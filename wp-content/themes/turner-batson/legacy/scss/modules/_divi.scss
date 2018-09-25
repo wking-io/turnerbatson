@@ -1,0 +1,47 @@
+/**
+ * Remove Sidebar
+ */
+#main-content .container:before {
+	background: none;
+}
+@media (min-width: 981px){
+	#left-area {
+		width: 100%;
+		float: none !important;
+	}
+}
+#sidebar {
+	display:none;
+}
+
+/**
+ * Always Display Slider Arrows
+ */
+
+@media all and (min-width: 768px) {
+	.et-pb-arrow-next {
+		opacity: 1;
+		top: -30px;
+		left: 22px;
+		right: auto;
+	}
+	.et-pb-arrow-prev {
+		opacity: 1;
+		left: 0;
+		top: -30px;
+	}
+}
+
+@media all and (max-width: 767px) {
+	.et-pb-arrow-next {
+		opacity: 1;
+		right: auto;
+		left: 22px;
+		top: -30px;
+	}
+	.et-pb-arrow-prev {
+		opacity: 1;
+		left: 0;
+		top: -30px;
+	}
+}

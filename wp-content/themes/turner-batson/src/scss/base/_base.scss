@@ -1,0 +1,21 @@
+*,
+*:before,
+*:after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 4px;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 4rem;
+  font-family: $sans-font;
+  overflow-x: hidden;
+}
+
+body.theme--dark {
+  background-color: $primary-color;
+}

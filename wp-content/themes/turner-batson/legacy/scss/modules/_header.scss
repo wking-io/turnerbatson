@@ -1,0 +1,44 @@
+body .mobile_menu_bar {
+	position: absolute;
+	top: 30px;
+	right: 0;
+
+	&:before {
+		position: relative;
+		display: block;
+		color: #fff;
+		z-index: 2;
+		top: 20px;
+		transform: rotate( 90deg );
+		font-size: 24px;
+	}
+
+	$trapezoid-width: 15;
+	$trapezoid-height: 30;
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		border-right: #{$trapezoid-height}px solid $red;
+		border-bottom: #{$trapezoid-width}px solid transparent;
+		border-top: #{$trapezoid-width}px solid transparent;
+		width: 0;
+		height: #{$trapezoid-height}px;
+		z-index: 1;
+		padding-left: 10px;
+		transform: scaleY( 1.75 );
+		cursor: pointer;
+	}
+}
+
+body.et_header_style_fullscreen .et_slide_in_menu_container span.mobile_menu_bar.et_toggle_fullscreen_menu {
+	top: 30px;
+	right: 0;
+
+	&:after {
+		border-right-color: $dark-gray;
+	}
+}

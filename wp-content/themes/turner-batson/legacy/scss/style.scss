@@ -1,0 +1,22 @@
+/*!
+ * Theme Name: Turner Batson
+ * Theme URI: http://www.turnerbatson.com/
+ * Version: 2.0.0
+ * Description: Custom WordPress theme for Turner Batson built by Briantics.
+ * Author: Briantics, Inc.
+ * Author URI: http://www.briantics.com
+ * Tags: responsive-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, featured-images, full-width-template, post-formats, rtl-language-support, theme-options, threaded-comments, translation-ready
+ * License: GNU General Public License v2
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Template: Divi
+ */
+
+@import 'vars';
+
+@import 'fonts/avenir';
+@import 'fonts/cera';
+
+@import 'modules/divi';
+
+@import 'modules/header';
