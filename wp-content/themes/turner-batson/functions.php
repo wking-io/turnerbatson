@@ -26,5 +26,5 @@ include 'inc/remove-comments.php';
 // Add option pages for custom post types
 include 'inc/option-pages.php';
 
-// Add google API key
-// include 'inc/google-api.php';
+// Add helper functions
+include 'inc/helpers.php';
