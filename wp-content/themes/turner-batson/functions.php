@@ -11,6 +11,9 @@ define( 'THEME_NAME', 'turnerbatson' );
 // Setup
 include 'inc/setup.php';
 
+// Add custom taxonomy for portfolio projects
+include 'inc/project-tax.php';
+
 // Assets.
 include 'inc/assets.php';
 
@@ -22,3 +25,6 @@ include 'inc/remove-comments.php';
 
 // Add option pages for custom post types
 include 'inc/option-pages.php';
+
+// Add google API key
+// include 'inc/google-api.php';

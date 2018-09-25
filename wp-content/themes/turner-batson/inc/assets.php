@@ -1,4 +1,9 @@
 <?php
+/**
+ * Add all assets for theme
+ *
+ * @package turner-batson
+ */
 
 if ( ! function_exists( 'turnerbatson_scripts' ) ) :
 

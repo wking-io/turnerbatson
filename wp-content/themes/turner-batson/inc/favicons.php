@@ -1,4 +1,10 @@
 <?php
+/**
+ * Add favicon to head
+ *
+ * @package turner-batson
+ */
+
 function turnerbatson_favicon() {
     $root = get_stylesheet_directory_uri() . '/assets/favicons/';
     echo '<link rel="apple-touch-icon" sizes="180x180" href="' . $root . 'apple-touch-icon.png">
