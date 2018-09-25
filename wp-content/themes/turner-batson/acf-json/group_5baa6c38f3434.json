@@ -1,11 +1,11 @@
 {
     "key": "group_5baa6c38f3434",
-    "title": "JOBS \/\/ Settings",
+    "title": "CAREER \/\/ Settings",
     "fields": [
         {
             "key": "field_5baa6c577b180",
             "label": "Background Image",
-            "name": "tb_job_bg",
+            "name": "tb_career_bg",
             "type": "image",
             "instructions": "",
             "required": 1,
@@ -29,7 +29,7 @@
         {
             "key": "field_5baa6c887b181",
             "label": "Heading",
-            "name": "tb_job_heading",
+            "name": "tb_career_heading",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -39,8 +39,8 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Job Opportunites",
-            "placeholder": "Job Opportunites",
+            "default_value": "Career Opportunites",
+            "placeholder": "Career Opportunites",
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -48,7 +48,7 @@
         {
             "key": "field_5baa6e107b182",
             "label": "Description",
-            "name": "tb_job_description",
+            "name": "tb_career_description",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -66,8 +66,8 @@
         },
         {
             "key": "field_5baa6e4f7b183",
-            "label": "No Available Jobs Description",
-            "name": "tb_jobs_no_jobs_description",
+            "label": "No Available Careers Description",
+            "name": "tb_career_no_careers_description",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -89,7 +89,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "job-settings"
+                "value": "career-settings"
             }
         ]
     ],
@@ -101,5 +101,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1537896143
+    "modified": 1537910707
 }

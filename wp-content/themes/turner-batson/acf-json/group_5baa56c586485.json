@@ -42,6 +42,44 @@
                     "multiple": 0,
                     "return_format": "id",
                     "ui": 1
+                },
+                {
+                    "key": "field_5baaac67d54f2",
+                    "label": "Project Short Title",
+                    "name": "project_short_title",
+                    "type": "text",
+                    "instructions": "This is a short title for the project so that it fits on the slider",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5baaac97d54f3",
+                    "label": "Project Short Subtitle",
+                    "name": "project_short_subtitle",
+                    "type": "text",
+                    "instructions": "This is a short subtitle. In the design it is the company\/institution this work was done for.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         },
@@ -193,5 +231,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1537897399
+    "modified": 1537912294
 }
