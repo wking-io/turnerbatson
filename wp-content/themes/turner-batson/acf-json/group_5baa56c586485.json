@@ -1,6 +1,6 @@
 {
     "key": "group_5baa56c586485",
-    "title": "Home",
+    "title": "HOME",
     "fields": [
         {
             "key": "field_5baa57302bc1d",
@@ -18,7 +18,7 @@
             "collapsed": "field_5baa576d2bc1e",
             "min": 3,
             "max": 3,
-            "layout": "table",
+            "layout": "row",
             "button_label": "Add Project",
             "sub_fields": [
                 {
@@ -180,6 +180,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
+        "the_content",
         "excerpt",
         "discussion",
         "comments",
@@ -192,5 +193,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1537890861
+    "modified": 1537897399
 }

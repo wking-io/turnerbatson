@@ -1,0 +1,94 @@
+{
+    "key": "group_5baa70ca209d5",
+    "title": "NEWS \/\/ Settings",
+    "fields": [
+        {
+            "key": "field_5baa71491bc98",
+            "label": "Turn On Custom Featured News?",
+            "name": "tb_is_custom_featured_news",
+            "type": "true_false",
+            "instructions": "Turn this toggle on if you would like full control over what articles are featured on the News Page. Default is chronological.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5baa70d71bc96",
+            "label": "Featured News",
+            "name": "tb_featured_news",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5baa71491bc98",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5baa70ff1bc97",
+            "min": 3,
+            "max": 3,
+            "layout": "row",
+            "button_label": "Add Article",
+            "sub_fields": [
+                {
+                    "key": "field_5baa70ff1bc97",
+                    "label": "Featured Article",
+                    "name": "tb_featured_article",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "post"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "id",
+                    "ui": 1
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "news-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1537897005
+}
