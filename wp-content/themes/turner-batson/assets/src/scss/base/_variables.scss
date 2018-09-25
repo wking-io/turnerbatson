@@ -1,9 +1,9 @@
 // Fonts
 $display-font: 'Century Gothic Bold', sans-serif;
 $serif-font: 'Merriweather', serif;
-$sans-font: 'Century Gothic', sans-serif;
+$sans-font: 'Avenir', sans-serif;
 
-// Header 
+// Header
 $header-l: 32rem;
 $header-m: 20rem;
 $header-s: 15rem;
@@ -14,7 +14,7 @@ $type-scale: (
   s: 200px,
   m: 300px,
   l: 400px,
-  xl: 500px
+  xl: 500px,
 );
 
 // Spacing
@@ -23,7 +23,7 @@ $gap: (
   s: 200px,
   m: 300px,
   l: 400px,
-  xl: 500px
+  xl: 500px,
 );
 
 // Responsive Breakpoints
@@ -32,7 +32,7 @@ $breakpoints: (
   s: 500px,
   m: 780px,
   l: 1100px,
-  xl: 1400px
+  xl: 1400px,
 );
 
 // Colors

@@ -6,7 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // Plugin Config
 const extractCommons = new webpack.optimize.CommonsChunkPlugin({
   name: 'commons',
-  filename: 'commons.js',
+  filename: 'js/commons.js',
 });
 const extractCSS = new ExtractTextPlugin('css/[name].css');
 
