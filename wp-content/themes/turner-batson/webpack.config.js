@@ -8,16 +8,16 @@ const extractCommons = new webpack.optimize.CommonsChunkPlugin({
   name: 'commons',
   filename: 'commons.js',
 });
-const extractCSS = new ExtractTextPlugin('[name].css');
+const extractCSS = new ExtractTextPlugin('css/[name].css');
 
 const config = {
-  context: path.resolve(__dirname, 'src'),
+  context: path.resolve(__dirname, 'assets/src'),
   entry: {
     main: './main.js',
   },
   output: {
     path: path.resolve(__dirname, 'assets'),
-    filename: '[name].js',
+    filename: 'js/[name].js',
   },
   devtool: 'source-map',
   module: {
@@ -32,7 +32,7 @@ const config = {
       },
       {
         test: /\.js$/,
-        include: path.resolve(__dirname, 'src/js'),
+        include: path.resolve(__dirname, 'assets/src/js'),
         exclude: /node_modules/,
         use: [
           {
@@ -45,7 +45,7 @@ const config = {
       },
       {
         test: /\.scss$/,
-        include: path.resolve(__dirname, 'src/scss'),
+        include: path.resolve(__dirname, 'assets/src/scss'),
         use: extractCSS.extract([
           {
             loader: 'css-loader',
@@ -72,7 +72,7 @@ const config = {
         use: [
           {
             loader: 'file-loader',
-            options: { name: '[name].[ext]' },
+            options: { name: 'fonts/[name].[ext]' },
           },
         ],
       },
