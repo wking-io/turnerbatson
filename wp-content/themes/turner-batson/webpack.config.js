@@ -11,7 +11,7 @@ const extractCommons = new webpack.optimize.CommonsChunkPlugin({
 const extractCSS = new ExtractTextPlugin('css/[name].css');
 
 const config = {
-  context: path.resolve(__dirname, 'assets/src'),
+  context: path.resolve(__dirname, 'src'),
   entry: {
     main: './main.js',
   },
@@ -32,7 +32,7 @@ const config = {
       },
       {
         test: /\.js$/,
-        include: path.resolve(__dirname, 'assets/src/js'),
+        include: path.resolve(__dirname, 'src/js'),
         exclude: /node_modules/,
         use: [
           {
@@ -45,7 +45,7 @@ const config = {
       },
       {
         test: /\.scss$/,
-        include: path.resolve(__dirname, 'assets/src/scss'),
+        include: path.resolve(__dirname, 'src/scss'),
         use: extractCSS.extract([
           {
             loader: 'css-loader',

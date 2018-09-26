@@ -123,8 +123,7 @@ plugins/hello.php
 /sitemap.xml.gz
 
 # Webpack Build
-wp-content/themes/*/assets/*
-!wp-content/themes/*/assets/src
+wp-content/themes/*/assets/
 
 
 # End of https://www.gitignore.io/api/git,node,sass,macos,composer,wordpress
