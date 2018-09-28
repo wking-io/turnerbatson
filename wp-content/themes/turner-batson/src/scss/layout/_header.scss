@@ -24,15 +24,16 @@
   opacity: 0;
   transform: translateY(20px);
   transition: none;
+  cursor: pointer;
 }
 
 .menu-item a {
-  @apply text-white no-underline font-bold leading-none;
+  @apply text-white no-underline font-bold leading-none block;
   font-size: 8vw;
 }
 
 .menu-item:hover a {
-  @apply opacity-75;
+  @apply opacity-50;
 }
 
 .menu-item.active a {
