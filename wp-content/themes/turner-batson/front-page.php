@@ -1,5 +1,7 @@
 <?php
 
-get_header();
+get_header(); ?>
 
-get_footer();
+<section data-section data-make-menu="dark">This is the homepage.</section>
+
+<?php get_footer();

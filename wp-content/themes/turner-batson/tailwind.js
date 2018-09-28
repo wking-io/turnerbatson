@@ -48,6 +48,7 @@ const colors = {
   grey: '#CBCCCD',
   white: '#ffffff',
   primary: '#DA291C',
+  "primary-dark": "#AE231E",
 };
 
 module.exports = {
@@ -175,6 +176,7 @@ module.exports = {
 
   fontWeights: {
     normal: 'normal',
+    medium: 500,
     semibold: 600,
     bold: 'bold',
   },
@@ -329,19 +331,19 @@ module.exports = {
   width: {
     auto: 'auto',
     px: '1px',
-    1: '0.25rem',
-    2: '0.5rem',
-    3: '0.75rem',
-    4: '1rem',
-    6: '1.5rem',
-    8: '2rem',
-    10: '2.5rem',
-    12: '3rem',
-    16: '4rem',
-    24: '6rem',
-    32: '8rem',
-    48: '12rem',
-    64: '16rem',
+    1: '1rem', // 4px
+    2: '2rem', // 8px
+    3: '3rem', // 12px
+    4: '4rem', // 16px
+    6: '6rem', // 24px
+    8: '8rem', // 32px
+    10: '10rem', // 40px
+    12: '12rem', // 48px
+    16: '16rem', // 64px
+    24: '24rem', // 96px
+    32: '32rem', // 128px
+    48: '48rem', // 192px
+    64: '64rem', // 256px
     '1/2': '50%',
     '1/3': '33.33333%',
     '2/3': '66.66667%',
@@ -375,19 +377,19 @@ module.exports = {
   height: {
     auto: 'auto',
     px: '1px',
-    1: '0.25rem',
-    2: '0.5rem',
-    3: '0.75rem',
-    4: '1rem',
-    6: '1.5rem',
-    8: '2rem',
-    10: '2.5rem',
-    12: '3rem',
-    16: '4rem',
-    24: '6rem',
-    32: '8rem',
-    48: '12rem',
-    64: '16rem',
+    1: '1rem', // 4px
+    2: '2rem', // 8px
+    3: '3rem', // 12px
+    4: '4rem', // 16px
+    6: '6rem', // 24px
+    8: '8rem', // 32px
+    10: '10rem', // 40px
+    12: '12rem', // 48px
+    16: '16rem', // 64px
+    24: '24rem', // 96px
+    32: '32rem', // 128px
+    48: '48rem', // 192px
+    64: '64rem', // 256px
     full: '100%',
     screen: '100vh',
   },

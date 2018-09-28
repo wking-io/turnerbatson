@@ -28,3 +28,6 @@ include 'inc/option-pages.php';
 
 // Add helper functions
 include 'inc/helpers.php';
+
+// Shortcodes
+include 'inc/shortcodes.php';

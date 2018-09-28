@@ -9,8 +9,11 @@ if ( ! function_exists( 'turnerbatson_scripts' ) ) :
 
 	function turnerbatson_scripts() {
 
-	    wp_register_script( 'common', get_template_directory_uri() . '/assets/js/common.js', array(), '1.0.0', true );
-	    wp_enqueue_script( 'common' );
+		wp_register_script( 'polyfill', get_template_directory_uri() . '/assets/js/polyfill.js', array(), '1.0.0', true );
+		wp_enqueue_script( 'polyfill' );
+		
+	    wp_register_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true );
+	    wp_enqueue_script( 'main' );
 
 	}
 
@@ -22,7 +25,7 @@ if ( ! function_exists( 'turnerbatson_styles' ) ) :
 
 	function turnerbatson_styles() {
 
-	    wp_register_style( 'main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.0', true );
+	    wp_register_style( 'main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.0', false );
 	    wp_enqueue_style( 'main' );
 
 	}

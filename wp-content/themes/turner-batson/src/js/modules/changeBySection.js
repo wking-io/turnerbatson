@@ -1,9 +1,10 @@
 import compose from './compose';
 import withDefault from './withDefault';
+import fromTop from './fromTop';
 
-const buildSections = elems => event =>
+const buildSections = elems => () =>
   elems.map(el => ({
-    menuStyle: withDefault('sectionStyle', '', el.dataset),
+    menuStyle: withDefault('makeMenu', '', el.dataset),
     fromTop: fromTop(el),
   }));
 

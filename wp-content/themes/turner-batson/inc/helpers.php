@@ -1,7 +1,6 @@
 <?php
 
 function get_page_name( $post_type ) {
-  error_log( $post_type );
 
   switch ( $post_type ) {
     case 'page':
@@ -27,8 +26,6 @@ function get_page_name( $post_type ) {
       break;
 
   }
-
-  error_log( $name );
 
   return $name;
 }

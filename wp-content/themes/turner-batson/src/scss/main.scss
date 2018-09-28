@@ -1,7 +1,7 @@
 @import 'base/fonts';
+@import '~normalize.css/normalize';
 
 @tailwind preflight;
-@tailwind utilities;
 
 @import 'vendors/module';
 @import 'base/module';
@@ -9,3 +9,5 @@
 @import 'layout/module';
 @import 'components/module';
 @import 'pages/module';
+
+@tailwind utilities;
