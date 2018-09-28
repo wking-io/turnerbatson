@@ -1,13 +1,13 @@
 // Responsive Breakpoints
-$breakpoints: (
-  sm: '576px',
-  md: '768px',
-  lg: '992px',
-  xl: '1200px',
-);
+$sm: '576px';
+$md: '768px';
+$lg: '992px';
+$xl: '1200px';
 
-$black: #3F4243;
-$grey: #CBCCCD;
+$black: #3f4243;
+$grey: #cbcccd;
 $white: #ffffff;
-$primary: #DA291C;
-$primary-dark: #AE231E;
+$primary: #da291c;
+$primary-dark: #ae231e;
+
+$animation-base: 0.2s;

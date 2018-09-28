@@ -28,7 +28,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', THEME_NAME ); ?></a>
 
 	<header id="masthead" class="w-full flex justify-between items-center fixed pl-6 py-6" role="banner" data-menu-style="dark">
-		<h1>
+		<h1 class="relative z-50">
 			<a class="flex items-center">
 				<?php echo do_shortcode( '[logo classname="w-8 h-auto"]' ); ?>
 				<span class="page-name ml-2 text-base md:text-md uppercase font-medium"><?php echo get_page_name( get_post_type() ); ?></span>
@@ -36,14 +36,23 @@
 		</h1>
 
 		<nav class="nav" role="navigation">
-			<button class="menu-toggle z-50 w-6 relative cursor-pointer" aria-expanded="false">
+			<button class="menu-toggle z-40 w-6 relative cursor-pointer" aria-expanded="false">
 				<span></span>
 				<span></span>
 				<span></span>
 				<span></span>
 			</button>
-
-			<?php wp_nav_menu( array( 'theme_location' => 'menu-main', 'menu_id' => 'primary-menu', 'menu_class' => 'flex', 'container_class' => 'fixed pin z-40' ) ); ?>
+		
+			<div class="menu-wrapper flex flex-col justify-end items-center fixed pin z-30 bg-black p-6 overflow-hidden w-screen">
+				<?php wp_nav_menu( array( 'theme_location' => 'menu-main', 'menu_id' => 'primary-menu', 'menu_class' => 'list-reset flex flex-col justify-end items-between flex-wrap menu-item-list w-full p-8 m-0', 'container' => false ) ); ?>
+				<div class="menu-aside flex justify-between items-center w-full text-white p-8 m-0">
+					<p class="menu-tagline uppercase fixed lg:static font-medium leading-none">People. Passion. Purpose</p>
+					<p class="leading-none font-medium hidden lg:block"><?php the_field('tb_company_address', 'options' ); ?></p>
+					<?php is_active_sidebar( 'social-widget-area' ) {
+						dynamic_sidebar( 'social-widget-area' )
+					} ?>
+				</div>
+			</div>
 
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

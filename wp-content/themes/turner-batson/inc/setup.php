@@ -62,6 +62,41 @@ function turnerbatson_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	function tb_widgets_init() {
+
+    register_sidebar( array(
+			'name'          => esc_html__( 'Sidebar', THEME_NAME ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'Add widgets here.', THEME_NAME ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+	
+		register_sidebar( array(
+			'name'          => esc_html__( 'Social Widget Area', THEME_NAME ),
+			'id'            => 'social-widget-area',
+			'description'   => esc_html__( 'Add social icons here.', THEME_NAME ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+
+		register_sidebar( array(
+			'name'          => esc_html__( 'Share Widget Area', THEME_NAME ),
+			'id'            => 'share-widget-area',
+			'description'   => esc_html__( 'Add share icons here.', THEME_NAME ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+	}
+
+	add_action( 'widgets_init', 'tb_widgets_init' );
 }
 
 endif;

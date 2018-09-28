@@ -1,21 +1,21 @@
-
 .menu-toggle {
   height: 7rem;
   transform: translateY(180%);
 
-  &:active, &:focus {
+  &:active,
+  &:focus {
     outline: none;
   }
 
-	$trapezoid-width: 24;
+  $trapezoid-width: 24;
   $trapezoid-height: 10;
-  
-	&:before {
+
+  &:before {
     content: '';
     position: absolute;
     left: 0;
     top: -4.25rem;
-		border-right: #{$trapezoid-width}px solid $primary;
+    border-right: #{$trapezoid-width}px solid $primary;
     border-top: #{$trapezoid-height}px solid transparent;
     border-bottom: #{$trapezoid-height}px solid transparent;
     height: 16rem;
@@ -28,7 +28,7 @@
     position: absolute;
     left: 0;
     top: -4.25rem;
-		border-right: #{$trapezoid-width}px solid $primary-dark;
+    border-right: #{$trapezoid-width}px solid $primary-dark;
     border-top: #{$trapezoid-height}px solid transparent;
     border-bottom: #{$trapezoid-height}px solid transparent;
     height: 16rem;
@@ -40,7 +40,7 @@
     position: absolute;
     left: 0;
     top: -4.25rem;
-		border-right: #{$trapezoid-width}px solid #54585A;
+    border-right: #{$trapezoid-width}px solid #54585a;
     border-top: #{$trapezoid-height}px solid transparent;
     border-bottom: #{$trapezoid-height}px solid transparent;
     height: 16rem;
@@ -52,13 +52,13 @@
     position: absolute;
     left: 0;
     top: -4.25rem;
-		border-right: #{$trapezoid-width}px solid $black;
+    border-right: #{$trapezoid-width}px solid $black;
     border-top: #{$trapezoid-height}px solid transparent;
     border-bottom: #{$trapezoid-height}px solid transparent;
     height: 16rem;
     width: 0;
   }
-  
+
   & span {
     display: block;
     position: absolute;
@@ -83,7 +83,7 @@
       left: 17px;
     }
   }
-  
+
   &[aria-expanded='true'] span {
     &:first-child {
       opacity: 0;
@@ -105,19 +105,19 @@
   }
 }
 
-// @include media('>md') {
-
+// @include media('>=md') {
 //   .menu-toggle {
 //     height: 7rem;
 //     transform: translateY(180%);
-  
-//     &:active, &:focus {
+
+//     &:active,
+//     &:focus {
 //       outline: none;
 //     }
-  
+
 //     $trapezoid-width: 24;
 //     $trapezoid-height: 10;
-    
+
 //     &:before {
 //       content: '';
 //       position: absolute;
@@ -130,7 +130,7 @@
 //       width: 0;
 //       transition: all 0.2s ease-in;
 //     }
-  
+
 //     &:hover:before {
 //       content: '';
 //       position: absolute;
@@ -142,19 +142,19 @@
 //       height: 16rem;
 //       width: 0;
 //     }
-  
+
 //     &[aria-expanded='true']:before {
 //       content: '';
 //       position: absolute;
 //       left: 0;
 //       top: -4.25rem;
-//       border-right: #{$trapezoid-width}px solid #54585A;
+//       border-right: #{$trapezoid-width}px solid #54585a;
 //       border-top: #{$trapezoid-height}px solid transparent;
 //       border-bottom: #{$trapezoid-height}px solid transparent;
 //       height: 16rem;
 //       width: 0;
 //     }
-  
+
 //     &[aria-expanded='true']:hover:before {
 //       content: '';
 //       position: absolute;
@@ -165,8 +165,6 @@
 //       border-bottom: #{$trapezoid-height}px solid transparent;
 //       height: 16rem;
 //       width: 0;
-//     }   
-    
+//     }
 //   }
-
 // }

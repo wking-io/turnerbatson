@@ -1,264 +1,155 @@
-[data-menu-style="light"] .page-name {
+.page-name {
+  transition: all #{$animation-base} ease-in;
+}
+
+.nav--open .page-name {
+  opacity: 0;
+}
+
+[data-menu-style='light'] .page-name {
   @apply text-white;
 }
 
-[data-menu-style="dark"] .page-name {
+[data-menu-style='dark'] .page-name {
   @apply text-black;
 }
 
-// .nav__menu {
-//   margin: -0.5rem 0;
+.menu-wrapper {
+  opacity: 0;
+  z-index: -1;
+}
 
-//   & .nav__menu__wrapper {
-//     display: flex;
-//     list-style-type: none;
-//     margin: 0;
+.menu-item {
+  @apply pt-6 leading-none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: none;
+}
 
-//     & > .menu-item {
-//       line-height: 1;
-//       position: relative;
-//       margin-left: 9rem;
+.menu-item a {
+  @apply text-white no-underline font-bold leading-none;
+  font-size: 8vw;
+}
 
-//       & > a {
-//         color: $primary-color;
-//         text-decoration: none;
-//         font-size: 4.5rem;
-//         font-family: $sans-font;
-//         text-transform: uppercase;
-//         letter-spacing: 0.5rem;
+.menu-item:hover a {
+  @apply opacity-75;
+}
 
-//         &:hover {
-//           font-weight: bold;
-//         }
-//       }
+.menu-item.active a {
+  @apply text-primary;
+}
 
-//       &:hover > .sub-menu {
-//         visibility: visible;
-//         opacity: 1;
-//       }
-//     }
-//   }
+.menu-aside {
+  opacity: 0;
+  transition: none;
+  max-width: 1100px;
+}
 
-//   & .sub-menu {
-//     position: absolute;
-//     top: calc(100% + 5.5rem);
-//     left: 0;
-//     min-width: 180px;
-//     padding: 6rem;
-//     background-color: $primary-color;
-//     z-index: 999;
-//     visibility: hidden;
-//     opacity: 0;
-//     transition: all 0.3s cubic-bezier(0.19, 0.66, 0.67, 0.98);
+.menu-tagline {
+  top: 7rem;
+  left: 15.5rem;
+}
 
-//     &:before {
-//       content: '';
-//       position: absolute;
-//       left: 0;
-//       height: 4rem;
-//       width: 4rem;
-//       top: -4rem;
-//       border-left: 10px solid $primary-color;
-//       border-bottom: 10px solid $primary-color;
-//       border-top: 10px solid transparent;
-//       border-right: 10px solid transparent;
-//     }
+.nav--open {
+  & .menu-wrapper {
+    opacity: 0.98;
+    z-index: 30;
+  }
 
-//     &:after {
-//       content: '';
-//       position: absolute;
-//       height: 5rem;
-//       width: 100%;
-//       top: -5rem;
-//       left: 0;
-//     }
+  & .menu-aside {
+    opacity: 1;
+    transition: all #{$animation-base} ease-in 0.7s;
+  }
 
-//     & li {
-//       margin-bottom: 3rem;
+  & .menu-item {
+    transform: translateY(0);
+    transition: all #{$animation-base} ease-in;
+    opacity: 1;
 
-//       &:last-child {
-//         margin-bottom: 0;
-//       }
-//     }
+    &:first-child {
+      transition-delay: grow-animation(0s);
+    }
+    &:nth-child(2n) {
+      transition-delay: grow-animation(0.05s);
+    }
+    &:nth-child(3n) {
+      transition-delay: grow-animation(0.1s);
+    }
+    &:nth-child(4n) {
+      transition-delay: grow-animation(0.15s);
+    }
+    &:nth-child(5n) {
+      transition-delay: grow-animation(0.2s);
+    }
+    &:nth-child(6n) {
+      transition-delay: grow-animation(0.25s);
+    }
+    &:nth-child(7n) {
+      transition-delay: grow-animation(0.3s);
+    }
+    &:last-child {
+      transition-delay: grow-animation(0.35s);
+    }
+  }
+}
 
-//     & a {
-//       color: $white;
-//       text-decoration: none;
-//       font-size: 3.5rem;
-//       font-family: $sans-font;
-//       letter-spacing: 0.125rem;
+@include media('>=#{$md}') {
+  .menu-item-list {
+    column-count: 2;
+    height: 50vw;
+  }
 
-//       &:hover {
-//         font-weight: bold;
-//       }
-//     }
-//   }
-// }
+  .menu-item {
+    width: 50%;
+  }
 
-// .theme--dark .nav__menu {
-//   & .nav__menu__wrapper > .menu-item {
-//     & > a {
-//       color: $white;
-//     }
-//   }
+  .menu-item a {
+    font-size: 7vw;
+  }
 
-//   & .sub-menu {
-//     background-color: $white;
+  .nav--open {
+    & .menu-aside {
+      transition: all #{$animation-base} ease-in 0.4s;
+    }
 
-//     &:before {
-//       content: '';
-//       position: absolute;
-//       left: 0;
-//       height: 4rem;
-//       width: 4rem;
-//       top: -4rem;
-//       border-left: 10px solid $white;
-//       border-bottom: 10px solid $white;
-//       border-top: 10px solid transparent;
-//       border-right: 10px solid transparent;
-//     }
+    & .menu-item {
+      &:first-child,
+      &:nth-child(5n) {
+        transition-delay: grow-animation(0s);
+      }
+      &:nth-child(2n),
+      &:nth-child(6n) {
+        transition-delay: grow-animation(0.1s);
+      }
+      &:nth-child(3n),
+      &:nth-child(7n) {
+        transition-delay: grow-animation(0.2s);
+      }
+      &:nth-child(4n),
+      &:nth-child(8n) {
+        transition-delay: grow-animation(0.3s);
+      }
+    }
+  }
+}
 
-//     & a {
-//       color: $primary-color;
-//     }
-//   }
-// }
+@include media('>=#{$lg}') {
+  .menu-item-list {
+    height: 48vw;
+  }
+}
 
-// @include media('<1200px') {
-//   .nav__menu .nav__menu__wrapper > .menu-item {
-//     margin-left: 8rem;
+@include media('>=#{$xl}') {
+  .menu-item-list {
+    max-width: 1100px;
+    max-height: 510px;
+  }
 
-//     & > a {
-//       font-size: 4rem;
-//     }
-//   }
-// }
+  .menu-item a {
+    font-size: 90px;
+  }
 
-// @include media('<1040px') {
-//   .header {
-//     height: 20rem;
-//     padding: 6rem 4vw;
-//   }
-//   .nav__menu {
-//     & .sub-menu {
-//       top: calc(100% + 5.5rem);
-
-//       &:before {
-//         content: '';
-//         position: absolute;
-//         left: 0;
-//         height: 3rem;
-//         width: 3rem;
-//         top: -3rem;
-//         border-left: 8px solid $primary-color;
-//         border-bottom: 8px solid $primary-color;
-//         border-top: 8px solid transparent;
-//         border-right: 8px solid transparent;
-//       }
-
-//       &:after {
-//         content: '';
-//         position: absolute;
-//         height: 6rem;
-//         width: 100%;
-//         top: -6rem;
-//         left: 0;
-//       }
-//     }
-//   }
-// }
-
-// @include media('<950px') {
-//   .header {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     z-index: 999;
-//   }
-//   .nav__menu {
-//     text-align: right;
-//     background-color: $primary-color;
-//     position: fixed;
-//     right: 0;
-//     top: 20rem;
-//     left: 100vw;
-//     padding: 10rem 8rem;
-//     width: 100vw;
-//     height: calc(100vh - 19.5rem);
-//     overflow-y: scroll;
-//     overflow-x: hidden;
-//     transition: all 0.3s cubic-bezier(0.19, 0.66, 0.67, 0.98);
-
-//     .nav--open & {
-//       transform: translateX(-100vw);
-//     }
-
-//     .nav__menu__wrapper {
-//       flex-direction: column;
-
-//       & > .menu-item {
-//         margin: 0 0 6rem;
-
-//         &:last-child {
-//           margin-bottom: 0;
-//         }
-
-//         & > a {
-//           font-size: 5.25rem;
-//         }
-
-//         & a {
-//           color: $white;
-//         }
-//       }
-//     }
-
-//     & .sub-menu {
-//       position: static;
-//       min-width: 0;
-//       padding: 6rem 0 2rem;
-//       background-color: transparent;
-//       visibility: visible;
-//       opacity: 1;
-
-//       &:before {
-//         display: none;
-//       }
-
-//       &:after {
-//         display: none;
-//       }
-
-//       & .menu-item {
-//         margin-bottom: 3.6rem;
-
-//         &:last-child {
-//           margin-bottom: 0;
-//         }
-//       }
-//     }
-//   }
-
-//   .theme--dark .nav__menu {
-//     & .sub-menu {
-//       background-color: $primary-color;
-
-//       & a {
-//         color: $white;
-//       }
-//     }
-//   }
-// }
-
-// @include media('<500px') {
-//   .header {
-//     height: 15rem;
-//     padding: 3rem 4rem;
-//   }
-
-//   .nav__menu {
-//     top: 15rem;
-//     height: calc(100vh - 14.5rem);
-//   }
-// }
+  .menu-aside {
+    max-width: 1100px;
+  }
+}

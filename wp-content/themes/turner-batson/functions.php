@@ -31,3 +31,6 @@ include 'inc/helpers.php';
 
 // Shortcodes
 include 'inc/shortcodes.php';
+
+// Custom active class on menu items
+include 'inc/custom-active-menu.php';
