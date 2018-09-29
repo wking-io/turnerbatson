@@ -27,7 +27,7 @@
 <body <?php body_class('font-sans'); ?>>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', THEME_NAME ); ?></a>
 
-	<header id="masthead" class="w-full flex justify-between items-center fixed pl-6 py-6" role="banner" data-menu-style="dark">
+	<header id="masthead" class="w-full flex justify-between items-center fixed pl-6 py-6 z-50" role="banner" data-menu-style="dark">
 		<h1 class="relative z-50">
 			<a class="flex items-center">
 				<?php echo do_shortcode( '[logo classname="w-8 h-auto"]' ); ?>
@@ -56,3 +56,4 @@
 
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+	<div class="min-h-screen">

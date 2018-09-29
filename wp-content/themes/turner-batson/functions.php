@@ -34,3 +34,6 @@ include 'inc/shortcodes.php';
 
 // Custom active class on menu items
 include 'inc/custom-active-menu.php';
+
+// Auto copyright
+include 'inc/copyright.php';

@@ -3,7 +3,7 @@
 }
 
 .nav--open .page-name {
-  opacity: 0;
+  @apply opacity-0;
 }
 
 [data-menu-style='light'] .page-name {
@@ -15,35 +15,36 @@
 }
 
 .menu-wrapper {
-  opacity: 0;
+  @apply opacity-0;
   z-index: -1;
+  transform: translateX(100%);
 }
 
-.menu-item {
-  @apply pt-6 leading-none;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: none;
-  cursor: pointer;
-}
+.nav {
+  & .menu-item {
+    @apply pt-6 leading-none opacity-0 cursor-pointer;
+    transform: translateY(20px);
+    transition: none;
+  }
 
-.menu-item a {
-  @apply text-white no-underline font-bold leading-none block;
-  font-size: 8vw;
-}
+  & .menu-item a {
+    @apply text-white no-underline font-bold leading-none block;
+    font-size: 8vw;
+  }
 
-.menu-item:hover a {
-  @apply opacity-50;
-}
+  & .menu-item:hover a {
+    @apply opacity-50;
+  }
 
-.menu-item.active a {
-  @apply text-primary;
+  & .menu-item.active a {
+    @apply text-primary;
+  }
 }
 
 .menu-aside {
-  opacity: 0;
+  @apply opacity-0;
   transition: none;
-  max-width: 1100px;
+  max-width: 1100px;  
 }
 
 .menu-tagline {
@@ -53,19 +54,20 @@
 
 .nav--open {
   & .menu-wrapper {
+    @apply z-30;
     opacity: 0.98;
-    z-index: 30;
+    transform: translateX(0);
   }
 
   & .menu-aside {
-    opacity: 1;
+    @apply opacity-100;
     transition: all #{$animation-base} ease-in 0.7s;
   }
 
   & .menu-item {
+    @apply opacity-100;
     transform: translateY(0);
     transition: all #{$animation-base} ease-in;
-    opacity: 1;
 
     &:first-child {
       transition-delay: grow-animation(0s);
@@ -95,17 +97,19 @@
 }
 
 @include media('>=#{$md}') {
-  .menu-item-list {
-    column-count: 2;
-    height: 50vw;
-  }
+  .nav {
+    & .menu-item-list {
+      column-count: 2;
+      height: 50vw;
+    }
 
-  .menu-item {
-    width: 50%;
-  }
+    & .menu-item {
+      @apply w-1/2;
+    }
 
-  .menu-item a {
-    font-size: 7vw;
+    & .menu-item a {
+      font-size: 7vw;
+    }
   }
 
   .nav--open {
@@ -131,19 +135,21 @@
 }
 
 @include media('>=#{$lg}') {
-  .menu-item-list {
+  .nav .menu-item-list {
     height: 48vw;
   }
 }
 
 @include media('>=#{$xl}') {
-  .menu-item-list {
-    max-width: 1100px;
-    max-height: 510px;
-  }
-
-  .menu-item a {
-    font-size: 90px;
+  .nav {
+    & .menu-item-list {
+      max-width: 1100px;
+      max-height: 510px;
+    }
+  
+    & .menu-item a {
+      font-size: 90px;
+    }
   }
 
   .menu-aside {

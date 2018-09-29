@@ -14,3 +14,15 @@ body {
   font-size: 4rem;
   overflow-x: hidden;
 }
+
+.wrapper {
+  max-width: 1200px;
+  width: 85vw;
+  margin: 0 auto;
+}
+
+@include media('>=#{$lg}') {
+  .wrapper {
+    width: 90vw;
+  }
+}
