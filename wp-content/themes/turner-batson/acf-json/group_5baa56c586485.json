@@ -84,10 +84,10 @@
             ]
         },
         {
-            "key": "field_5baa580d2bc1f",
-            "label": "Our Purpose Video",
-            "name": "tb_purpose_video",
-            "type": "oembed",
+            "key": "field_5baff60ff421d",
+            "label": "Our Purpose Video Poster",
+            "name": "tb_purpose_poster",
+            "type": "image",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
@@ -96,8 +96,32 @@
                 "class": "",
                 "id": ""
             },
-            "width": "",
-            "height": ""
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5baa580d2bc1f",
+            "label": "Our Purpose Video",
+            "name": "tb_purpose_video",
+            "type": "url",
+            "instructions": "To fill out this field follow these steps:\r\n\r\n1. Go to the Cloudinary Media Library > Videos here: http:\/\/turnerbatson.test\/wp-admin\/admin.php?page=cloudinary-image-management-and-manipulation-in-the-cloud-cdn%2Flibrary.php\r\n2. Click into the edit page for the video you want to add\r\n3. Copy the URL below the video preview\r\n4. Paste URL in video below",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_5baa583e2bc20",
@@ -231,5 +255,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1537912294
+    "modified": 1538260746
 }

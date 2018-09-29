@@ -37,3 +37,5 @@ include 'inc/custom-active-menu.php';
 
 // Auto copyright
 include 'inc/copyright.php';
+
+include 'inc/cloudinary.php';
