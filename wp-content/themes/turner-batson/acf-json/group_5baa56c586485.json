@@ -111,8 +111,8 @@
             "key": "field_5baa580d2bc1f",
             "label": "Our Purpose Video",
             "name": "tb_purpose_video",
-            "type": "url",
-            "instructions": "To fill out this field follow these steps:\r\n\r\n1. Go to the Cloudinary Media Library > Videos here: http:\/\/turnerbatson.test\/wp-admin\/admin.php?page=cloudinary-image-management-and-manipulation-in-the-cloud-cdn%2Flibrary.php\r\n2. Click into the edit page for the video you want to add\r\n3. Copy the URL below the video preview\r\n4. Paste URL in video below",
+            "type": "text",
+            "instructions": "To fill out this field follow these steps:\r\n\r\n1. Go to the Cloudinary Media Library > Videos here: http:\/\/turnerbatson.test\/wp-admin\/admin.php?page=cloudinary-image-management-and-manipulation-in-the-cloud-cdn%2Flibrary.php\r\n2. Click into the edit page for the video you want to add\r\n3. Copy the name of the videoURL below the video preview\r\n4. Paste URL in video below",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -121,7 +121,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5baa583e2bc20",
@@ -255,5 +258,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1538260746
+    "modified": 1538276472
 }

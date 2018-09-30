@@ -38,4 +38,5 @@ include 'inc/custom-active-menu.php';
 // Auto copyright
 include 'inc/copyright.php';
 
+// Setup Cloudinary Config
 include 'inc/cloudinary.php';
