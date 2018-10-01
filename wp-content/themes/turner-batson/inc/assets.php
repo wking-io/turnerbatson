@@ -12,8 +12,13 @@ if ( ! function_exists( 'turnerbatson_scripts' ) ) :
 		wp_register_script( 'polyfill', get_template_directory_uri() . '/assets/js/polyfill.js', array(), '1.0.0', true );
 		wp_enqueue_script( 'polyfill' );
 		
-	    wp_register_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true );
-	    wp_enqueue_script( 'main' );
+	    wp_register_script( 'main', get_template_directory_uri() . '/assets/js/home.js', array(), '1.0.0', true );
+		wp_enqueue_script( 'main' );
+		
+		if ( is_front_page() ) :
+			wp_register_script( 'home', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true );
+			wp_enqueue_script( 'home' );
+		endif;
 
 	}
 

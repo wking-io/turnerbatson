@@ -9,6 +9,8 @@
  * @package turner-batson
  */
 
+$post_type = get_post_type();
+
 ?>
 
 <!DOCTYPE html>
@@ -24,14 +26,14 @@
 		<?php wp_head(); ?>
 	</head>
 
-<body <?php body_class('font-sans'); ?>>
+<body <?php body_class('font-sans text-black'); ?>>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', THEME_NAME ); ?></a>
 
-	<header id="masthead" class="w-full flex justify-between items-center fixed pl-6 py-6 z-50" role="banner" data-menu-style="dark">
-		<h1 class="relative z-50">
+	<header id="masthead" class="w-full flex justify-between items-center fixed pl-6 py-6 z-50" role="banner">
+		<h1 class="branding relative z-50">
 			<a class="flex items-center">
 				<?php echo do_shortcode( '[logo classname="w-8 h-auto"]' ); ?>
-				<span class="page-name ml-2 text-base md:text-md uppercase font-medium"><?php echo get_page_name( get_post_type() ); ?></span>
+				<span class="page-name ml-2 text-base md:text-md uppercase font-medium"><?php echo get_page_name( $post_type ); ?></span>
 			</a>
 		</h1>
 
@@ -56,4 +58,3 @@
 
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-	<div class="min-h-screen">

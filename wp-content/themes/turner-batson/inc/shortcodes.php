@@ -7,19 +7,31 @@
 
 add_shortcode( 'tagline', 'turnerbatson_tagline_shortcode' );
 
-function turnerbatson_tagline_shortcode( $atts = array(), $content = null, $shortcode = 'tagline' ) {
-	$atts = shortcode_atts( array(
-		'bold' => false,
+function turnerbatson_tagline_shortcode( $atts = array() ) {
+	$a = shortcode_atts( array(
+		'theme' => 'none',
 	), $atts );
 
-	$people = false !== $atts['bold'] ? '<strong>' . __( 'People.', 'turner-batson' ) . '</strong>' : __( 'People.', 'turner-batson' );
+	if ( $a['theme'] === 'people-red' ) :
+		$people = __( '<span class="text-primary">People.</span>', THEME_NAME );
+		$passion = __( 'Passion.', THEME_NAME ); 
+		$purpose = __( 'Purpose.', THEME_NAME );
+	elseif ( $a['theme'] === 'stack' ) :
+		$people = __( '<span class="block">People.</span>', THEME_NAME );
+		$passion = __( '<span class="block">Passion.</span>', THEME_NAME ); 
+		$purpose = __( '<span class="block">Purpose.</span>', THEME_NAME );
+	else :
+		$people = __( 'People.', THEME_NAME );
+		$passion = __( 'Passion.', THEME_NAME );
+		$purpose = __( 'Purpose.', THEME_NAME );
+	endif;
 
 	$words = array(
 		$people,
-		__( 'Passion.', 'turner-batson' ),
-		__( 'Purpose.', 'turner-batson' ),
+		$passion,
+		$purpose,
 	);
-	return '<span class="tagline">' . implode( ' ', $words ) . '</span>';
+	return implode( ' ', $words );
 }
 
 add_shortcode( 'logo', 'tb_logo_shortcode');

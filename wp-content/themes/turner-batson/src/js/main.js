@@ -3,19 +3,22 @@ import './modules/fonts';
 
 import compose from './modules/compose';
 import runAndListen from './modules/runAndListen';
-import changeBySection from './modules/changeBySection';
+import { hide } from './modules/onScroll';
 import { toggleAttr } from './modules/attr';
 import { toggleClass } from './modules/classlist';
-import { dom, domAll } from './modules/dom';
+import { dom } from './modules/dom';
 import { wrapEvent, eventOn } from './modules/event';
 
-const sectionElems = domAll('[data-section]');
 const nav = dom('#masthead');
+const navName = dom('.page-name');
 const navToggle = dom('.menu-toggle');
 
-runAndListen(changeBySection(nav, sectionElems), 'scroll', window);
+runAndListen(() => hide(10, navName), 'scroll', window);
 
 // Toggle Nav
 const toggleNavOnEvent = wrapEvent(toggleClass, ['nav--open', nav]);
-const toggleExpandedOnEvent = wrapEvent(toggleAttr, ['aria-expanded', navToggle]);
+const toggleExpandedOnEvent = wrapEvent(toggleAttr, [
+  'aria-expanded',
+  navToggle,
+]);
 eventOn('click', compose(toggleExpandedOnEvent, toggleNavOnEvent), navToggle);

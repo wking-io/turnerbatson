@@ -10,7 +10,6 @@
  */
 
 ?>
-	</div>
 	<footer id="footer" class="footer py-8 bg-black" role="contentinfo">
 		<div class="wrapper flex flex-col md:flex-row md:items-center justify-between py-4">
 			<div class="flex flex-col lg:flex-row md:w-2/3">

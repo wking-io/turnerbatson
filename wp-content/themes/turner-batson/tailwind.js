@@ -48,7 +48,7 @@ const colors = {
   grey: '#CBCCCD',
   white: '#ffffff',
   primary: '#DA291C',
-  "primary-dark": "#AE231E",
+  'primary-dark': '#AE231E',
 };
 
 module.exports = {
@@ -390,6 +390,8 @@ module.exports = {
     32: '32rem', // 128px
     48: '48rem', // 192px
     64: '64rem', // 256px
+    '2/3': '75vh',
+    '9/10': '90%',
     full: '100%',
     screen: '100vh',
   },
@@ -735,7 +737,7 @@ module.exports = {
   |
   */
 
- plugins: [],
+  plugins: [],
 
   /*
   |-----------------------------------------------------------------------------

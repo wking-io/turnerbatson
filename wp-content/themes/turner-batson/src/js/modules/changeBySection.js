@@ -4,7 +4,7 @@ import fromTop from './fromTop';
 
 const buildSections = elems => () =>
   elems.map(el => ({
-    menuStyle: withDefault('makeMenu', '', el.dataset),
+    menuStyle: withDefault('', 'makeMenu', el.dataset),
     fromTop: fromTop(el),
   }));
 

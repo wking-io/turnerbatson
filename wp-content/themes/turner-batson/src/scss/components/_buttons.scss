@@ -1,40 +1,23 @@
-.btn {
-  color: $primary-color;
-  text-decoration: none;
-  display: inline-block;
-  padding: 4rem 12rem;
-  margin: 0;
-  border: 2px solid $primary-color;
-  text-align: center;
-  font-family: $sans-font;
+.button {
+  @apply inline-block no-underline font-bold text-white py-3 px-8 bg-primary;
 
-  &--ghost {
-    background-color: transparent;
-
-    &:hover {
-      background-color: $primary-color;
-      color: $white;
-    }
+  &:hover {
+    @apply bg-primary-dark;
   }
+}
 
-  &--ghost-light {
-    color: $white;
-    border-color: $white;
+.button-outline-dark {
+  @apply inline-block no-underline font-bold text-black py-3 px-8 border border-black;
 
-    &:hover {
-      color: $primary-color;
-      background-color: $white;
-    }
+  &:hover {
+    @apply bg-black text-white;
   }
+}
 
-  &--light {
-    color: $primary-color;
-    border-color: $white;
-    background-color: $white;
+.button-outline-white {
+  @apply inline-block no-underline font-bold text-white py-3 px-8 border border-white;
 
-    &:hover {
-      color: $white;
-      background-color: transparent;
-    }
+  &:hover {
+    @apply bg-white text-black;
   }
 }
