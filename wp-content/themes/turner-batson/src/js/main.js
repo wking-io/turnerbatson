@@ -6,8 +6,9 @@ import runAndListen from './modules/runAndListen';
 import { hide } from './modules/onScroll';
 import { toggleAttr } from './modules/attr';
 import { toggleClass } from './modules/classlist';
-import { dom } from './modules/dom';
+import { dom, domAll } from './modules/dom';
 import { wrapEvent, eventOn } from './modules/event';
+import togglePopup from './modules/popup';
 
 const nav = dom('#masthead');
 const navName = dom('.page-name');
@@ -22,3 +23,9 @@ const toggleExpandedOnEvent = wrapEvent(toggleAttr, [
   navToggle,
 ]);
 eventOn('click', compose(toggleExpandedOnEvent, toggleNavOnEvent), navToggle);
+
+// Popups
+const popups = domAll('[data-popup-action]');
+popups.forEach(function(btn) {
+  btn.addEventListener('click', togglePopup);
+});

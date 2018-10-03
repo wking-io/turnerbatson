@@ -119,19 +119,20 @@
 
   .culture-accent {
     height: 168px;
-  
+
     & > div {
       transform: scaleY(5.5) translateY(-3rem);
       transform-origin: top;
     }
   }
-  
+
   .culture-content {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    left: calc(5vw - 8rem);
   }
-  
+
   .culture-tagline {
     font-size: 7vw;
   }
@@ -139,5 +140,32 @@
   .culture-testimonial {
     max-width: 180rem;
     margin-bottom: 72px;
+  }
+}
+
+.latest-slider {
+  margin: 0 auto;
+  width: calc(100% - 16rem);
+
+  & .slick-slide {
+    width: 480px;
+    margin-right: 20px;
+  }
+
+  &-aspect {
+    @include aspect-ratio(5, 3);
+  }
+}
+
+@include media('>=#{$lg}') {
+  .latest-slider {
+    margin: 0 0 0 auto;
+    width: 95%;
+  }
+}
+
+@include media('>=1334px') {
+  .latest-slider {
+    width: calc(1200px + ((100% - 1200px) / 2));
   }
 }

@@ -7,6 +7,9 @@ export function getAttr(attr, el) {
   return el.getAttribute(attr);
 }
 
-export const flipAttr = (attr, el) => (getAttr(attr, el) === 'true' ? 'false' : 'true');
+export const flipAttr = (attr, el) =>
+  getAttr(attr, el) === 'true' ? 'false' : 'true';
 
 export const toggleAttr = (attr, el) => setAttr(attr, flipAttr(attr, el), el);
+
+export const attrToBool = (el, attr) => el.getAttribute(attr) === 'true';

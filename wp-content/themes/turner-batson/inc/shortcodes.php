@@ -73,3 +73,24 @@ function tb_name_shortcode( $atts = array() ) {
 		
 	<?php return ob_get_clean();
 }
+
+add_shortcode( 'slider_nav', 'tb_slider_nav_shortcode');
+
+function tb_slider_nav_shortcode( $atts = array() ) {
+	$a = shortcode_atts( array(
+		'large' => 'false',
+		'type' => 'prev'
+	), $atts );
+
+	$is_large = $a['large'] === 'true';
+
+	ob_start(); ?>
+
+	<button class="button-slider button-slider-<?php echo $a['type']; ?> <?php $is_large ? 'button-slider-large' : ''; ?>" data-slider-<?php echo $a['type']; ?>>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 18" class="button-slider-arrow">
+			<path class="button-slider-arrow-fill" fill-rule="evenodd" d="M10.886 2.4L4.286 9l6.6 6.6L9 17.485.515 9 9 .515 10.886 2.4z"/>
+		</svg>
+	</button>
+		
+	<?php return ob_get_clean();
+}

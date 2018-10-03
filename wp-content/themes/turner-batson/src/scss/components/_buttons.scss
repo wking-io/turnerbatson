@@ -21,3 +21,31 @@
     @apply bg-white text-black;
   }
 }
+
+.button-slider {
+  @apply border border-primary relative;
+  width: 44px;
+  height: 44px;
+  padding: 2.75rem;
+
+  &:hover {
+    @apply bg-primary;
+  }
+
+  &-arrow {
+    height: 100%;
+  }
+
+  &-arrow-fill {
+    fill: $primary;
+  }
+
+  &:hover &-arrow-fill {
+    fill: $white;
+  }
+
+  &-next {
+    transform: rotate(180deg);
+    margin: 0 0 0 -5px;
+  }
+}

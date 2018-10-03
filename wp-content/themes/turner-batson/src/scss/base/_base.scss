@@ -5,6 +5,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+button:focus,
+button:active,
+a:focus,
+a:active {
+  outline: none;
+}
+
 html {
   font-size: 4px;
   overflow-x: hidden;
@@ -17,7 +24,7 @@ body {
 
 .wrapper {
   max-width: 1200px;
-  width: 85vw;
+  width: calc(100% - 16rem);
   margin: 0 auto;
 }
 

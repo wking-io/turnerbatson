@@ -165,6 +165,27 @@
             "maxlength": ""
         },
         {
+            "key": "field_5bb3cd57d0aa8",
+            "label": "Our Purpose Button Link",
+            "name": "tb_purpose_button_link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "team"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
+        },
+        {
             "key": "field_5baa597a2bc24",
             "label": "Culture Background Image",
             "name": "tb_culture_bg",
@@ -206,6 +227,27 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5bb3cd7dd0aa9",
+            "label": "Culture Button Link",
+            "name": "tb_culture_button_link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
         },
         {
             "key": "field_5baa593f2bc23",
@@ -258,5 +300,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1538411675
+    "modified": 1538510344
 }

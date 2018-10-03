@@ -8,12 +8,14 @@ $tb_purpose_poster = get_field( 'tb_purpose_poster' );
 $tb_purpose_video = get_field( 'tb_purpose_video' );
 $tb_purpose_description = get_field( 'tb_purpose_description' );
 $tb_purpose_button_text = get_field( 'tb_purpose_button_text' );
+$tb_purpose_button_link = get_field( 'tb_purpose_button_link' );
 $tb_culture_bg = get_field( 'tb_culture_bg' );
 $tb_culture_button_text =get_field( 'tb_culture_button_text' );
+$tb_culture_button_link =get_field( 'tb_culture_button_link' );
 $tb_culture_testimonial = get_field( 'tb_culture_testimonial' );
 $tb_latest_news = new WP_Query( array(
     'post_type' => 'post',
-    'post_status' => 'published',
+    'post_status' => 'publish',
     'posts_per_page' => 5,
     'no_found_rows' => true,
     'update_post_meta_cache' => false,
@@ -54,26 +56,26 @@ $tb_latest_news = new WP_Query( array(
   </div>
 </section>
 
-<section id="purpose" class="pt-8" data-section data-section-type="light">
+<section id="purpose" class="pt-8">
   <div class="flex flex-col lg:flex-row justify-between">
     <div class="relative w-full lg:w-3/5 aspect-16:9 bg-cover bg-center bg-no-repeat" style="background-image: url(<?php echo $tb_purpose_poster; ?>);">
-      <button class="absolute pin-center opacity-75 hover:opacity-100 purpose-play-button"></button>
+      <button class="absolute pin-center opacity-75 hover:opacity-100 purpose-play-button" aria-controls="purpose-popup" data-popup-action></button>
     </div>
     <div class="p-8 pb-0 lg:pb-8 w-full lg:w-2/5">
       <h2 class="purpose-heading uppercase text-primary mb-6"><span class="text-black block">Our</span> Purpose</h2>
       <div class="leading-normal mb-8"><?php echo $tb_purpose_description; ?></div>
-      <a href="" class="button-outline-dark"><?php echo $tb_purpose_button_text; ?></a>
+      <a href="<?php echo $tb_purpose_button_link; ?>" class="button-outline-dark"><?php echo $tb_purpose_button_text; ?></a>
     </div>
   </div>
 </section>
 
-<section id="culture" class="" data-section data-section-type="light">
+<section id="culture" class="">
   <div class="mx-8 culture-accent relative z-30"><div class="w-1 h-full bg-primary lg:absolute lg:pin-t lg:pin-r"></div></div>
   <div class="relative">
     <div class="culture-bg bg-cover bg-fixed bg-center p-8 mb-8" style="background-image: linear-gradient(rgba(63, 66, 67, 0.2), rgba(63, 66, 67, 0.2)), url(<?php echo $tb_culture_bg; ?>);">
-      <div class="culture-content">
+      <div class="culture-content xl:ml-8 xl:pl-8">
         <h2 class="culture-tagline text-white mb-6"><?php echo do_shortcode( '[tagline theme="stack"]' ); ?></h2>
-        <a href="" class="button"><?php echo $tb_culture_button_text; ?></a>
+        <a href="<?php echo $tb_culture_button_link; ?>" class="button"><?php echo $tb_culture_button_text; ?></a>
       </div>
     </div>
     <figure class="culture-testimonial p-8 lg:mr-8 lg:w-3/5 lg:absolute lg:text-right pin-r pin-b">
@@ -85,28 +87,30 @@ $tb_latest_news = new WP_Query( array(
   </div>
 </section>
 
-<section id="latest-news" class="" data-section data-section-type="dark">
-  <div class="flex flex-between">
-    <h2>Latest News</h2>
-    <a href="">Give me all news</a>
-    <div>
-      <button></button>
-      <button></button>
+<section id="latest-news" class="pb-8 mt-8 mb-jumbo md:my-jumbo" data-slider="latest">
+  <div class="wrapper flex justify-between items-center py-8">
+    <h2 class="text-xl uppercase text-bold">The <span class="text-primary">Latest</span></h2>
+    <div class="hidden md:flex md:flex-row md:flex-1 md:justify-end md:items-center">
+      <a href="" class="text-black font-bold">Give me all news</a>
+      <div class="ml-8">
+        <?php echo do_shortcode( '[slider_nav type="prev"]' ); ?>
+        <?php echo do_shortcode( '[slider_nav type="next"]' ); ?>
+      </div>
     </div>
   </div>
-  <div>
+  <div class="latest-slider slider">
     <?php
 
     // The Loop
     if ( $tb_latest_news->have_posts() ) : 
       while ( $tb_latest_news->have_posts() ) : $tb_latest_news->the_post(); ?>
-
-        <div class="flex flex-col">
-          <div>
-            <img href="<?php echo get_field( 'tb_news_hero', $post->ID ); ?>" alt="Featured Image" />
+        <a class="text-black no-underline hover:underline" href="<?php the_permalink(); ?>">
+          <div class="flex flex-col pb-8 md:p-0">
+            <div class="aspect-5:3 w-full bg-cover bg-center bg-no-repeat" style="background-image: url(<?php the_post_thumbnail_url( 'medium_large' ); ?>);">
+            </div>
+            <h3 class="border-l-4 border-primary mt-4 pl-4 py-1 text-normal"><?php the_title(); ?></h3>
           </div>
-          <h3><?php the_title(); ?></h3>
-        </div>
+        </a>
 
     <?php endwhile;
     endif;
@@ -115,20 +119,23 @@ $tb_latest_news = new WP_Query( array(
 
     ?>
   </div>
+  <a href="" class="md:hidden text-black font-bold text-md block px-8 pt-8">Give me all news</a>
 </section>
 
-<section>
-  <div class=""></div>
-  <div class="">
+<aside data-popup data-popup-hidden="true" id="purpose-popup">
+  <div class="popup-bg" data-popup-action aria-controls="purpose-popup"></div>
+  <div class="popup-dialogue">
     <?php 
-      echo cl_video_tag( "samples_elephants", 
+      echo cl_video_tag( $tb_purpose_video, 
         array(
           "controls" => true,
-          "fallback_content" => "Your browser does not support HTML5 video tags"
+          "fallback_content" => "Your browser does not support HTML5 video tags",
+          "width" => 1000,
+          "crop" => "fit",
         )
       ); 
     ?>
   </div>
-</section>
+</aside>
 
 <?php get_footer();

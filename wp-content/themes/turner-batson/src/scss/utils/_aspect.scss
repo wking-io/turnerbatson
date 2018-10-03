@@ -2,4 +2,8 @@
   .aspect-16\:9 {
     @include aspect-ratio(16, 9);
   }
+
+  .aspect-5\:3 {
+    @include aspect-ratio(5, 3);
+  }
 }
