@@ -17,15 +17,17 @@ $tb_project_categories = array_merge( array('all' => 'All'), wp_list_pluck( get_
 error_log( print_r( $tb_project_categories, true ) );
 ?>
 
-<section>
-  <div></div>
-  <div></div>
-  <div>
-    <div></div>
-    <ul class="flex flex-row justify-center items-center">
+<section class="featured-projects h-screen">
+  <div class="featured-projects-preview">
+    <div class="featured-projects-info"></div>
+    <div class="featured-projects-slider slider"></div>
+  </div>
+  <div class="featured-projects-nav border-t border-b border-primary flex ">
+    <p class="bg-primary text-white text-center p-6 font-bold">See Projects From Category:</p>
+    <ul class="list-reset flex flex-1 flex-row justify-center items-center">
       <?php foreach( $tb_project_categories as $slug => $name ) : 
         $path = 'all' === $slug ? 'portfolio#projects' : 'portfolio/type/' . $slug . '#projects'; ?>
-        <li class="uppercase no-underline hover:no-underline" href="<?php echo home_url($path); ?>" class=""><?php echo $name; ?></li>
+        <li class="font-bold uppercase p-6"><a href="<?php echo home_url($path); ?>" class="text-black no-underline hover:underline"><?php echo $name; ?></a></li>
       <?php endforeach; ?>
       
     </ul>
