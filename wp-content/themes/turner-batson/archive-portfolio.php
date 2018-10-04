@@ -68,6 +68,23 @@ $tb_project_categories = array_merge( array('all' => 'All'), wp_list_pluck( get_
   </div>
 </section>
 
-<section id="projects"></section>
+<section id="projects" class="py-jumbo">
+  <div class="flex items-center wrapper">
+    <h2 class="uppercase text-2xl">Projects</h2>
+    <ul class="flex-1 list-reset flex justify-end items-center">
+      <?php foreach( $tb_project_categories as $slug => $name ) : 
+        $path = 'all' === $slug ? 'portfolio#projects' : 'portfolio/type/' . $slug . '#projects'; ?>
+        <?php if ( 'all' === $slug ) : ?>
+          <li class="font-bold uppercase px-6 py-3 border border-primary"><?php echo $name; ?></li>
+        <?php else : ?>
+          <li class="font-bold uppercase border border-transparent hover:border-primary -ml-px"><a href="<?php echo home_url($path); ?>" class="text-black no-underline px-6 py-3 block"><?php echo $name; ?></a></li>
+        <?php endif; ?>
+      <?php endforeach; ?>
+    </ul>
+  </div>
+  <div class="wrapper">
+    <?php echo do_shortcode('[ajax_load_more preloaded="true" preloaded_amount="8" images_loaded="true" posts_per_page="8" pause="true" pause_override="true" max_pages="0" css_classes="infinite-scroll"]'); ?>
+  </div>
+</section>
 
 <?php get_footer();
