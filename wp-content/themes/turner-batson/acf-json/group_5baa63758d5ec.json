@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_5baa639d49376",
-            "label": "Project Hero Image",
-            "name": "tb_project_hero_img",
+            "label": "Project Featured Image",
+            "name": "tb_project_featured_img",
             "type": "image",
             "instructions": "This image is what will show if this project is selected to show on the home page.",
             "required": 1,
@@ -138,5 +138,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1538359107
+    "modified": 1538661388
 }

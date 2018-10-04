@@ -32,6 +32,14 @@
     @apply bg-primary;
   }
 
+  &-secondary {
+    @apply border-black;
+  }
+
+  &-secondary:hover {
+    @apply bg-black;
+  }
+
   &-arrow {
     height: 100%;
   }
@@ -44,8 +52,20 @@
     fill: $white;
   }
 
+  &-secondary &-arrow-fill {
+    fill: $black;
+  }
+
   &-next {
     transform: rotate(180deg);
     margin: 0 0 0 -5px;
+  }
+
+  &-prev.button-slider-vertical {
+    transform: rotate(90deg);
+  }
+
+  &-next.button-slider-vertical {
+    transform: rotate(270deg);
   }
 }

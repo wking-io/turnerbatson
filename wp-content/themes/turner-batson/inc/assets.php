@@ -20,6 +20,11 @@ if ( ! function_exists( 'turnerbatson_scripts' ) ) :
 			wp_enqueue_script( 'home' );
 		endif;
 
+		if ( is_post_type_archive( 'portfolio' ) || is_tax( 'project-type' ) ) :
+			wp_register_script( 'portfolio', get_template_directory_uri() . '/assets/js/portfolio.js', array(), '1.0.0', true );
+			wp_enqueue_script( 'portfolio' );
+		endif;
+
 	}
 
 endif;

@@ -79,14 +79,19 @@ add_shortcode( 'slider_nav', 'tb_slider_nav_shortcode');
 function tb_slider_nav_shortcode( $atts = array() ) {
 	$a = shortcode_atts( array(
 		'large' => 'false',
-		'type' => 'prev'
+		'type' => 'prev',
+		'vertical' => 'false',
+		'secondary' => 'false',
 	), $atts );
 
+	
 	$is_large = $a['large'] === 'true';
+	$is_vertical = $a['vertical'] === 'true';
+	$is_secondary = $a['secondary'] === 'true';
 
 	ob_start(); ?>
 
-	<button class="button-slider button-slider-<?php echo $a['type']; ?> <?php $is_large ? 'button-slider-large' : ''; ?>" data-slider-<?php echo $a['type']; ?>>
+	<button class="button-slider button-slider-<?php echo $a['type']; ?><?php echo $is_large ? ' button-slider-large' : ''; ?><?php echo $is_vertical ? ' button-slider-vertical' : ''; ?><?php echo $is_secondary ? ' button-slider-secondary' : ''; ?>" data-slider-<?php echo $a['type']; ?>>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 18" class="button-slider-arrow">
 			<path class="button-slider-arrow-fill" fill-rule="evenodd" d="M10.886 2.4L4.286 9l6.6 6.6L9 17.485.515 9 9 .515 10.886 2.4z"/>
 		</svg>

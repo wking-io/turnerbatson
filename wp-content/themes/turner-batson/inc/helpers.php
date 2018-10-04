@@ -45,3 +45,17 @@ function get_name_by_page() {
 function with_default( $default, $key, $array ) {
   return array_key_exists( $key, $array ) && ! empty( $array[$key] ) ? $array[$key] : $default;
 }
+
+function get_main_category( $id, $tax ) {
+  $categories = get_the_terms( $id, $tax );
+  $result = '';
+  if ( !empty( $categories ) ) {
+    foreach ( $categories as $category ) {
+      if ( 'featured' !== $category->slug ) {
+        $result = $category->name;
+        break;
+      }
+    }
+  }
+  return $result;
+}

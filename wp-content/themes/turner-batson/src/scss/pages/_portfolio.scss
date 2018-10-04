@@ -4,3 +4,77 @@
 .featured-projects-nav {
   height: 58px;
 }
+
+.featured-projects-info--solo {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@include media('>=#{$lg}') {
+  .featured-projects-info {
+    min-width: 360px;
+    max-width: 412px;
+
+    &--nav {
+      position: relative;
+      width: 100%;
+      top: 55%;
+      transform: translateY(-50%);
+      left: 8rem;
+    }
+
+    &--category {
+      font-size: 1.75vw;
+      margin-bottom: 0.5em;
+    }
+
+    &--title {
+      font-size: 3.25vw;
+      margin-bottom: 0.5em;
+    }
+
+    &--link {
+      font-size: 1.75vw;
+      margin-bottom: 0;
+    }
+  }
+
+  .featured-projects-nav--info {
+    min-width: 280px;
+    max-width: 334px;
+    width: 28.25%;
+  }
+}
+
+@include media('>=1156px') {
+  .featured-projects-info {
+    &--category {
+      @apply text-md;
+    }
+
+    &--title {
+      @apply text-2xl;
+    }
+
+    &--link {
+      @apply text-md;
+    }
+  }
+}
+
+.featured-projects-slider {
+  &:after {
+    @apply absolute pin;
+    content: '';
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0) 45%
+    );
+  }
+
+  & .slick-slide {
+    height: calc((100vh - 58px) * 0.75);
+    margin-bottom: 8rem;
+  }
+}

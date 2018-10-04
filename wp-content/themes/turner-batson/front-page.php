@@ -24,7 +24,7 @@ $tb_latest_news = new WP_Query( array(
 
 ?>
 
-<section id="hero" class="relative h-2/3 md:h-screen" data-slider="featured">
+<section id="hero" class="relative h-2/3 md:h-screen" data-slider="home">
   <ul id="featured-project-slider" class="featured-project-slider slider list-reset h-9/10 md:h-full">
     <?php foreach( $tb_featured_projects as $i => $project ) : ?>
       <li class="h-full w-screen bg-center bg-cover bg-no-repeat" style="background-image: url(<?php the_field( 'tb_project_hero_img', $project['project']); ?>); ?>"></li>

@@ -37,7 +37,7 @@ function fancyNav(context, buttons) {
   );
 }
 
-export function initFeaturedSlider(context) {
+export function initHomeSlider(context) {
   const buttons = domAll('[data-slider-button="featured"]', context);
 
   // Update the nav items with active class on init
@@ -61,6 +61,8 @@ export function initFeaturedSlider(context) {
     fade: true,
     cssEase: 'linear',
     rows: 0,
+    pauseOnHover: false,
+    pauseOnFocus: false,
   });
 
   fancyNav(context, buttons);
@@ -106,4 +108,49 @@ export function initLatestSlider(context) {
 
 export function destroySlider(context) {
   $(`${context} .slider`).slick('unslick');
+}
+
+export function initFeaturedSlider(context) {
+  // Update the nav items with active class on init
+  $(`${context} .slider`).on('init', () => {
+    $(`${context} .featured-projects-preview`).removeClass('lg:opacity-0');
+  });
+
+  // Update the nav items with active class on init
+  $(`${context} .slider`).on('reInit', () => {
+    $(`${context} .featured-projects-preview`).removeClass('lg:opacity-0');
+  });
+
+  $(`${context} .slider`).slick({
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    vertical: true,
+    adaptiveHeight: true,
+    autoplay: true,
+    arrows: false,
+    rows: 0,
+    autoplaySpeed: 7500,
+    cssEase: 'ease-in-out',
+    asNavFor: `${context} .slider-sub`,
+  });
+
+  $(`${context} .slider-sub`).slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: false,
+    asNavFor: `${context} .slider`,
+    focusOnSelect: true,
+    fade: true,
+    rows: 0,
+  });
+
+  $(`${context} [data-slider-prev]`).click(() =>
+    $(`${context} .slider-sub`).slick('slickPrev')
+  );
+  $(`${context} [data-slider-next]`).click(() =>
+    $(`${context} .slider-sub`).slick('slickNext')
+  );
 }
