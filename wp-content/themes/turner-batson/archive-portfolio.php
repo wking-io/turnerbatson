@@ -82,8 +82,9 @@ $tb_project_categories = array_merge( array('all' => 'All'), wp_list_pluck( get_
       <?php endforeach; ?>
     </ul>
   </div>
-  <div class="wrapper">
-    <?php echo do_shortcode('[ajax_load_more preloaded="true" preloaded_amount="8" images_loaded="true" posts_per_page="8" pause="true" pause_override="true" max_pages="0" css_classes="infinite-scroll"]'); ?>
+  <div class="wrapper" data-load-more="portfolio">
+      <div data-load-more-container></div>
+      <button data-load-more-button data-load-more-loading="false" data-load-page="2">Load More Projects</button>
   </div>
 </section>
 

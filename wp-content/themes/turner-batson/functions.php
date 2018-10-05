@@ -40,3 +40,9 @@ include 'inc/copyright.php';
 
 // Setup Cloudinary Config
 include 'inc/cloudinary.php';
+
+// Template functions for post items
+include 'inc/item-templates.php';
+
+// Infinite scroll functions
+include 'inc/infinite.php';
