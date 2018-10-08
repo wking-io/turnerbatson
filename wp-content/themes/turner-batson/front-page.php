@@ -4,7 +4,6 @@ get_header();
 
 // DATA
 $tb_featured_projects = get_field( 'tb_portfolio_slider' );
-$tb_purpose_poster = get_field( 'tb_purpose_poster' );
 $tb_purpose_video = get_field( 'tb_purpose_video' );
 $tb_purpose_description = get_field( 'tb_purpose_description' );
 $tb_purpose_button_text = get_field( 'tb_purpose_button_text' );
@@ -56,10 +55,21 @@ $tb_latest_news = new WP_Query( array(
   </div>
 </section>
 
-<section id="purpose" class="pt-8">
-  <div class="flex flex-col lg:flex-row justify-between">
-    <div class="relative w-full lg:w-3/5 aspect-16:9 bg-cover bg-center bg-no-repeat" style="background-image: url(<?php echo $tb_purpose_poster; ?>);">
-      <button class="absolute pin-center opacity-75 hover:opacity-100 purpose-play-button" aria-controls="purpose-popup" data-popup-action></button>
+<section id="purpose" class="purpose relative pt-8 lg:pt-jumbo">
+  <div class="flex flex-col lg:flex-row justify-between items-center">
+    <div class="purpose-video relative w-full lg:w-3/5 aspect-16:9">
+    <?php 
+      echo cl_video_tag( $tb_purpose_video, 
+        array(
+          "controls" => false,
+          "loop" => true,
+          "autoplay" => true,
+          "fallback_content" => "Your browser does not support HTML5 video tags",
+          "width" => 1000,
+          "crop" => "fit",
+        )
+      ); 
+    ?>
     </div>
     <div class="p-8 pb-0 lg:pb-8 w-full lg:w-2/5">
       <h2 class="purpose-heading uppercase text-primary mb-6"><span class="text-black block">Our</span> Purpose</h2>
@@ -121,21 +131,5 @@ $tb_latest_news = new WP_Query( array(
   </div>
   <a href="" class="md:hidden text-black font-bold text-md block px-8 pt-8">Give me all news</a>
 </section>
-
-<aside data-popup data-popup-hidden="true" id="purpose-popup">
-  <div class="popup-bg" data-popup-action aria-controls="purpose-popup"></div>
-  <div class="popup-dialogue">
-    <?php 
-      echo cl_video_tag( $tb_purpose_video, 
-        array(
-          "controls" => true,
-          "fallback_content" => "Your browser does not support HTML5 video tags",
-          "width" => 1000,
-          "crop" => "fit",
-        )
-      ); 
-    ?>
-  </div>
-</aside>
 
 <?php get_footer();

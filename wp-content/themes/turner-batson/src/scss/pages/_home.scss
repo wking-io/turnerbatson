@@ -51,23 +51,33 @@
   }
 }
 
-.purpose-play-button {
-  width: 12vw;
-  height: 12vw;
-  background-color: #fff;
-  border-radius: 100%;
+.purpose:after {
+  content: '';
+  position: absolute;
+  right: 32px;
+  background-color: $primary;
+  width: 1rem;
+  height: 50vw;
+  top: 40vw;
+}
 
-  &:after {
+@include media('>=#{$lg}') {
+  .purpose:after {
     content: '';
     position: absolute;
-    left: 40%;
-    top: 38%;
-    height: 0;
-    border-left: 3vw solid $black;
-    border-top: 1.75vw solid transparent;
-    border-right: 1.75vw solid transparent;
-    border-bottom: 1.75vw solid transparent;
+    left: 32px;
+    background-color: $primary;
+    width: 1rem;
+    height: 85rem;
+    top: 0rem;
   }
+}
+
+.purpose-video video {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .purpose-heading {
@@ -77,21 +87,6 @@
 @include media('>=#{$lg}') {
   .purpose-heading {
     font-size: 6vw;
-  }
-
-  .purpose-play-button {
-    width: 6vw;
-    height: 6vw;
-
-    &:after {
-      content: '';
-      position: absolute;
-      top: 37%;
-      border-left: 1.75vw solid $black;
-      border-top: 1vw solid transparent;
-      border-right: 1vw solid transparent;
-      border-bottom: 1vw solid transparent;
-    }
   }
 }
 
