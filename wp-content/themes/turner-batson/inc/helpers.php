@@ -59,3 +59,7 @@ function get_main_category( $id, $tax ) {
   }
   return $result;
 }
+
+function no_items( $name = 'items' ) {
+  return sprintf( 'There were no %s found', $name );
+}

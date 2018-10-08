@@ -78,3 +78,26 @@
     margin-bottom: 8rem;
   }
 }
+
+@include media('>=#{$md}') {
+  .portfolio-item {
+    width: calc(50% - 4rem);
+    margin-right: 4rem;
+  }
+  .portfolio-item:nth-child(2n) {
+    margin-left: 4rem;
+    margin-right: 0;
+  }
+
+  .portfolio-overlay {
+    background-image: linear-gradient(
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.95)
+    );
+    transition: opacity 0.2s ease-in;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

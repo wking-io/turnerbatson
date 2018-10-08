@@ -69,22 +69,32 @@ $tb_project_categories = array_merge( array('all' => 'All'), wp_list_pluck( get_
 </section>
 
 <section id="projects" class="py-jumbo">
-  <div class="flex items-center wrapper">
-    <h2 class="uppercase text-2xl">Projects</h2>
-    <ul class="flex-1 list-reset flex justify-end items-center">
+  <div class="flex flex-col md:flex-row md:items-center wrapper pb-8">
+    <h2 class="uppercase text-2xl mb-4 md:mb-0">Projects</h2>
+    <ul class="flex-1 list-reset flex md:justify-end items-center">
       <?php foreach( $tb_project_categories as $slug => $name ) : 
         $path = 'all' === $slug ? 'portfolio#projects' : 'portfolio/type/' . $slug . '#projects'; ?>
         <?php if ( 'all' === $slug ) : ?>
-          <li class="font-bold uppercase px-6 py-3 border border-primary"><?php echo $name; ?></li>
-        <?php else : ?>
-          <li class="font-bold uppercase border border-transparent hover:border-primary -ml-px"><a href="<?php echo home_url($path); ?>" class="text-black no-underline px-6 py-3 block"><?php echo $name; ?></a></li>
+          <li class="font-bold mx-1 md:mx-0 md:px-6 py-2 md:py-3 border-b-2 md:border border-primary text-sm"><?php echo $name; ?></li>
+        <?php elseif ( 'featured' !== $slug ) : ?>
+          <li class="font-bold border-b-2 md:border border-transparent hover:border-primary md:-ml-px"><a href="<?php echo home_url($path); ?>" class="text-base text-black no-underline px-3 md:px-6 py-2 md:py-3 block"><?php echo $name; ?></a></li>
         <?php endif; ?>
       <?php endforeach; ?>
     </ul>
   </div>
   <div class="wrapper" data-load-more="portfolio">
-      <div data-load-more-container></div>
-      <button data-load-more-button data-load-more-loading="false" data-load-page="2">Load More Projects</button>
+      <div class="md:flex md:flex-wrap" data-load-more-container>
+        <?php if ( have_posts() ) :
+          while ( have_posts() ) : the_post();
+            echo portfolio_item( get_the_ID() );
+          endwhile;
+        else :
+          echo no_items( 'portfolio items' );
+        endif; ?>
+      </div>
+      <div class="text-center py-8">
+        <button class="button" data-load-more-button data-load-more-loading="false" data-load-page="2">Load More Projects</button>
+      </div>
   </div>
 </section>
 
