@@ -1,0 +1,31 @@
+.project-heading:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 1rem;
+  background-color: $primary;
+  bottom: 50%;
+  height: 55rem;
+}
+
+.project-nav {
+  right: 0;
+  top: 0;
+  transform: translateY(-50%);
+}
+
+.project-content p {
+  @apply mb-4 leading-normal;
+}
+
+@include media('>=#{$md}') {
+  .project-heading:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 1rem;
+    background-color: $primary;
+    bottom: 50%;
+    height: 75rem;
+  }
+}

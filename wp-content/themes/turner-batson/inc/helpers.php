@@ -63,3 +63,7 @@ function get_main_category( $id, $tax ) {
 function no_items( $name = 'items' ) {
   return sprintf( 'There were no %s found', $name );
 }
+
+function replace_space( $str ) {
+  return str_replace( '-', ' ', $str );
+}

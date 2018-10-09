@@ -644,7 +644,7 @@ module.exports = {
   |
   */
 
-  svgFill: Object.assign({ current: 'currentColor' }, colors),
+  svgFill: { current: 'currentColor' },
 
   /*
   |-----------------------------------------------------------------------------
@@ -660,7 +660,7 @@ module.exports = {
   |
   */
 
-  svgStroke: {},
+  svgStroke: { current: 'currentColor' },
 
   /*
   |-----------------------------------------------------------------------------
@@ -710,7 +710,7 @@ module.exports = {
     resize: ['responsive'],
     shadows: false,
     svgFill: [],
-    svgStroke: false,
+    svgStroke: [],
     textAlign: ['responsive'],
     textColors: ['responsive', 'hover'],
     textSizes: ['responsive'],

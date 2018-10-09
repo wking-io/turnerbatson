@@ -6,7 +6,8 @@ import withDefault from './withDefault';
 const goTo = (el, context) => {
   const index = withDefault(false, 'slideTo', el.dataset);
   if (false === index) {
-    console.log('No slideTo data prop was found for this element.');
+    // eslint-disable-next-line no-console
+    console.error('No slideTo data prop was found for this element.');
   } else {
     $(`${context} .slider`).slick('slickGoTo', index);
   }
@@ -152,5 +153,25 @@ export function initFeaturedSlider(context) {
   );
   $(`${context} [data-slider-next]`).click(() =>
     $(`${context} .slider-sub`).slick('slickNext')
+  );
+}
+
+export function initProjectSlider(context) {
+  $(`${context} .slider`).slick({
+    infinite: true,
+    slidesToShow: 2,
+    variableWidth: true,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    rows: false,
+  });
+
+  $(`${context} [data-slider-prev]`).click(() =>
+    $(`${context} .slider`).slick('slickPrev')
+  );
+  $(`${context} [data-slider-next]`).click(() =>
+    $(`${context} .slider`).slick('slickNext')
   );
 }

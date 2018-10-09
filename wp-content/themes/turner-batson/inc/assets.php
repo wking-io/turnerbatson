@@ -24,6 +24,11 @@ if ( ! function_exists( 'turnerbatson_scripts' ) ) :
 			wp_register_script( 'portfolio', get_template_directory_uri() . '/assets/js/portfolio.js', array(), '1.0.0', true );
 			wp_enqueue_script( 'portfolio' );
 		endif;
+		
+		if ( is_singular( 'portfolio' ) ) :
+			wp_register_script( 'portfolio-single', get_template_directory_uri() . '/assets/js/portfolio-single.js', array(), '1.0.0', true );
+			wp_enqueue_script( 'portfolio-single' );
+		endif;
 
 	}
 

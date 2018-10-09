@@ -7,7 +7,7 @@ export default function loadMore(context, options) {
   const button = dom('[data-load-more-button]', context);
   const page = parseInt(withDefault('2', 'loadPage', button.dataset));
 
-  button.addEventListener('click', function(e) {
+  button.addEventListener('click', function() {
     const loading = attrToBool(button, 'loadPageLoading');
     if (!loading) {
       button.setAttribute('data-load-more-loading', true);
@@ -32,11 +32,11 @@ export default function loadMore(context, options) {
           }
         } else {
           button.setAttribute('data-load-more-loading', false);
-          console.log(res);
         }
       }).fail(function(xhr) {
         button.setAttribute('data-load-more-loading', false);
-        console.log(`Failed with message of: ${xhr.responseText}`);
+        // eslint-disable-next-line no-console
+        console.error(`Failed with message of: ${xhr.responseText}`);
       });
     }
   });
