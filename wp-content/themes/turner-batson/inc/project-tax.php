@@ -33,4 +33,4 @@ function tb_register_project_tax() {
 	register_taxonomy( 'project-type', 'portfolio', $args );
 }
 
-add_action( 'init', 'tb_register_project_tax' );
+add_action( 'init', 'tb_register_project_tax', 1 );

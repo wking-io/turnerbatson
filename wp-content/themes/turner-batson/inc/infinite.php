@@ -57,8 +57,6 @@ function tb_ajax_load_more() {
 
   // Get if last page in request
   $is_last_page = false;
-  error_log( $loop->max_num_pages );
-  error_log( $loop->get( 'paged' ) );
   if ( $loop->max_num_pages == $loop->get( 'paged' ) ) {
     $is_last_page =  true;
   }

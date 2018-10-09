@@ -2,6 +2,10 @@
 
 get_header();
 
+global $wp_query;
+$current_page = $wp_query->get( 'paged' ) ? $wp_query->get( 'paged' ) : 1;
+$is_last_page = $wp_query->max_num_pages == $current_page;
+
 $tb_featured_projects = new WP_Query( array(
   'post_type' => 'portfolio',
   'project_type' => 'featured',
@@ -14,6 +18,9 @@ $tb_featured_projects = new WP_Query( array(
 $tb_featured_project_solo = $tb_featured_projects->posts[0];
 
 $tb_project_categories = array_merge( array('all' => 'All'), wp_list_pluck( get_terms('project-type'), 'name', 'slug' ) );
+
+	
+$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 
 ?>
 
@@ -74,8 +81,8 @@ $tb_project_categories = array_merge( array('all' => 'All'), wp_list_pluck( get_
     <ul class="flex-1 list-reset flex md:justify-end items-center">
       <?php foreach( $tb_project_categories as $slug => $name ) : 
         $path = 'all' === $slug ? 'portfolio#projects' : 'portfolio/type/' . $slug . '#projects'; ?>
-        <?php if ( 'all' === $slug ) : ?>
-          <li class="font-bold mx-1 md:mx-0 md:px-6 py-2 md:py-3 border-b-2 md:border border-primary text-sm md:text-base"><?php echo $name; ?></li>
+        <?php if ( $term->slug === $slug ) : ?>
+          <li class="font-bold mx-1 md:mx-0 md:-ml-px md:px-6 py-2 md:py-3 border-b-2 md:border border-primary text-sm md:text-base"><?php echo $name; ?></li>
         <?php elseif ( 'featured' !== $slug ) : ?>
           <li class="font-bold border-b-2 md:border border-transparent hover:border-primary md:-ml-px"><a href="<?php echo home_url($path); ?>" class="text-sm md:text-base text-black no-underline px-3 md:px-6 py-2 md:py-3 block"><?php echo $name; ?></a></li>
         <?php endif; ?>
