@@ -24,6 +24,13 @@ function toggleDrawerAttr(btn, wrapper) {
   wrapper.setAttribute('data-drawer-expanded', !isExpanded);
   wrapper.classList.toggle('drawer--open');
   btn.setAttribute('aria-expanded', !isExpanded);
+
+  if ( isExpanded ) {
+    btn.innerHTML = btn.getAttribute('data-open-text');
+  } else {
+    btn.innerHTML = btn.getAttribute('data-close-text');
+  }
+
   return wrapper;
 }
 

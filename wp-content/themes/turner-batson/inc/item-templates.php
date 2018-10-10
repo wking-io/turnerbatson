@@ -31,7 +31,7 @@ function team_item( $id, $i ) {
             <h3 class="uppercase text-bold mb-1"><?php echo get_the_title( $id ); ?></h3>
             <p><?php the_field( 'tb_team_role', $id ); ?></p>
           </div>
-          <button class="button-link-primary lg:hidden" data-drawer-action aria-expanded="false" aria-controls="team-member-<?php echo $id ?>a">View Bio</button>
+          <button class="button-link-primary lg:hidden" data-drawer-action data-open-text="View Bio" data-close-text="Hide Bio" aria-expanded="false" aria-controls="team-member-<?php echo $id ?>a">View Bio</button>
         </div>
       </div>
       <div class="team-bio pb-4 md:pb-0">
