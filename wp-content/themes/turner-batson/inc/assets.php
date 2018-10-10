@@ -30,6 +30,11 @@ if ( ! function_exists( 'turnerbatson_scripts' ) ) :
 			wp_enqueue_script( 'portfolio-single' );
 		endif;
 
+		if ( is_post_type_archive( 'team' ) ) :
+			wp_register_script( 'team', get_template_directory_uri() . '/assets/js/team.js', array(), '1.0.0', true );
+			wp_enqueue_script( 'team' );
+		endif;
+
 	}
 
 endif;

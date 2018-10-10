@@ -18,7 +18,8 @@ function portfolio_item( $id ) {
   <?php return ob_get_clean();
 }
 
-function team_item( $id ) {
+function team_item( $id, $i ) {
+  $is_right = ( $i % 2 === 0 ) ? true : false;
   ob_start(); ?>
 
   <div class="team-item relative md:hidden" id="team-member-<?php echo $id ?>a" data-drawer-wrapper data-drawer-expanded="false">
@@ -44,24 +45,20 @@ function team_item( $id ) {
     </div>
   </div>
 
-  <div class="team-item relative hidden md:block" id="team-member-<?php echo $id ?>b" data-drawer-wrapper data-drawer-expanded="false">
-    <div data-drawer-full>
-      <div data-drawer-visible>
-        <div class="team-headshot aspect-5:3 bg-no-repeat" style="background-image: url('<?php the_field( 'tb_team_headshot', $id ); ?>'), radial-gradient(at bottom, #FFFFFF, #EAEAEA, #C6C6C6);"></div>
-        <div class="relative py-4 flex items-start">
-          <div class="flex-1">
-            <h3 class="uppercase text-bold mb-1"><?php echo get_the_title( $id ); ?></h3>
-            <p><?php the_field( 'tb_team_role', $id ); ?></p>
-          </div>
-          <button class="button-link-primary lg:hidden" data-drawer-action aria-expanded="false" aria-controls="team-member-<?php echo $id ?>b">View Bio</button>
-          <div class="team-overlay absolute pin-t pin-r lg:opacity-0 hidden lg:block">
-            <button class="button-outline-primary" data-drawer-action aria-expanded="false" aria-controls="team-member-<?php echo $id ?>b">View Bio</button>
-          </div>
+  <div class="team-item<?php echo $is_right ? ' team-item--right' : ''; ?> relative hidden md:block lg:mb-8" id="team-member-<?php echo $id ?>b" data-drawer-wrapper data-drawer-special data-drawer-expanded="false">
+      <div class="team-headshot aspect-5:3 lg:aspect-16:9 bg-no-repeat" style="background-image: url('<?php the_field( 'tb_team_headshot', $id ); ?>'), radial-gradient(at bottom, #FFFFFF, #EAEAEA, #C6C6C6);"></div>
+      <div class="relative py-4 flex items-start lg:absolute lg:pin">
+        <div class="flex-1 lg:flex lg:flex-row lg:justify-between lg:absolute lg:pin-b lg:pin-l lg:pin-r lg:px-3 lg:pb-3">
+          <h3 class="uppercase text-bold mb-1 lg:mb-0 lg:leading-none"><?php echo get_the_title( $id ); ?></h3>
+          <p class="lg:mb-0 lg:leading-none"><?php the_field( 'tb_team_role', $id ); ?></p>
         </div>
-      </div>
+        <button class="button-link-primary lg:hidden" data-drawer-action-special aria-expanded="false" aria-controls="team-member-<?php echo $id ?>b">View Bio</button>
+        <div class="team-overlay absolute pin lg:opacity-0 hidden lg:flex lg:justify-center lg:items-center">
+          <button class="button-outline-primary" data-drawer-action-special aria-expanded="false" aria-controls="team-member-<?php echo $id ?>b">View Bio</button>
+        </div>
     </div>
     <div class="team-bio pb-4 md:pb-0">
-      <button class="team-bio-close" data-drawer-action aria-expanded="false" aria-controls="team-member-<?php echo $id ?>b"><span></span><span></span></button>
+      <button class="team-bio-close" data-drawer-action-special aria-expanded="false" aria-controls="team-member-<?php echo $id ?>b"><span></span><span></span></button>
       <h3 class="hidden md:block mb-1"><?php echo get_the_title( $id ); ?></h3>
       <h4 class="hidden md:block mb-4"><?php the_field( 'tb_team_role', $id ); ?></h4>
       <div class="">

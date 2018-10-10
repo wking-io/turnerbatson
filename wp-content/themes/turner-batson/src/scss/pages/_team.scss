@@ -38,15 +38,135 @@
     }
   }
 
+  .team-container--open:after {
+    @apply bg-white border-l-2 border-r-2 border-grey absolute z-10;
+    content: '';
+    width: calc(50% - 4rem);
+    top: 0;
+    bottom: 8rem;
+    left: 0;
+  }
+
+  .team-container--open-left:after {
+    transform: translateX(calc(100% + 8rem));
+  }
+
   .team-bio {
     @apply bg-white border-l-2 border-r-2 border-grey absolute z-20 px-6;
     top: 0;
     right: 0;
     transform: translateX(calc(100% + 8rem));
+
+    &:before {
+      @apply bg-grey border-t-2 border-r-2 border-grey absolute;
+      content: '';
+      width: 4rem;
+      height: 4rem;
+      transform: rotate(45deg);
+      left: -2.5rem;
+      top: 12vw;
+    }
+
+    &:after {
+      @apply bg-white absolute;
+      content: '';
+      width: 4rem;
+      height: 4rem;
+      transform: rotate(45deg);
+      left: -1.75rem;
+      top: 12vw;
+    }
   }
 
-  .team-item:nth-child(4n) .team-bio {
+  .team-item--right .team-bio {
     left: 0;
     transform: translateX(calc((-100% - 8rem)));
+
+    &:before {
+      @apply bg-grey border-t-2 border-r-2 border-grey absolute;
+      content: '';
+      width: 4rem;
+      height: 4rem;
+      transform: rotate(45deg);
+      left: auto;
+      right: -2.5rem;
+      top: 12vw;
+    }
+
+    &:after {
+      @apply bg-white absolute;
+      content: '';
+      width: 4rem;
+      height: 4rem;
+      transform: rotate(45deg);
+      left: auto;
+      right: -1.75rem;
+      top: 12vw;
+    }
+  }
+}
+
+@include media('>=#{$lg}') {
+  .team-overlay {
+    background-image: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    );
+    transition: opacity 0.2s ease-in;
+  }
+  .team-item:hover .team-overlay {
+    opacity: 1;
+  }
+
+  .team-item[data-drawer-expanded='true'] .team-overlay {
+    opacity: 0;
+  }
+}
+
+@include media('>=#{1334px}') {
+  .team-bio {
+    &:before {
+      @apply bg-grey border-t-2 border-r-2 border-grey absolute;
+      content: '';
+      width: 4rem;
+      height: 4rem;
+      transform: rotate(45deg);
+      left: -2.5rem;
+      top: 40rem;
+    }
+
+    &:after {
+      @apply bg-white absolute;
+      content: '';
+      width: 4rem;
+      height: 4rem;
+      transform: rotate(45deg);
+      left: -1.75rem;
+      top: 40rem;
+    }
+  }
+
+  .team-item--right .team-bio {
+    &:before {
+      @apply bg-grey border-t-2 border-r-2 border-grey absolute;
+      content: '';
+      width: 4rem;
+      height: 4rem;
+      transform: rotate(45deg);
+      left: auto;
+      right: -2.5rem;
+      top: 40rem;
+    }
+
+    &:after {
+      @apply bg-white absolute;
+      content: '';
+      width: 4rem;
+      height: 4rem;
+      transform: rotate(45deg);
+      left: auto;
+      right: -1.75rem;
+      top: 40rem;
+    }
   }
 }

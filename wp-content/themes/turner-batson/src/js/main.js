@@ -32,9 +32,9 @@ popups.forEach(function(btn) {
 });
 
 // Drawers
-var drawers = domAll('[data-drawer-action]');
+const drawers = domAll('[data-drawer-action]');
 drawers.forEach(function(btn) {
-  var wrapper = document.getElementById(btn.getAttribute('aria-controls'));
-  setDrawerHeight(wrapper)
-  btn.addEventListener("click", toggleDrawer(wrapper));
+  const wrapper = document.getElementById(btn.getAttribute('aria-controls'));
+  setDrawerHeight(wrapper);
+  btn.addEventListener('click', toggleDrawer(wrapper));
 });

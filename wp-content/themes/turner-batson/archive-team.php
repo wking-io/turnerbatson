@@ -9,7 +9,7 @@ $tb_hero_img = get_field( 'tb_team_hero_img', 'options' );
 get_header(); ?>
 
 <section class="team-header pt-nav lg:pt-0">
-  <div class="h-full bg-cover bg-no-repeat bg-center aspect-5:3 relative" style="background-image: linear-gradient(to bottom, rgba(63, 66, 67, .2), rgba(63, 66, 67, 0) 80%), url('<?php echo $tb_hero_img; ?>');">
+  <div class="h-full bg-cover bg-no-repeat bg-center aspect-5:3 relative" style="background-image: linear-gradient(to bottom, rgba(63, 66, 67, .6), rgba(63, 66, 67, 0) 30%), url('<?php echo $tb_hero_img; ?>');">
     <div class="w-full md:w-auto bg-white md:inline-block md:absolute pin-b pin-r text-center"><h2 class="text-md xl:text-lg text-grey uppercase font-medium py-6 px-8"><?php echo do_shortcode( '[tagline theme="people-red"]' ); ?></h2></div>
   </div>
 </section>
@@ -17,10 +17,12 @@ get_header(); ?>
 <section class="py-8 md:py-jumbo">
   <div class="py-4 wrapper" data-load-more="team">
     <h1 class="uppercase text-lg md:text-xl mb-6 md:mb-8">Meet Our Team</h1>
-    <div class="md:flex md:flex-wrap justify-between" data-load-more-container>
+    <div class="team-container md:flex md:flex-wrap justify-between relative" data-load-more-container>
       <?php if ( have_posts() ) :
+        $i = 1;
         while ( have_posts() ) : the_post();
-          echo team_item( get_the_ID() );
+          echo team_item( get_the_ID(), $i );
+          $i++;
         endwhile;
       else :
         echo no_items( 'team members' );
