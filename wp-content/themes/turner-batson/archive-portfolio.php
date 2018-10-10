@@ -2,6 +2,10 @@
 
 get_header();
 
+global $wp_query;
+$current_page = $wp_query->get( 'paged' ) ? $wp_query->get( 'paged' ) : 1;
+$is_last_page = $wp_query->max_num_pages == $current_page;
+
 $tb_featured_projects = new WP_Query( array(
   'post_type' => 'portfolio',
   'project_type' => 'featured',

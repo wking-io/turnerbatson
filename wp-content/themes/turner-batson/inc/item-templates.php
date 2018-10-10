@@ -17,3 +17,58 @@ function portfolio_item( $id ) {
 
   <?php return ob_get_clean();
 }
+
+function team_item( $id ) {
+  ob_start(); ?>
+
+  <div class="team-item relative md:hidden" id="team-member-<?php echo $id ?>a" data-drawer-wrapper data-drawer-expanded="false">
+    <div data-drawer-full>
+      <div data-drawer-visible>
+        <div class="team-headshot aspect-5:3 bg-no-repeat" style="background-image: url('<?php the_field( 'tb_team_headshot', $id ); ?>'), radial-gradient(at bottom, #FFFFFF, #EAEAEA, #C6C6C6);"></div>
+        <div class="relative py-4 flex items-start">
+          <div class="flex-1">
+            <h3 class="uppercase text-bold mb-1"><?php echo get_the_title( $id ); ?></h3>
+            <p><?php the_field( 'tb_team_role', $id ); ?></p>
+          </div>
+          <button class="button-link-primary lg:hidden" data-drawer-action aria-expanded="false" aria-controls="team-member-<?php echo $id ?>a">View Bio</button>
+        </div>
+      </div>
+      <div class="team-bio pb-4 md:pb-0">
+        <button class="team-bio-close" data-drawer-action aria-expanded="false" aria-controls="team-member-<?php echo $id ?>a"><span></span><span></span></button>
+        <h3 class="hidden md:block"><?php echo get_the_title( $id ); ?></h3>
+        <h4 class="hidden md:block"><?php the_field( 'tb_team_role', $id ); ?></h4>
+        <div class="">
+          <?php echo get_the_content( $id ); ?>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="team-item relative hidden md:block" id="team-member-<?php echo $id ?>b" data-drawer-wrapper data-drawer-expanded="false">
+    <div data-drawer-full>
+      <div data-drawer-visible>
+        <div class="team-headshot aspect-5:3 bg-no-repeat" style="background-image: url('<?php the_field( 'tb_team_headshot', $id ); ?>'), radial-gradient(at bottom, #FFFFFF, #EAEAEA, #C6C6C6);"></div>
+        <div class="relative py-4 flex items-start">
+          <div class="flex-1">
+            <h3 class="uppercase text-bold mb-1"><?php echo get_the_title( $id ); ?></h3>
+            <p><?php the_field( 'tb_team_role', $id ); ?></p>
+          </div>
+          <button class="button-link-primary lg:hidden" data-drawer-action aria-expanded="false" aria-controls="team-member-<?php echo $id ?>b">View Bio</button>
+          <div class="team-overlay absolute pin-t pin-r lg:opacity-0 hidden lg:block">
+            <button class="button-outline-primary" data-drawer-action aria-expanded="false" aria-controls="team-member-<?php echo $id ?>b">View Bio</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="team-bio pb-4 md:pb-0">
+      <button class="team-bio-close" data-drawer-action aria-expanded="false" aria-controls="team-member-<?php echo $id ?>b"><span></span><span></span></button>
+      <h3 class="hidden md:block mb-1"><?php echo get_the_title( $id ); ?></h3>
+      <h4 class="hidden md:block mb-4"><?php the_field( 'tb_team_role', $id ); ?></h4>
+      <div class="">
+        <?php echo get_the_content( $id ); ?>
+      </div>
+    </div>
+  </div>
+
+  <?php return ob_get_clean();
+}

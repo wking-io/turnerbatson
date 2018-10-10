@@ -1,0 +1,52 @@
+.team-headshot {
+  background-size: auto 90%, 100%;
+  background-position: center bottom;
+}
+
+.team-bio p {
+  @apply mb-4 leading-normal;
+}
+
+.team-bio-close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 6rem;
+
+  & span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: $grey;
+    width: 2px;
+    height: 20px;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  & span:last-child {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+@include media('>=#{$md}') {
+  .team-item {
+    width: calc(50% - 4rem);
+
+    &[data-drawer-expanded='true'] {
+      overflow: visible;
+    }
+  }
+
+  .team-bio {
+    @apply bg-white border-l-2 border-r-2 border-grey absolute z-20 px-6;
+    top: 0;
+    right: 0;
+    transform: translateX(calc(100% + 8rem));
+  }
+
+  .team-item:nth-child(4n) .team-bio {
+    left: 0;
+    transform: translateX(calc((-100% - 8rem)));
+  }
+}

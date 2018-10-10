@@ -8,6 +8,7 @@ import { toggleAttr } from './modules/attr';
 import { toggleClass } from './modules/classlist';
 import { dom, domAll } from './modules/dom';
 import { wrapEvent, eventOn } from './modules/event';
+import { setDrawerHeight, toggleDrawer } from './modules/drawer';
 import togglePopup from './modules/popup';
 
 const nav = dom('#masthead');
@@ -28,4 +29,12 @@ eventOn('click', compose(toggleExpandedOnEvent, toggleNavOnEvent), navToggle);
 const popups = domAll('[data-popup-action]');
 popups.forEach(function(btn) {
   btn.addEventListener('click', togglePopup);
+});
+
+// Drawers
+var drawers = domAll('[data-drawer-action]');
+drawers.forEach(function(btn) {
+  var wrapper = document.getElementById(btn.getAttribute('aria-controls'));
+  setDrawerHeight(wrapper)
+  btn.addEventListener("click", toggleDrawer(wrapper));
 });

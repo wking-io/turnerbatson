@@ -53,6 +53,14 @@
   }
 }
 
+.button-link-primary {
+  @apply inline-block underline font-bold text-primary border-0;
+
+  &:hover {
+    @apply no-underline;
+  }
+}
+
 .button-slider {
   @apply border border-primary relative bg-white;
   width: 44px;

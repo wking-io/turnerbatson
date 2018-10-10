@@ -102,3 +102,10 @@ function turnerbatson_setup() {
 endif;
 
 add_action( 'after_setup_theme', 'turnerbatson_setup' );
+
+function update_posts_per_page_cpt( $query ) {
+  if ( ! is_admin() && $query->is_main_query() && is_post_type_archive( 'team' ) ) {
+    $query->set( 'posts_per_page', '500' );
+  }
+}
+add_action( 'pre_get_posts', 'update_posts_per_page_cpt' );

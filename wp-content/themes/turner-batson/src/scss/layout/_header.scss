@@ -131,10 +131,11 @@
 }
 
 @include media('>=#{$lg}') {
-  .single-portfolio .page-name {
+  .single-portfolio .page-name,
+  .post-type-archive-team .page-name {
     @apply text-white;
   }
-  
+
   .nav .menu-item-list {
     height: 48vw;
   }

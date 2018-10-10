@@ -3,25 +3,6 @@
     "title": "TEAM \/\/ Settings",
     "fields": [
         {
-            "key": "field_5baa68c77eb70",
-            "label": "Is Hero A Video?",
-            "name": "tb_is_team_hero_video",
-            "type": "true_false",
-            "instructions": "Turn this toggle on if the hero background is a video instead of an image",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_5baa68827eb6f",
             "label": "Team Hero Image",
             "name": "tb_team_hero_img",
@@ -52,30 +33,6 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
-        },
-        {
-            "key": "field_5baa693d7eb71",
-            "label": "Team Hero Video",
-            "name": "tb_team_hero_video",
-            "type": "oembed",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5baa68c77eb70",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "width": "",
-            "height": ""
         }
     ],
     "location": [
@@ -95,5 +52,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1538359114
+    "modified": 1539142620
 }
