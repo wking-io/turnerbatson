@@ -1,3 +1,7 @@
+.project-header {
+  height: 85vh;
+}
+
 .project-heading:after {
   content: '';
   position: absolute;
@@ -10,8 +14,20 @@
 
 .project-nav {
   right: 0;
-  top: 0;
-  transform: translateY(-50%);
+  bottom: 0;
+  transform: translateY(50%);
+}
+
+.project-slider .slick-slide {
+  width: calc(100vw - 43px);
+  margin-right: 4rem;
+}
+
+.project-content {
+  width: 90vw;
+  max-width: 230rem;
+  margin-left: auto;
+  margin-right: 5vw;
 }
 
 .project-content p {
@@ -27,5 +43,30 @@
     background-color: $primary;
     bottom: 50%;
     height: 75rem;
+  }
+
+  .project-slider .slick-slide {
+    width: calc(100vw - 63px);
+    margin-right: 4rem;
+  }
+}
+
+@include media('>=#{$lg}') {
+  .project-nav {
+    right: 0;
+    top: 0;
+    transform: translateX(calc(100% + 8rem));
+  }
+
+  .project-slider {
+    margin-top: -17.5rem;
+    margin-left: auto;
+    width: 95vw;
+    max-width: calc(230rem + 5vw);
+  }
+
+  .project-slider .slick-slide {
+    width: 60vw;
+    margin-right: 6rem;
   }
 }

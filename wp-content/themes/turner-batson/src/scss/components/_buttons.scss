@@ -45,7 +45,6 @@
   }
 }
 
-
 .button-outline-dark {
   @apply inline-block no-underline font-bold text-black py-3 px-8 border border-black;
 
@@ -59,10 +58,7 @@
   width: 44px;
   height: 44px;
   padding: 2.75rem;
-
-  &:hover {
-    @apply bg-primary;
-  }
+  cursor: pointer;
 
   &-secondary {
     @apply border-black;
@@ -78,10 +74,6 @@
 
   &-arrow-fill {
     fill: $primary;
-  }
-
-  &:hover &-arrow-fill {
-    fill: $white;
   }
 
   &-secondary &-arrow-fill {
@@ -106,6 +98,6 @@
   .button-slider-large {
     width: 64px;
     height: 64px;
-    padding: 4.25rem;
+    padding: 4.75rem;
   }
 }

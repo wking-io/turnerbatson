@@ -93,10 +93,6 @@
 }
 
 @include media('>=#{$md}') {
-  .single-portfolio .page-name {
-    @apply text-white;
-  }
-
   .nav {
     & .menu-item-list {
       column-count: 2;
@@ -135,6 +131,10 @@
 }
 
 @include media('>=#{$lg}') {
+  .single-portfolio .page-name {
+    @apply text-white;
+  }
+  
   .nav .menu-item-list {
     height: 48vw;
   }

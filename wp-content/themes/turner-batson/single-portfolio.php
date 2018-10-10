@@ -18,19 +18,14 @@ get_header();
 
 while ( have_posts() ) : the_post(); ?>
 
-  <section class="flex flex-col md:justify-end lg:h-screen pt-nav lg:pt-0">
-    <div class="h-64 md:h-full bg-cover bg-no-repeat bg-center" style="background-image: linear-gradient(to bottom, rgba(63, 66, 67, .2), rgba(63, 66, 67, 0) 80%), url('<?php echo $tb_featured_img; ?>');"></div>
-    <div class="wrapper"><h1 class="project-heading relative text-lg lg:text-3xl uppercase font-bold py-8 pl-6"><?php the_title(); ?></h1></div>
+  <section class="flex flex-col project-header justify-end lg:h-screen pt-nav lg:pt-0">
+    <div class="project-feature h-full bg-cover bg-no-repeat bg-center" style="background-image: linear-gradient(to bottom, rgba(63, 66, 67, .2), rgba(63, 66, 67, 0) 80%), url('<?php echo $tb_featured_img; ?>');"></div>
+    <div class="wrapper"><h1 class="project-heading relative text-lg lg:text-xl xl:text-3xl uppercase font-bold py-8 pl-6"><?php the_title(); ?></h1></div>
   </section>
 
   <section class="flex flex-col" data-slider="project">
-    <ul class="list-reset slider">
-      <?php foreach( $tb_gallery as $image ) : ?>
-        <li class="aspect-5:3 bg-cover bg-no-repeat bg-center" style="background-image: url('<?php echo $image['url']; ?>')"></li>
-      <?php endforeach; ?>
-    </ul>
-    <div class="relative">
-      <ul class="list-reset text-white bg-primary pt-8 pb-4 flex flex-col md:flex-row md:flex-wrap">
+    <div class="relative z-20 bg-primary lg:w-1/2">
+      <ul class="list-reset text-white pt-8 pb-4 md:w-4/5 mx-auto flex flex-col md:flex-row md:flex-wrap">
         <?php foreach( $tb_details as $name => $detail ) : ?>
           <li class="pl-8 pb-4 md:pl-0 md:w-1/2">
             <p class="text-sm uppercase pb-1"><?php echo replace_space( $name ); ?></p>
@@ -43,9 +38,14 @@ while ( have_posts() ) : the_post(); ?>
         <?php echo do_shortcode( '[slider_nav type="next" large="true"]' ); ?>
       </div>
     </div>
+    <ul class="list-reset project-slider slider">
+      <?php foreach( $tb_gallery as $image ) : ?>
+        <li class="aspect-5:3 bg-cover bg-no-repeat bg-center" style="background-image: url('<?php echo $image['url']; ?>')"></li>
+      <?php endforeach; ?>
+    </ul>
   </section>
 
-  <section class="project-content wrapper py-8">
+  <section class="project-content py-8">
     <?php the_content(); ?>
     <a class="button-outline-primary my-8" href="<?php echo home_url( '/portfolio#projects' ); ?>">Back To Portfolio</a>
   </section>
