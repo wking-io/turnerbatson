@@ -45,6 +45,11 @@ if ( ! function_exists( 'turnerbatson_scripts' ) ) :
 			wp_enqueue_script( 'news-single' );
 		endif;
 
+		if ( is_post_type_archive( 'testimonial' ) ) :
+			wp_register_script( 'testimonial', get_template_directory_uri() . '/assets/js/testimonial.js', array(), '1.0.0', true );
+			wp_enqueue_script( 'testimonial' );
+		endif;
+
 	}
 
 endif;

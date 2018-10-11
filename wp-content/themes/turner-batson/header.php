@@ -50,8 +50,8 @@ $post_type = get_post_type();
 				<div class="menu-aside flex justify-between items-center w-full text-white p-8 m-0">
 					<p class="menu-tagline uppercase fixed lg:static font-medium leading-none">People. Passion. Purpose</p>
 					<p class="leading-none font-medium hidden lg:block"><?php the_field('tb_company_address', 'options' ); ?></p>
-					<?php is_active_sidebar( 'social-widget-area' ) {
-						dynamic_sidebar( 'social-widget-area' )
+					<?php if ( is_active_sidebar( 'social-widget-area' ) ) {
+						dynamic_sidebar( 'social-widget-area' );
 					} ?>
 				</div>
 			</div>

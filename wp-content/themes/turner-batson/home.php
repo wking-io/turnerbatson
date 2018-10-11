@@ -45,7 +45,7 @@ get_header(); ?>
       endif; ?>
     </div>
     <div class="text-center">
-      <button class="button button-lg my-8<?php echo $is_last_page ? ' hidden' : '' ;?>" data-load-more-button data-load-more-loading="false" data-load-page="2">Load More News <?php echo do_shortcode( '[loader]' ); ?></button>
+      <button class="button button-lg my-8<?php echo $is_last_page ? ' hidden' : '' ;?>" data-load-more-button data-load-more-loading="false" data-load-page="2" data-ppp="20" data-offset="11">Load More News <?php echo do_shortcode( '[loader]' ); ?></button>
     </div>
   </div>
 </section>

@@ -105,12 +105,33 @@ add_action( 'after_setup_theme', 'turnerbatson_setup' );
 
 function update_posts_per_page_cpt( $query ) {
   if ( ! is_admin() && $query->is_main_query() ) {
-		if ( is_post_type_archive( 'team' ) ) {
-			$query->set( 'posts_per_page', '500' );
-		}
 
 		if ( is_home() ) {
-			$query->set( 'posts_per_page', '11' );
+			$first_page = 11;
+			$ppp = 10;
+			$offset = $first_page;
+			
+			if ( ! $query->is_paged() ) {
+				$query->set( 'posts_per_page', $first_page );
+			} else {
+				$offset = ( ( $query->query_vars['paged']-1 ) * $offset ) + $ppp;
+				$query->set( 'posts_per_page', $ppp );
+				$query->set( 'offset', $offset );
+			}
+		}
+
+		if ( is_post_type_archive( 'testimonial' ) || is_post_type_archive( 'team' ) ) {
+			$query->set( 'posts_per_page', '500' );
+			$ppp = 500;
+			$offset = 500;
+			
+			if ( ! $query->is_paged() ) {
+				$query->set( 'posts_per_page', $ppp );
+			} else {
+				$offset = ( ( $query->query_vars['paged']-1 ) * $offset ) + $ppp;
+				$query->set( 'posts_per_page', $ppp );
+				$query->set( 'offset', $offset );
+			}
 		}
   }
 }

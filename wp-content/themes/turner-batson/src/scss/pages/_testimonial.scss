@@ -1,0 +1,22 @@
+@include media('>=#{$md}') {
+  .testimonial-wrap {
+    width: calc(50% - 4rem);
+  }
+}
+
+@include media('>=#{$lg}') {
+  .testimonial-wrap {
+    width: 100%;
+  }
+
+  .testimonial-info {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@include media('>=#{$xl}') {
+  .testimonial-wrap {
+    width: calc(50% - 4rem);
+  }
+}

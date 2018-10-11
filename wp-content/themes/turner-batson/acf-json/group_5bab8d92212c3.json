@@ -57,8 +57,8 @@
             "key": "field_5bab8e413f55b",
             "label": "Hero Video",
             "name": "tb_culture_hero_video",
-            "type": "oembed",
-            "instructions": "",
+            "type": "text",
+            "instructions": "To fill out this field follow these steps:\r\n\r\n1. Go to the Cloudinary Media Library > Videos here: http:\/\/turnerbatson.test\/wp-admin\/admin.php?page=cloudinary-image-management-and-manipulation-in-the-cloud-cdn%2Flibrary.php\r\n2. Click into the edit page for the video you want to add\r\n3. Copy the name of the video in the top left\r\n4. Paste the name of the video below",
             "required": 0,
             "conditional_logic": [
                 [
@@ -74,32 +74,11 @@
                 "class": "",
                 "id": ""
             },
-            "width": "",
-            "height": ""
-        },
-        {
-            "key": "field_5bab8e853f55d",
-            "label": "Hero Video - Mobile",
-            "name": "tb_culture_hero_video_mobile",
-            "type": "oembed",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5bab8db43f559",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "width": "",
-            "height": ""
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5bab8e553f55c",
@@ -287,5 +266,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1538359094
+    "modified": 1539285039
 }

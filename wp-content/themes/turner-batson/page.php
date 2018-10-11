@@ -1,4 +1,4 @@
 <?php
 
-get_header();error_log('here');
+get_header();
 get_footer();

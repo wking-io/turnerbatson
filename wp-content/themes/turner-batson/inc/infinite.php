@@ -5,7 +5,6 @@
  * 
  */
 function tb_get_template( $post_type = '' ) {
-  error_log( $post_type );
   $markup = '';
   if ( ! empty( $post_type ) ) {
     switch ( $post_type ) {
@@ -20,6 +19,10 @@ function tb_get_template( $post_type = '' ) {
       case 'post':
         $markup = news_item( get_the_ID() );
         break;
+
+      case 'testimonial':
+        $markup = testimonial_item( get_the_ID() );
+        break;
     }
   }
   return $markup;
@@ -31,7 +34,8 @@ function tb_get_template( $post_type = '' ) {
  */
 function tb_load_more_portfolio_js() {
 
-	global $wp_query;
+  global $wp_query;
+  error_log( print_r( $wp_query, true ) );
 	$args = array(
 		'nonce' => wp_create_nonce( 'tb-load-more-nonce' ),
 		'url'   => admin_url( 'admin-ajax.php' ),
@@ -42,6 +46,7 @@ function tb_load_more_portfolio_js() {
   wp_localize_script( 'portfolio', 'loadmore', $args );
   wp_localize_script( 'team', 'loadmore', $args );
   wp_localize_script( 'news', 'loadmore', $args );
+  wp_localize_script( 'testimonial', 'loadmore', $args );
 	
 }
 add_action( 'wp_enqueue_scripts', 'tb_load_more_portfolio_js' );
@@ -52,24 +57,31 @@ add_action( 'wp_enqueue_scripts', 'tb_load_more_portfolio_js' );
  */
 function tb_ajax_load_more() {
 	check_ajax_referer( 'tb-load-more-nonce', 'nonce' );
-    
   $args = isset( $_POST['query'] ) ? $_POST['query'] : array();
-	$args['post_type'] = isset( $args['post_type'] ) ? $args['post_type'] : 'post';
-	$args['paged'] = $_POST['page'];
+  $args['post_type'] = isset( $args['post_type'] ) ? $args['post_type'] : 'post';
   $args['post_status'] = 'publish';
+  $check_max = false;
+  
+  if ( ! isset( $args['posts_per_page'] ) || ! isset( $args['offset'] ) ) {
+    $args['paged'] = $_POST['page'];
+    $check_max = true;
+  }
   
   // Get markup from template functions
-	ob_start();
+  ob_start();
   $loop = new WP_Query( $args );
+  error_log( print_r( $loop, true ) );
 	if( $loop->have_posts() ): while( $loop->have_posts() ): $loop->the_post();
-		echo tb_get_template( $args['post_type'] );
-	endwhile; endif; wp_reset_postdata();
+  echo tb_get_template( $args['post_type'] );
+  endwhile; endif; wp_reset_postdata();
   $markup = ob_get_clean();
 
   // Get if last page in request
   $is_last_page = false;
-  if ( $loop->max_num_pages == $loop->get( 'paged' ) ) {
+  if ( $check_max && $loop->max_num_pages == $loop->get( 'paged' ) ) {
     $is_last_page =  true;
+  } elseif ( ( $loop->found_posts - $loop->get( 'offset' ) ) <= $loop->get( 'posts_per_page' ) ) {
+    $is_last_page = true;
   }
 
   // Setup data object

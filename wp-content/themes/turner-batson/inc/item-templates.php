@@ -88,3 +88,20 @@ function news_item( $id, $is_featured = false ) {
 
   <?php return ob_get_clean();
 }
+
+function testimonial_item( $id ) {
+  ob_start(); ?>
+  <li class="testimonial-wrap my-8">
+    <figure class="testimonial-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 26" class="w-8 mb-4">
+        <path fill="#DA291C" fill-rule="evenodd" d="M19 25.5c0-1.042-.024-2.596-.073-4.663a214.7 214.7 0 0 1-.073-4.566c0-1.92.056-3.572.17-4.956.114-1.383.367-2.799.757-4.248.39-1.448.928-2.62 1.612-3.515.683-.895 1.61-1.628 2.783-2.198C25.348.784 26.747.5 28.375.5L31.5 6.75c-2.246 0-3.85.488-4.81 1.465-.96.976-1.44 2.571-1.44 4.785h6.25v12.5H19zm-18.75 0c0-1.042-.024-2.596-.073-4.663a214.7 214.7 0 0 1-.073-4.566c0-1.92.056-3.572.17-4.956.114-1.383.367-2.799.757-4.248.39-1.448.928-2.62 1.612-3.515.683-.895 1.61-1.628 2.783-2.198C6.598.784 7.997.5 9.625.5l3.125 6.25c-2.246 0-3.85.488-4.81 1.465C6.98 9.19 6.5 10.786 6.5 13h6.25v12.5H.25z"/>
+      </svg>
+      <blockquote class="leading-normal lg:text-md mb-4"><?php echo get_the_content( $id ); ?></blockquote>
+      <footer>
+        <cite class="leading-normal font-bold text-sm uppercase"><?php echo get_the_title(); ?></cite>
+      </footer>
+    </figure>
+  </li>
+
+  <?php return ob_get_clean();
+}
