@@ -104,8 +104,22 @@ endif;
 add_action( 'after_setup_theme', 'turnerbatson_setup' );
 
 function update_posts_per_page_cpt( $query ) {
-  if ( ! is_admin() && $query->is_main_query() && is_post_type_archive( 'team' ) ) {
-    $query->set( 'posts_per_page', '500' );
+  if ( ! is_admin() && $query->is_main_query() ) {
+		if ( is_post_type_archive( 'team' ) ) {
+			$query->set( 'posts_per_page', '500' );
+		}
+
+		if ( is_home() ) {
+			$query->set( 'posts_per_page', '11' );
+		}
   }
 }
 add_action( 'pre_get_posts', 'update_posts_per_page_cpt' );
+
+add_filter('next_post_link', 'posts_link_attributes');
+add_filter('previous_post_link', 'posts_link_attributes');
+
+function posts_link_attributes( $output ) {
+		$code = 'class="button-outline-primary"';
+		return str_replace( '<a href=', '<a ' . $code . ' href=', $output );
+}

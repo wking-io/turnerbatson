@@ -5,11 +5,20 @@
  * 
  */
 function tb_get_template( $post_type = '' ) {
+  error_log( $post_type );
   $markup = '';
   if ( ! empty( $post_type ) ) {
     switch ( $post_type ) {
       case 'portfolio':
         $markup = portfolio_item( get_the_ID() );
+        break;
+
+      case 'team':
+        $markup = team_item( get_the_ID() );
+        break;
+
+      case 'post':
+        $markup = news_item( get_the_ID() );
         break;
     }
   }
@@ -30,7 +39,9 @@ function tb_load_more_portfolio_js() {
     'action' => 'tb_ajax_load_more',
   );
   
-	wp_localize_script( 'portfolio', 'loadmore', $args );
+  wp_localize_script( 'portfolio', 'loadmore', $args );
+  wp_localize_script( 'team', 'loadmore', $args );
+  wp_localize_script( 'news', 'loadmore', $args );
 	
 }
 add_action( 'wp_enqueue_scripts', 'tb_load_more_portfolio_js' );

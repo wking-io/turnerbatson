@@ -1,0 +1,40 @@
+.news-share .zoom-social-icons-widget {
+  & .zoom-social_icons-list__item {
+    margin: 0;
+    font-size: 4.5rem;
+  }
+
+  & .socicon {
+    padding: 2rem 0 2rem 2rem;
+  }
+}
+
+.news-content p {
+  @apply leading-normal mb-4;
+}
+
+.news-pagination > a {
+  width: calc(50% - 2rem);
+}
+
+@include media('>=#{$md}') {
+  .news-pagination > a {
+    width: auto;
+
+    &:first-child {
+      margin-right: 6rem;
+    }
+  }
+}
+
+@include media('>=#{$lg}') {
+  h1.news-title {
+    font-size: 3.25vw;
+  }
+}
+
+@include media('>=1334px') {
+  h1.news-title {
+    font-size: 11rem;
+  }
+}

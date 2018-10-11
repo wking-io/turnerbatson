@@ -21,7 +21,6 @@ function add_option_pages() {
 	add_option_page('Team');
 	add_option_page('Testimonial');
 	add_option_page('Career');
-	add_option_page('News');
 
 	if( function_exists( 'acf_add_options_page' ) ) {
 		// add sub page

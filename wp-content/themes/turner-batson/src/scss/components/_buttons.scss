@@ -1,5 +1,5 @@
 .button {
-  @apply inline-block no-underline font-bold text-white py-3 px-8 bg-primary relative;
+  @apply inline-block no-underline font-bold text-white py-3 px-8 bg-primary relative text-center;
 
   &:hover {
     @apply bg-primary-dark;
@@ -30,7 +30,7 @@
 }
 
 .button-outline-dark {
-  @apply inline-block no-underline font-bold text-black py-3 px-8 border border-black;
+  @apply inline-block no-underline font-bold text-black py-3 px-8 border border-black text-center;
 
   &:hover {
     @apply bg-primary text-white;
@@ -38,7 +38,7 @@
 }
 
 .button-outline-primary {
-  @apply inline-block no-underline font-bold text-black py-3 px-8 border border-primary;
+  @apply inline-block no-underline font-bold text-black py-3 px-8 border border-primary text-center;
 
   &:hover {
     @apply bg-primary text-white;
@@ -46,7 +46,7 @@
 }
 
 .button-outline-dark {
-  @apply inline-block no-underline font-bold text-black py-3 px-8 border border-black;
+  @apply inline-block no-underline font-bold text-black py-3 px-8 border border-black text-center;
 
   &:hover {
     @apply bg-black text-white;

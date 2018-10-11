@@ -132,7 +132,8 @@
 
 @include media('>=#{$lg}') {
   .single-portfolio .page-name,
-  .post-type-archive-team .page-name {
+  .post-type-archive-team .page-name,
+  .single-post .page-name {
     @apply text-white;
   }
 

@@ -29,7 +29,7 @@ get_header(); ?>
       endif; ?>
     </div>
     <div class="text-center">
-      <button class="button button-lg my-8<?php echo $is_last_page ? ' hidden' : '' ;?>" data-load-more-button data-load-more-loading="false" data-load-page="2">Load More Projects <?php echo do_shortcode( '[loader]' ); ?></button>
+      <button class="button button-lg my-8<?php echo $is_last_page ? ' hidden' : '' ;?>" data-load-more-button data-load-more-loading="false" data-load-page="2">Load More Team Members <?php echo do_shortcode( '[loader]' ); ?></button>
     </div>
   </div>
 </section>

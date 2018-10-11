@@ -35,6 +35,16 @@ if ( ! function_exists( 'turnerbatson_scripts' ) ) :
 			wp_enqueue_script( 'team' );
 		endif;
 
+		if ( is_home() ) :
+			wp_register_script( 'news', get_template_directory_uri() . '/assets/js/news.js', array(), '1.0.0', true );
+			wp_enqueue_script( 'news' );
+		endif;
+
+		if ( is_singular( 'post' ) ) :
+			wp_register_script( 'news-single', get_template_directory_uri() . '/assets/js/news-single.js', array(), '1.0.0', true );
+			wp_enqueue_script( 'news-single' );
+		endif;
+
 	}
 
 endif;
