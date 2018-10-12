@@ -50,6 +50,9 @@ if ( ! function_exists( 'turnerbatson_scripts' ) ) :
 			wp_enqueue_script( 'testimonial' );
 		endif;
 
+		if ( is_page( 'connect' ) ) {
+		}
+
 	}
 
 endif;
@@ -74,7 +77,7 @@ add_action('wp_enqueue_scripts', 'turnerbatson_styles');
 */
 function turnerbatson_remove_jquery( &$scripts) {
     if ( ! is_admin() ) {
-        $scripts->remove( 'jquery');
+        // $scripts->remove( 'jquery');
         // $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.12.4' );
     }
 }

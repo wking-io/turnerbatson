@@ -1,0 +1,13 @@
+.no-careers {
+  & p {
+    margin-bottom: 4rem;
+  }
+
+  & a {
+    color: $primary;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

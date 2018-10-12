@@ -23,7 +23,7 @@ $page_specific = is_page( 'culture' ) ? ' culture' : '';
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 
-		<?php // gravity_form_enqueue_scripts( 1, true ); ?>
+		<?php gravity_form_enqueue_scripts( 1, false ); ?>
 		<?php wp_head(); ?>
 	</head>
 

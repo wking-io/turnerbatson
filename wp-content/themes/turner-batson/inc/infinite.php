@@ -35,7 +35,6 @@ function tb_get_template( $post_type = '' ) {
 function tb_load_more_portfolio_js() {
 
   global $wp_query;
-  error_log( print_r( $wp_query, true ) );
 	$args = array(
 		'nonce' => wp_create_nonce( 'tb-load-more-nonce' ),
 		'url'   => admin_url( 'admin-ajax.php' ),
@@ -70,7 +69,6 @@ function tb_ajax_load_more() {
   // Get markup from template functions
   ob_start();
   $loop = new WP_Query( $args );
-  error_log( print_r( $loop, true ) );
 	if( $loop->have_posts() ): while( $loop->have_posts() ): $loop->the_post();
   echo tb_get_template( $args['post_type'] );
   endwhile; endif; wp_reset_postdata();

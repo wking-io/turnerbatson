@@ -11,24 +11,18 @@
   transform: rotate(-90deg);
 }
 
-.culture-video {
-  height: 68vh;
-  & video {
-    height: 68vh;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-  }
+.culture-video video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
 }
 
 @include media('>=#{$md}') {
   .culture-heading {
     font-size: 9vw;
     margin-top: -10rem; 
-  }
-
-  .culture-video video {
-    height: 100%;
   }
 
   .culture-img {
@@ -42,9 +36,6 @@
 }
 
 @include media('>=#{$lg}') {
-  .culture-video {
-    height: 100%;
-  }
   .culture-hero-info {
     width: 35%;
   }
