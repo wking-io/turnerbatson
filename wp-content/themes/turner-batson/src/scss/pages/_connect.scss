@@ -10,3 +10,21 @@
     height: 100% !important;
   }
 }
+
+@include media('>=#{$lg}') {
+  .connect-info {
+    max-width: 350px;
+    & address {
+      padding: 10rem;
+    }
+  }
+
+  .connect-map {
+    margin-right: 200px;
+  }
+
+  .connect-social {
+    margin-top: 4rem;
+    margin-left: 174px;
+  }
+}

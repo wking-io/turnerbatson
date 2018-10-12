@@ -61,7 +61,6 @@ $tb_latest_news = new WP_Query( array(
     <?php 
       echo cl_video_tag( $tb_purpose_video, 
         array(
-          "controls" => false,
           "loop" => true,
           "autoplay" => true,
           "muted" => true,
