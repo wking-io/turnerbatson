@@ -1,56 +1,67 @@
-.contact-form {
+.connect-form {
   & .gform_body {
-    & ul.gform_fields {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    & .contact-form__input {
+    & .connect-form__input {
       width: 100%;
       position: relative;
-      margin-top: 2rem;
+      margin: 0 0 6rem 0;
 
       & > label {
         position: absolute;
-        top: 4.5rem;
-        left: 3rem;
+        bottom: 2rem;
+        left: 0rem;
         color: $white;
-        font-size: 3.5rem;
+        font-size: 4rem;
+        opacity: 0.5;
+        transition: all 0.2s ease-in;
+        transform-origin: bottom left;
 
         &.label-hide {
           display: none;
         }
       }
 
+      &.connect-form__textarea > label {
+        bottom: 2.75rem;
+      }
+
+      &.connect-form__input--active > label {
+        transform: scale(0.75) translateY(-11rem);
+      }
+
       &
         .ginput_container
         input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']) {
         width: 100%;
-        background-color: $primary-color;
-        border: 1px solid $white;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid rgba($white, 0.5);
         border-radius: 0px !important;
-        padding: 2.25rem;
+        padding: 2rem 0;
         color: $white;
         line-height: 1;
+        height: 44px;
 
         &:focus,
         &:active {
           outline: none;
+          border-bottom: 1px solid rgba($white, 1);
         }
       }
 
       & .ginput_container textarea {
         width: 100%;
-        height: 120px;
-        background-color: $primary-color;
-        border: 1px solid $white;
+        height: 44px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid rgba($white, 0.5);
         border-radius: 0px !important;
-        padding: 2.25rem;
+        padding: 2rem 0;
         color: $white;
 
         &:focus,
         &:active {
           outline: none;
+          border-bottom: 1px solid rgba($white, 1);
         }
       }
 
@@ -63,48 +74,32 @@
     }
   }
 
-  & .gform_footer {
+  & div.gform_footer {
     text-align: right;
     margin-top: 0;
 
-    & input {
+    & input[type='submit'] {
       text-decoration: none;
-      display: inline-block;
-      padding: 2rem 12rem;
+      display: block;
+      width: 100%;
+      padding: 4rem 12rem;
       margin: 0;
-      border: 2px solid $white;
+      border: 1px solid $white;
       text-align: center;
-      font-family: $sans-font;
-      color: $primary-color;
+      color: $white;
       border-color: $white;
-      background-color: $white;
+      background-color: transparent;
       cursor: pointer;
 
       &:hover {
         color: $white;
         background-color: transparent;
       }
-    }
-  }
-}
 
-@include media('<642px') {
-  .contact-form {
-    & .gform_body {
-      & .contact-form__input {
-        &--name {
-          width: 100%;
-        }
-        &--number {
-          width: 100%;
-        }
-      }
-    }
-
-    & .gform_footer {
-      &
-        input:not([type='radio']):not([type='checkbox']):not([type='image']):not([type='file']) {
-        line-height: 1;
+      &:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+        cursor: none;
       }
     }
   }

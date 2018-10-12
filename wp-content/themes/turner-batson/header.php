@@ -10,7 +10,8 @@
  */
 
 $post_type = get_post_type();
-$page_specific = is_page( 'culture' ) ? ' culture' : '';
+$culture = is_page( 'culture' ) ? ' culture' : '';
+$connect = is_page( 'connect' ) ? ' connect' : '';
 
 ?>
 
@@ -23,11 +24,13 @@ $page_specific = is_page( 'culture' ) ? ' culture' : '';
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 
-		<?php gravity_form_enqueue_scripts( 1, false ); ?>
+		<?php if ( is_page( 'connect' ) ) {
+			gravity_form_enqueue_scripts( 1, false );
+		} ?>
 		<?php wp_head(); ?>
 	</head>
 
-<body <?php body_class('font-sans text-black' . $page_specific ); ?>>
+<body <?php body_class('font-sans text-black' . $culture . $connect ); ?>>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', THEME_NAME ); ?></a>
 
 	<header id="masthead" class="w-full flex justify-between items-center fixed pl-6 py-6 z-50" role="banner">

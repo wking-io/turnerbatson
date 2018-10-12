@@ -51,6 +51,8 @@ if ( ! function_exists( 'turnerbatson_scripts' ) ) :
 		endif;
 
 		if ( is_page( 'connect' ) ) {
+			wp_register_script( 'connect', get_template_directory_uri() . '/assets/js/connect.js', array(), '1.0.0', true );
+			wp_enqueue_script( 'connect' );
 		}
 
 	}

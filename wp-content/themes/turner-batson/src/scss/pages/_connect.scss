@@ -1,0 +1,12 @@
+.connect {
+  @apply bg-black;
+}
+
+.connect-map {
+  height: 300px;
+
+  & .huge_it_google_map_container,
+  & .huge_it_google_map {
+    height: 100% !important;
+  }
+}
