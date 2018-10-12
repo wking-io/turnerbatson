@@ -28,8 +28,15 @@ body {
   margin: 0 auto;
 }
 
+.wrapper-sm {
+  max-width: 800px;
+  width: calc(100% - 16rem);
+  margin: 0 auto;
+}
+
 @include media('>=#{$lg}') {
-  .wrapper {
+  .wrapper,
+  .wrapper-sm {
     width: 90vw;
   }
 }

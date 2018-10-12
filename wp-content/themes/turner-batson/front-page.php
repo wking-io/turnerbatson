@@ -85,7 +85,7 @@ $tb_latest_news = new WP_Query( array(
   <div class="mx-8 culture-accent relative z-30"><div class="w-1 h-full bg-primary lg:absolute lg:pin-t lg:pin-r"></div></div>
   <div class="relative">
     <div class="culture-bg bg-cover bg-fixed bg-center p-8 mb-8" style="background-image: linear-gradient(rgba(63, 66, 67, 0.2), rgba(63, 66, 67, 0.2)), url(<?php echo $tb_culture_bg; ?>);">
-      <div class="culture-content xl:ml-8 xl:pl-8">
+      <div class="culture-info xl:ml-8 xl:pl-8">
         <h2 class="culture-tagline text-white mb-6"><?php echo do_shortcode( '[tagline theme="stack"]' ); ?></h2>
         <a href="<?php echo $tb_culture_button_link; ?>" class="button"><?php echo $tb_culture_button_text; ?></a>
       </div>

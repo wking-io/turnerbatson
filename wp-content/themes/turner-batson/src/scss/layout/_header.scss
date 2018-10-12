@@ -6,7 +6,8 @@
   @apply opacity-0;
 }
 
-.home .page-name {
+.home .page-name,
+.culture .page-name {
   @apply text-white;
 }
 
@@ -135,6 +136,14 @@
   .post-type-archive-team .page-name,
   .single-post .page-name {
     @apply text-white;
+  }
+
+  .culture .fill-back {
+    fill: transparent !important;
+  }
+
+  .culture .fill-front {
+    fill: $white !important;
   }
 
   .nav .menu-item-list {

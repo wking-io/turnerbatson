@@ -42,7 +42,7 @@ include 'inc/copyright.php';
 include 'inc/cloudinary.php';
 
 // Template functions for post items
-include 'inc/item-templates.php';
+include 'inc/templates.php';
 
 // Infinite scroll functions
 include 'inc/infinite.php';

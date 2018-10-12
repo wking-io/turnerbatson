@@ -10,6 +10,7 @@
  */
 
 $post_type = get_post_type();
+$page_specific = is_page( 'culture' ) ? ' culture' : '';
 
 ?>
 
@@ -26,7 +27,7 @@ $post_type = get_post_type();
 		<?php wp_head(); ?>
 	</head>
 
-<body <?php body_class('font-sans text-black'); ?>>
+<body <?php body_class('font-sans text-black' . $page_specific ); ?>>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', THEME_NAME ); ?></a>
 
 	<header id="masthead" class="w-full flex justify-between items-center fixed pl-6 py-6 z-50" role="banner">

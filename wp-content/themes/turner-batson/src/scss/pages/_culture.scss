@@ -1,0 +1,72 @@
+.culture-content p {
+  @apply mb-4;
+}
+
+.culture-heading {
+  font-size: 14vw;
+  margin-top: -8rem;
+}
+
+.scroll-arrow {
+  transform: rotate(-90deg);
+}
+
+.culture-video {
+  height: 68vh;
+  & video {
+    height: 68vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+  }
+}
+
+@include media('>=#{$md}') {
+  .culture-heading {
+    font-size: 9vw;
+    margin-top: -10rem; 
+  }
+
+  .culture-video video {
+    height: 100%;
+  }
+
+  .culture-img {
+    width: 95vw;
+    margin-left: auto;
+  }
+
+  .p-item {
+    width: calc(50% - 4rem);
+  }
+}
+
+@include media('>=#{$lg}') {
+  .culture-video {
+    height: 100%;
+  }
+  .culture-hero-info {
+    width: 35%;
+  }
+  .culture-heading {
+    margin-top: 0;
+    font-size: 6.2vw;
+    transform: translateX(50%);
+    line-height: 1.1;
+  }
+  .scroll-block {
+    transform: rotate(90deg);
+    transform-origin: bottom right;
+    left: -12rem;
+    bottom: 26rem;
+  }
+  .scroll-arrow {
+    transform: rotate(180deg);
+  }
+}
+
+@include media('>=864px') {
+  .culture-img {
+    width: calc(800px + ((100% - 800px) / 2));
+  }
+}

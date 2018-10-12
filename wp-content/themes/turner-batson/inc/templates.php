@@ -105,3 +105,35 @@ function testimonial_item( $id ) {
 
   <?php return ob_get_clean();
 }
+
+function job_content() {
+  $tb_careers = new WP_Query( array(
+    'post_type' => 'career',
+    'post_status' => 'publish',
+    'posts_per_page' => 50,
+    'no_found_rows' => true,
+    'update_post_meta_cache' => false,
+    'update_post_term_cache' => false,
+  ) );
+
+  ob_start(); ?>
+  
+  <div>
+    <h3 class="uppercase text-2xl mb-6"><?php the_field( 'tb_career_heading', 'options' ); ?></h3>
+    <div class="leading-normal text-md mb-8"><?php the_field( 'tb_career_description', 'options' ); ?></div>
+    <?php if ( $tb_careers->have_posts() ) : ?>
+      <ul class="list-reset flex flex-col md:flex-row md:flex-wrap md:justify-between">
+        <?php while ( $tb_careers->have_posts() ) : $tb_careers->the_post(); ?>
+            <li class="career-item bg-primary hover:bg-black text-white p-6 pt-8 mb-6 rounded">
+              <h4 class="text-md pt-8"><?php the_title(); ?></h4>
+              <p><a class="text-white" href="<?php the_field( 'tb_career_description_link', get_the_ID() ); ?>">View Full Description</a></p>
+            </li>
+        <?php endwhile; ?>
+      </ul>
+    <?php else : ?>
+      <div><?php the_field( 'tb_career_no_careers_description', 'options' ); ?></div>
+    <?php endif; ?>
+  </div>
+
+  <?php return ob_get_clean();
+}
