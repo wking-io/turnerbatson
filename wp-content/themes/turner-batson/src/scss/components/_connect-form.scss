@@ -92,8 +92,8 @@
       cursor: pointer;
 
       &:hover {
-        color: $white;
-        background-color: transparent;
+        color: $black;
+        background-color: $white;
       }
 
       &:disabled {
