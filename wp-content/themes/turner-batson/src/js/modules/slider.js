@@ -41,31 +41,31 @@ function fancyNav(context, buttons) {
 export function initHomeSlider(context) {
   const buttons = domAll('[data-slider-button="featured"]', context);
 
-  // Update the nav items with active class on init
-  $(`${context} .slider`).on('init', () => {
-    updateWhenIndex(0, buttons);
-  });
+  $(`${context} .slider`)
+    .slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 7500,
+      speed: 500,
+      vertical: true,
+      useTransform: true,
+      cssEase: 'cubic-bezier(0.0, 0.86, 0.9, 1)',
+      rows: 0,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+    })
+    .slick('slickPause');
 
-  // Update the nav items with active class on init
-  $(`${context} .slider`).on('reInit', () => {
-    updateWhenIndex(0, buttons);
-  });
+  const initDelay = 2200;
 
-  $(`${context} .slider`).slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 7500,
-    speed: 500,
-    vertical: true,
-    useTransform: true,
-    cssEase: 'cubic-bezier(0.0, 0.86, 0.9, 1)',
-    rows: 0,
-    pauseOnHover: false,
-    pauseOnFocus: false,
-  });
+  setTimeout(function() {
+    $(`${context} .slider`).slick('slickPlay');
+    $(context).attr('data-initializing', 'false');
+    updateWhenIndex(0, buttons);
+  }, initDelay);
 
   fancyNav(context, buttons);
 }
