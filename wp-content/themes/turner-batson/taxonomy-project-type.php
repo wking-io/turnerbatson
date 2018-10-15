@@ -76,15 +76,15 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 </section>
 
 <section id="projects" class="py-jumbo">
-  <div class="flex flex-col md:flex-row md:items-center wrapper pb-8">
+  <div class="flex flex-col md:flex-row items-center wrapper pb-8">
     <h2 class="uppercase text-2xl mb-4 md:mb-0">Projects</h2>
-    <ul class="flex-1 list-reset flex md:justify-end items-center">
+    <ul class="flex-1 list-reset flex flex-wrap md:flex-no-wrap justify-center md:justify-end items-center">
       <?php foreach( $tb_project_categories as $slug => $name ) : 
         $path = 'all' === $slug ? 'portfolio#projects' : 'portfolio/type/' . $slug . '#projects'; ?>
         <?php if ( $term->slug === $slug ) : ?>
-          <li class="font-bold mx-1 md:mx-0 md:-ml-px md:px-6 py-2 md:py-3 border-b-2 md:border border-primary text-sm md:text-base"><?php echo $name; ?></li>
+          <li class="font-bold mx-3 mb-2 md:mx-0 md:px-3 lg:px-6 py-2 lg:py-3 border-b-2 md:border border-primary text-sm lg:text-base"><?php echo $name; ?></li>
         <?php elseif ( 'featured' !== $slug ) : ?>
-          <li class="font-bold border-b-2 md:border border-transparent hover:border-primary md:-ml-px"><a href="<?php echo home_url($path); ?>" class="text-sm md:text-base text-black no-underline px-3 md:px-6 py-2 md:py-3 block"><?php echo $name; ?></a></li>
+          <li class="font-bold border-b-2 md:border border-transparent hover:border-primary mb-2 mx-3 md:mx-0 md:-ml-px"><a href="<?php echo home_url($path); ?>" class="text-sm lg:text-base text-black no-underline lg:px-6 py-2 lg:py-3 block"><?php echo $name; ?></a></li>
         <?php endif; ?>
       <?php endforeach; ?>
     </ul>

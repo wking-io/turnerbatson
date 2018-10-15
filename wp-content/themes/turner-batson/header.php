@@ -35,10 +35,10 @@ $connect = is_page( 'connect' ) ? ' connect' : '';
 
 	<header id="masthead" class="w-full flex justify-between items-center fixed pl-6 py-6 z-50" role="banner">
 		<h1 class="branding relative z-50">
-			<a class="flex items-center">
-				<?php echo do_shortcode( '[logo classname="w-8 h-auto"]' ); ?>
+			<div class="flex items-center">
+				<a class="h-8 w-8" href="<?php echo home_url(); ?>"><?php echo do_shortcode( '[logo classname="w-full h-full"]' ); ?></a>
 				<span class="page-name ml-2 text-base md:text-md uppercase font-medium"><?php echo get_page_name( $post_type ); ?></span>
-			</a>
+			</div>
 		</h1>
 
 		<nav class="nav" role="navigation">

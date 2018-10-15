@@ -61,10 +61,11 @@ $tb_project_categories = array_merge( array('all' => 'All'), wp_list_pluck( get_
     <div class="hidden lg:flex">
       <p class="bg-primary text-white text-center p-6 font-bold featured-projects-nav--info">See Full Portfolio Below</p>
       <ul class="list-reset flex flex-1 flex-row justify-center items-center">
-        <?php foreach( $tb_project_categories as $slug => $name ) : 
+        <?php foreach( $tb_project_categories as $slug => $name ) :
+        if ( $slug !== 'featured' ) : 
           $path = 'all' === $slug ? 'portfolio#projects' : 'portfolio/type/' . $slug . '#projects'; ?>
           <li class="font-bold uppercase p-6"><a href="<?php echo home_url($path); ?>" class="text-black no-underline hover:underline"><?php echo $name; ?></a></li>
-        <?php endforeach; ?>
+        <?php endif; endforeach; ?>
         
       </ul>
     </div>
@@ -73,15 +74,15 @@ $tb_project_categories = array_merge( array('all' => 'All'), wp_list_pluck( get_
 </section>
 
 <section id="projects" class="py-jumbo">
-  <div class="flex flex-col md:flex-row md:items-center wrapper pb-8">
+  <div class="flex flex-col md:flex-row items-center wrapper pb-8">
     <h2 class="uppercase text-2xl mb-4 md:mb-0">Projects</h2>
-    <ul class="flex-1 list-reset flex md:justify-end items-center">
+    <ul class="flex-1 list-reset flex flex-wrap md:flex-no-wrap justify-center md:justify-end items-center">
       <?php foreach( $tb_project_categories as $slug => $name ) : 
         $path = 'all' === $slug ? 'portfolio#projects' : 'portfolio/type/' . $slug . '#projects'; ?>
         <?php if ( 'all' === $slug ) : ?>
-          <li class="font-bold mx-1 md:mx-0 md:px-6 py-2 md:py-3 border-b-2 md:border border-primary text-sm md:text-base"><?php echo $name; ?></li>
+          <li class="font-bold mx-3 mb-2 md:mx-0 md:px-3 lg:px-6 py-2 lg:py-3 border-b-2 md:border border-primary text-sm lg:text-base"><?php echo $name; ?></li>
         <?php elseif ( 'featured' !== $slug ) : ?>
-          <li class="font-bold border-b-2 md:border border-transparent hover:border-primary md:-ml-px"><a href="<?php echo home_url($path); ?>" class="text-sm md:text-base text-black no-underline px-3 md:px-6 py-2 md:py-3 block"><?php echo $name; ?></a></li>
+          <li class="font-bold border-b-2 md:border border-transparent hover:border-primary mb-2 md:mb-0 mx-3 md:mx-0 md:-ml-px"><a href="<?php echo home_url($path); ?>" class="text-sm lg:text-base text-black no-underline lg:px-6 py-2 lg:py-3 block"><?php echo $name; ?></a></li>
         <?php endif; ?>
       <?php endforeach; ?>
     </ul>

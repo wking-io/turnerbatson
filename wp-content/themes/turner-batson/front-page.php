@@ -26,7 +26,7 @@ $tb_latest_news = new WP_Query( array(
 <section id="hero" class="relative h-2/3 md:h-screen" data-slider="home">
   <ul id="featured-project-slider" class="featured-project-slider slider list-reset h-9/10 md:h-full">
     <?php foreach( $tb_featured_projects as $i => $project ) : ?>
-      <li class="h-full w-screen bg-center bg-cover bg-no-repeat" style="background-image: url(<?php the_field( 'tb_project_hero_img', $project['project']); ?>); ?>"></li>
+      <li class="h-full w-screen bg-center bg-cover bg-no-repeat" style="background-image: url(<?php the_field( 'tb_project_featured_img', $project['project']); ?>); ?>"></li>
     <?php endforeach; ?>
   </ul>
   <div class="featured-project-nav flex flex-col lg:flex-row justify-between items-start lg:items-center p-8 absolute pin-b pin-l pin-r z-30">
