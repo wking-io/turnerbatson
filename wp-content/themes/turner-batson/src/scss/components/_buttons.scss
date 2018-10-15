@@ -88,6 +88,10 @@
     fill: $black;
   }
 
+  &-secondary:hover &-arrow-fill {
+    fill: $white;
+  }
+
   &-next {
     transform: rotate(180deg);
     margin: 0 0 0 -5px;

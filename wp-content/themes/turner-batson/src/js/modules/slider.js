@@ -58,9 +58,10 @@ export function initHomeSlider(context) {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 7500,
-    speed: 300,
-    fade: true,
-    cssEase: 'linear',
+    speed: 500,
+    vertical: true,
+    useTransform: true,
+    cssEase: 'cubic-bezier(0.0, 0.86, 0.9, 1)',
     rows: 0,
     pauseOnHover: false,
     pauseOnFocus: false,
@@ -90,6 +91,8 @@ export function initLatestSlider(context) {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 5000,
+    useTransform: true,
+    cssEase: 'cubic-bezier(0.0, 0.86, 0.9, 1)',
   };
 
   unslickWhen(() => $(window).width() < 768, $slickSlider, settings);
@@ -132,7 +135,8 @@ export function initFeaturedSlider(context) {
     arrows: false,
     rows: 0,
     autoplaySpeed: 7500,
-    cssEase: 'ease-in-out',
+    useTransform: true,
+    cssEase: 'cubic-bezier(0.0, 0.86, 0.9, 1)',
     asNavFor: `${context} .slider-sub`,
   });
 
@@ -165,6 +169,8 @@ export function initProjectSlider(context) {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 5000,
+    useTransform: true,
+    cssEase: 'cubic-bezier(0.0, 0.86, 0.9, 1)',
     rows: false,
   });
 
