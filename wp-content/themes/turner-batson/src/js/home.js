@@ -7,7 +7,9 @@ import fromTop from './modules/fromTop';
 
 const hero = dom('#hero');
 const navName = dom('#masthead .branding');
-runAndListen(() => show(hero.offsetHeight, navName), 'scroll', window);
+if (window.innerWidth > 992) {
+  runAndListen(() => show(hero.offsetHeight, navName), 'scroll', window);
+}
 
 initHomeSlider('[data-slider="home"]');
 initLatestSlider('[data-slider="latest"]');
@@ -16,50 +18,50 @@ const growers = domAll('[data-grow]').map(grow);
 growers.forEach(grower => runAndListen(grower, 'scroll', window));
 
 const logo = dom('[data-sticky]');
-const nav = dom('[data-sticky-ref');
+const nav = dom('[data-sticky-ref]');
 const name = dom('.branding-name');
 
 export function stick(el, ref, name) {
-  if (window.innerWidth > 992) {
     return function() {
-      requestAnimationFrame(() => {
-        const isReady =
-          fromTop(ref) <=
-          parseInt(withDefault('0', 'stickyBuffer', el.dataset));
+      if (window.innerWidth > 992) {
+        requestAnimationFrame(() => {
+          const isReady =
+            fromTop(ref) <=
+            parseInt(withDefault('0', 'stickyBuffer', el.dataset));
 
-        if (isReady) {
-          const top = withDefault('auto', 'stickyTop', el.dataset);
-          const left = withDefault('auto', 'stickyLeft', el.dataset);
+          if (isReady) {
+            const top = withDefault('auto', 'stickyTop', el.dataset);
+            const left = withDefault('auto', 'stickyLeft', el.dataset);
 
-          el.style.position = 'fixed';
-          el.style.top = top;
-          el.style.left = left;
+            el.style.position = 'fixed';
+            el.style.top = top;
+            el.style.left = left;
 
-          const opacity = 1 - (88 - fromTop(name)) / 20;
-          name.style.opacity = opacity;
+            const opacity = 1 - (88 - fromTop(name)) / 20;
+            name.style.opacity = opacity;
 
-          const fromTopFixed = fromTop(ref) + 100;
-          const fromFinal = (132 - fromTopFixed) / 132;
-          if (fromFinal >= 1) {
-            el.style.top = '20px';
-            el.style.left = '20px';
-            el.style.width = '32px';
-            el.classList.add('opacity-0');
+            const fromTopFixed = fromTop(ref) + 100;
+            const fromFinal = (132 - fromTopFixed) / 132;
+            if (fromFinal >= 1) {
+              el.style.top = '20px';
+              el.style.left = '20px';
+              el.style.width = '32px';
+              el.classList.add('opacity-0');
+            } else {
+              el.style.top = `${32 - fromFinal * 12}px`;
+              el.style.left = `${32 - fromFinal * 12}px`;
+              el.style.width = `${40 - fromFinal * 8}px`;
+              el.classList.add('opacity-100');
+            }
           } else {
-            el.style.top = `${32 - fromFinal * 12}px`;
-            el.style.left = `${32 - fromFinal * 12}px`;
-            el.style.width = `${40 - fromFinal * 8}px`;
-            el.classList.add('opacity-100');
+            el.style.position = 'absolute';
+            el.style.top = '0px';
+            el.style.left = '0px';
+            name.style.opacity = '1';
           }
-        } else {
-          el.style.position = 'absolute';
-          el.style.top = '0px';
-          el.style.left = '0px';
-          name.style.opacity = '1';
-        }
-      });
+        });
+      }
     };
-  }
 }
 
 runAndListen(stick(logo, nav, name), 'scroll', window);
@@ -68,8 +70,8 @@ const tagline = dom('.culture-info');
 const wrapper = dom('.culture-bg');
 
 function moveTagline(tagline, wrapper) {
-  if (window.innerWidth > 992) {
-    return function() {
+  return function() {
+    if (window.innerWidth > 992) {
       requestAnimationFrame(() => {
         const wrapperTop = fromTop(wrapper);
         const wrapperCenter = wrapperTop + wrapper.offsetHeight / 2;
@@ -87,8 +89,8 @@ function moveTagline(tagline, wrapper) {
           tagline.style.transform = `translateY(-${base}%)`;
         }
       });
-    };
-  }
+    }
+  };
 }
 
 runAndListen(moveTagline(tagline, wrapper), 'scroll', window);
@@ -96,8 +98,8 @@ runAndListen(moveTagline(tagline, wrapper), 'scroll', window);
 const quote = dom('.culture-testimonial');
 
 function moveQuote(quote) {
-  if (window.innerWidth > 992) {
-    return function() {
+  return function() {
+    if (window.innerWidth > 992) {
       requestAnimationFrame(() => {
         const quoteTop = fromTop(quote);
         const buffer = window.innerHeight * 0.75;
@@ -123,8 +125,8 @@ function moveQuote(quote) {
           quote.style.transform = 'translateX(20px)';
         }
       });
-    };
-  }
+    }
+  };
 }
 
 runAndListen(moveQuote(quote), 'scroll', window);

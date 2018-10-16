@@ -52,10 +52,10 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
     </div>
     <div class="featured-projects-slider slider hidden lg:block w-full overflow-hidden relative">
       <?php foreach( $tb_featured_projects->posts as $featured_project ) : ?>
-        <div class="featured-projects-img lg:hidden bg-cover bg-no-repeat bg-center h-full" style="background-image: url(<?php the_field( 'tb_project_featured_img', $featured_project->ID ); ?>);"></div>
+        <div class="featured-projects-img lg:hidden bg-cover bg-no-repeat bg-center h-full relative" style="background-image: url(<?php the_field( 'tb_project_featured_img', $featured_project->ID ); ?>);"><a href="<?php echo get_permalink( $tb_featured_project_solo->ID ); ?>" class="absolute"></a></div>
       <?php endforeach; ?>
     </div>
-    <div class="featured-projects-img lg:hidden bg-cover bg-no-repeat bg-center h-full" style="background-image: linear-gradient(to top, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 55%), url(<?php the_field( 'tb_project_featured_img', $tb_featured_project_solo->ID ); ?>);"></div>
+    <div class="featured-projects-img lg:hidden bg-cover bg-no-repeat bg-center h-full relative" style="background-image: linear-gradient(to top, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 55%), url(<?php the_field( 'tb_project_featured_img', $tb_featured_project_solo->ID ); ?>);"><a href="<?php echo get_permalink( $tb_featured_project_solo->ID ); ?>" class="absolute pin"></a></div>
   </div>
   <div class="featured-projects-nav border-t border-b border-primary z-20">
     <div class="lg:hidden h-full">

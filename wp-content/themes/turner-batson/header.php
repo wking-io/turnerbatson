@@ -37,7 +37,7 @@ $connect = is_page( 'connect' ) ? ' connect' : '';
 		<h1 class="branding relative z-50">
 			<div class="flex items-center">
 				<a class="h-8 w-8" href="<?php echo home_url(); ?>"><?php echo do_shortcode( '[logo classname="w-full h-full"]' ); ?></a>
-				<button class="page-name ml-2 text-base md:text-md uppercase font-medium name-toggle" aria-expanded="false"><?php echo get_page_name( $post_type ); ?></button>
+				<button class="page-name ml-2 text-base md:text-md uppercase font-medium name-toggle<?php echo is_front_page() ? ' opacity-0' : ''; ?>" aria-expanded="false"><?php echo get_page_name( $post_type ); ?></button>
 			</div>
 		</h1>
 
@@ -50,8 +50,8 @@ $connect = is_page( 'connect' ) ? ' connect' : '';
 			</button>
 		
 			<div class="menu-wrapper flex flex-col justify-end items-center fixed pin z-30 bg-black p-6 overflow-hidden w-screen">
-				<?php wp_nav_menu( array( 'theme_location' => 'menu-main', 'menu_id' => 'primary-menu', 'menu_class' => 'list-reset flex flex-col justify-end items-between flex-wrap menu-item-list w-full p-8 m-0', 'container' => false ) ); ?>
-				<div class="menu-aside flex justify-between items-center w-full text-white p-8 m-0">
+				<?php wp_nav_menu( array( 'theme_location' => 'menu-main', 'menu_id' => 'primary-menu', 'menu_class' => 'list-reset flex flex-col justify-end items-between flex-wrap menu-item-list w-full p-8 pb-4 sm:pb-8 m-0', 'container' => false ) ); ?>
+				<div class="menu-aside flex justify-between items-center w-full text-white py-4 px-8 sm:p-8 m-0">
 					<p class="menu-tagline uppercase fixed lg:static font-medium leading-none">People. Passion. Purpose</p>
 					<p class="leading-none font-medium hidden lg:block"><?php the_field('tb_company_address', 'options' ); ?></p>
 					<?php if ( is_active_sidebar( 'social-widget-area' ) ) {

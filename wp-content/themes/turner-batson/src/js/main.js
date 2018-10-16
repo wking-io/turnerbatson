@@ -16,7 +16,9 @@ const navName = dom('.page-name');
 const navToggle = dom('.menu-toggle');
 const nameToggle = dom('.name-toggle');
 
-runAndListen(() => hide(10, navName), 'scroll', window);
+if (window.location.pathname !== '/') {
+  runAndListen(() => hide(10, navName), 'scroll', window);
+}
 
 // Toggle Nav
 const toggleNavOnEvent = wrapEvent(toggleClass, ['nav--open', nav]);

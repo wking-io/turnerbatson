@@ -59,8 +59,14 @@
 }
 
 .featured-project-slider .slick-slide {
-  height: 100vh;
+  height: 70vh;
   width: 100%;
+}
+
+@include media('>=#{$md}') {
+  .featured-project-slider .slick-slide {
+    height: 95vh;
+  }
 }
 
 .featured-project-nav {
