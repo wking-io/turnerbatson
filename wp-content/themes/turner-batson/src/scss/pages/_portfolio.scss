@@ -20,7 +20,7 @@
       width: 100%;
       top: 55%;
       transform: translateY(-50%);
-      left: 8rem;
+      left: 24rem;
     }
 
     &--category {
@@ -63,19 +63,21 @@
 }
 
 .featured-projects-slider {
-  &:after {
-    @apply absolute pin;
-    content: '';
-    background-image: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0) 45%
-    );
-  }
-
   & .slick-slide {
     height: calc((100vh - 58px) * 0.75);
     margin-bottom: 8rem;
+
+    & > a {
+      left: -1px;
+      top: -1px;
+      bottom: -1px;
+      right: -1px;
+      background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0) 45%
+      );
+    }
   }
 }
 

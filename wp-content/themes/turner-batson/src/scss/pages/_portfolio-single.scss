@@ -62,6 +62,9 @@
 }
 
 @include media('>=#{$lg}') {
+  .project-header {
+    height: 96vh;
+  }
   .project-nav {
     right: 0;
     top: 0;
