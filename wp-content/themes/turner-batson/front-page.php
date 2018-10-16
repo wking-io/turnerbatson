@@ -56,7 +56,7 @@ $tb_latest_news = new WP_Query( array(
   </div>
 </section>
 
-<section id="purpose" class="purpose relative pt-8 lg:pt-jumbo">
+<section id="purpose" class="purpose relative pt-8 lg:pt-jumbo bg-white">
   <span class="purpose-bar" data-grow data-grow-buffer="0.5"></span>
   <div class="flex flex-col lg:flex-row justify-between items-center">
     <div class="purpose-video relative w-full lg:w-3/5 aspect-16:9">

@@ -59,7 +59,7 @@ export function initHomeSlider(context) {
     })
     .slick('slickPause');
 
-  const initDelay = 2200;
+  const initDelay = window.innerWidth > 922 ? 2200 : 0;
 
   setTimeout(function() {
     $(`${context} .slider`).slick('slickPlay');

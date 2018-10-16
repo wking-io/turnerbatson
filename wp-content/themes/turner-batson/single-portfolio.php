@@ -20,7 +20,7 @@ while ( have_posts() ) : the_post(); ?>
 
   <section class="flex flex-col project-header justify-end lg:h-screen pt-nav lg:pt-0">
     <div class="project-feature h-full bg-cover bg-no-repeat bg-center" style="background-image: linear-gradient(to bottom, rgba(63, 66, 67, .6), rgba(63, 66, 67, 0) 30%), url('<?php echo $tb_featured_img; ?>');"></div>
-    <div class="wrapper"><h1 class="project-heading relative text-lg lg:text-xl xl:text-3xl uppercase font-bold py-8 pl-6"><?php the_title(); ?></h1></div>
+    <div class="wrapper relative"><h1 class="project-heading relative text-lg lg:text-xl xl:text-3xl uppercase font-bold py-8 pl-6"><?php the_title(); ?></h1><div class="project-bar"></div></div>
   </section>
 
   <section class="flex flex-col" data-slider="project">

@@ -1,15 +1,26 @@
-.project-header {
-  height: 85vh;
+@keyframes grow {
+  from {
+    transform-origin: top center;
+    transform: scaleY(0);
+  }
+  to {
+    transform-origin: top center;
+    transform: scaleY(1);
+  }
 }
 
-.project-heading:after {
-  content: '';
+.project-bar {
   position: absolute;
   left: 0;
   width: 1rem;
   background-color: $primary;
   bottom: 50%;
   height: 55rem;
+  animation: grow 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s 1 both;
+}
+
+.project-header {
+  height: 85vh;
 }
 
 .project-nav {
@@ -35,8 +46,7 @@
 }
 
 @include media('>=#{$md}') {
-  .project-heading:after {
-    content: '';
+  .project-bar {
     position: absolute;
     left: 0;
     width: 1rem;
