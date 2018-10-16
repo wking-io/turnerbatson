@@ -104,18 +104,18 @@
   }
 }
 
-.purpose:after {
-  content: '';
+.purpose-bar {
   position: absolute;
   right: 32px;
   background-color: $primary;
   width: 1rem;
   height: 50vw;
   top: 40vw;
+  z-index: 20;
 }
 
 @include media('>=#{$lg}') {
-  .purpose:after {
+  .purpose-bar {
     content: '';
     position: absolute;
     left: 32px;
@@ -157,6 +157,7 @@
 
 .culture-tagline {
   font-size: 12vw;
+  line-height: 1.15;
 }
 
 @include media('>=#{$lg}') {
@@ -182,7 +183,7 @@
   }
 
   .culture-tagline {
-    font-size: 7vw;
+    font-size: 6.5vw;
   }
 
   .culture-testimonial {
