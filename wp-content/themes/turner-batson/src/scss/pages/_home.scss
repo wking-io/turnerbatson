@@ -65,7 +65,7 @@
 
 @include media('>=#{$md}') {
   .featured-project-slider .slick-slide {
-    height: 95vh;
+    height: 100vh;
   }
 }
 

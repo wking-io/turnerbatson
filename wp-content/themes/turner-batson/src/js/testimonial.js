@@ -14,10 +14,18 @@ function stopAtBottom(wrapper) {
 
   return function() {
     const infoBreak = fromTop(info) + info.offsetHeight;
+    const infoCenter = fromTop(info) + (info.offsetHeight / 2);
     const itemsBreak = fromTop(items) + items.offsetHeight - 96;
     const isDone = infoBreak >= itemsBreak;
+    const isAbove = infoCenter > window.innerHeight / 2
 
-    if (isDone) {
+
+    if (isAbove) {
+      info.style.position = 'fixed';
+      info.style.top = '50%';
+      info.style.bottom = 'auto';
+      info.style.transform = 'translateY(-50%)';
+    } else if (isDone) {
       info.style.position = 'absolute';
       info.style.top = 'auto';
       info.style.bottom = '96px';

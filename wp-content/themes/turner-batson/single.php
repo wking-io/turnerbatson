@@ -1,6 +1,7 @@
 <?php
 
 $author_id = get_field( 'tb_news_author' );
+$author_name = get_the_title( $author_id );
 $author_title = get_field( 'tb_team_role', $author_id );
 $date = get_the_date( 'F j, Y' );
 
@@ -15,7 +16,7 @@ get_header();
           <h1 class="news-title text-md md:text-xl pb-8"><?php the_title(); ?></h1>
           <div class="flex mb-8 lg:hidden">
             <div class="flex-1">
-              <p class="mb-1"><strong><?php echo get_the_author(); ?></strong></p>
+              <p class="mb-1"><strong><?php echo $author_name; ?></strong></p>
               <p class="mb-1"><?php echo $author_title; ?></p>
               <p><?php echo $date; ?></p>
             </div>
@@ -42,7 +43,7 @@ get_header();
       </div>
       <div class="hidden lg:flex lg:flex-col lg:text-right lg:mr-8 lg:flex-no-shrink">
         <div class="flex-1 lg:mb-4">
-          <p class="mb-1"><strong><?php echo get_the_author(); ?></strong></p>
+          <p class="mb-1"><strong><?php echo $author_name; ?></strong></p>
           <p class="mb-1"><?php echo $author_title; ?></p>
           <p><?php echo $date; ?></p>
         </div>
