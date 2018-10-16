@@ -14,16 +14,23 @@ import togglePopup from './modules/popup';
 const nav = dom('#masthead');
 const navName = dom('.page-name');
 const navToggle = dom('.menu-toggle');
+const nameToggle = dom('.name-toggle');
 
 runAndListen(() => hide(10, navName), 'scroll', window);
 
 // Toggle Nav
 const toggleNavOnEvent = wrapEvent(toggleClass, ['nav--open', nav]);
-const toggleExpandedOnEvent = wrapEvent(toggleAttr, [
+const toggleExpandedOnNav = wrapEvent(toggleAttr, [
   'aria-expanded',
   navToggle,
 ]);
-eventOn('click', compose(toggleExpandedOnEvent, toggleNavOnEvent), navToggle);
+const toggleExpandedOnName = wrapEvent(toggleAttr, [
+  'aria-expanded',
+  nameToggle,
+]);
+const menuPipeline = compose(toggleExpandedOnNav, toggleExpandedOnName, toggleNavOnEvent);
+eventOn('click', menuPipeline, navToggle);
+eventOn('click', menuPipeline, nameToggle);
 
 // Popups
 const popups = domAll('[data-popup-action]');

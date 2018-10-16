@@ -48,7 +48,7 @@ export function initHomeSlider(context) {
       slidesToScroll: 1,
       arrows: false,
       autoplay: true,
-      autoplaySpeed: 7500,
+      autoplaySpeed: 3000,
       speed: 500,
       vertical: true,
       useTransform: true,
@@ -59,7 +59,7 @@ export function initHomeSlider(context) {
     })
     .slick('slickPause');
 
-  const initDelay = window.innerWidth > 922 ? 2200 : 0;
+  const initDelay = window.innerWidth > 922 ? 2000 : 0;
 
   setTimeout(function() {
     $(`${context} .slider`).slick('slickPlay');

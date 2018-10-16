@@ -125,7 +125,7 @@ function job_content() {
       <ul class="list-reset flex flex-col md:flex-row md:flex-wrap md:justify-between">
         <?php while ( $tb_careers->have_posts() ) : $tb_careers->the_post(); ?>
             <li class="career-item bg-primary hover:bg-black text-white p-6 pt-8 mb-6 rounded">
-              <h4 class="text-md pt-8"><?php the_title(); ?></h4>
+              <h4 class="text-md pt-8 mb-1"><?php the_title(); ?></h4>
               <p><a class="text-white hover:no-underline" href="<?php the_field( 'tb_career_description_link', get_the_ID() ); ?>">View Full Description</a></p>
             </li>
         <?php endwhile; ?>

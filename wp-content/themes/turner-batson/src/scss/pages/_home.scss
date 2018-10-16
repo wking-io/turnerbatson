@@ -33,23 +33,23 @@
 
 @include media('>=#{$md}') {
   [data-initializing='true'] .featured-project-nav {
-    animation: extendBar 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s 1 both;
+    animation: extendBar 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s 1 both;
   }
 
   [data-initializing='true'] .branding {
-    animation: inAndRight 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 1.2s 1 both;
+    animation: inAndRight 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 1s 1 both;
   }
 
   [data-initializing='true'] .featured-project-slider-nav-item:first-child {
-    animation: inAndUp 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 1.4s 1 both;
+    animation: inAndUp 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 1.2s 1 both;
   }
 
   [data-initializing='true'] .featured-project-slider-nav-item {
-    animation: inAndUp 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 1.6s 1 both;
+    animation: inAndUp 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 1.4s 1 both;
   }
 
   [data-initializing='true'] .featured-project-slider-nav-item:last-child {
-    animation: inAndUp 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 1.8s 1 both;
+    animation: inAndUp 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 1.6s 1 both;
   }
 }
 
@@ -102,7 +102,7 @@
 .active-item .featured-project-slider-indicator {
   & span:last-child {
     width: 4px;
-    animation: timer 7.5s linear 0s 1 both;
+    animation: timer 3s linear 0s 1 both;
   }
 }
 
@@ -172,7 +172,7 @@
     height: 168px;
 
     & > div {
-      transform: scaleY(5.5) translateY(-3rem);
+      transform: scaleY(4.23) translateY(-3rem);
       transform-origin: top;
     }
   }
@@ -190,7 +190,7 @@
 
   .culture-testimonial {
     max-width: 180rem;
-    margin-bottom: 72px;
+    margin-bottom: 272px;
   }
 }
 

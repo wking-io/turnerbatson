@@ -1,5 +1,5 @@
 .page-name {
-  transition: all #{$animation-base} ease-in;
+  transition: all 0.1s ease-in;
 }
 
 .nav--open .page-name {

@@ -44,7 +44,6 @@ get_header(); ?>
           )
         ); 
         ?>
-        <div class="absolute pin" style="background-image: linear-gradient(rgba(63, 66, 67, 0.4), rgba(63, 66, 67, 0.4));"></div>
     </div>
   <?php else : ?>
     <div class="aspect-4:3 bg-cover bg-no-repeat bg-center" style="background-image: linear-gradient(rgba(63, 66, 67, 0.4), rgba(63, 66, 67, 0.4)), url('<?php echo $tb_hero_content; ?>');"></div>

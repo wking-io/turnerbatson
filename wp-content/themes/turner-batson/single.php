@@ -8,7 +8,7 @@ get_header();
   while ( have_posts() ) : the_post(); ?>
 
   <section class="pt-nav lg:pt-0">
-    <div class="aspect-16:9 lg:aspect-2:1 bg-cover bg-no-repeat bg-center" style="background-image: url('<?php echo get_the_post_thumbnail_url( $id, 'full' ); ?>');"></div>
+    <div class="aspect-16:9 lg:aspect-3:1 bg-cover bg-no-repeat bg-center" style="background-image: url('<?php echo get_the_post_thumbnail_url( $id, 'full' ); ?>');"></div>
     <div class="wrapper flex flex-col lg:flex-row-reverse lg:justify-between lg:items-start py-8 lg:mt-8">
       <div>
         <div class="flex flex-col">
@@ -41,7 +41,7 @@ get_header();
         </div>
       </div>
       <div class="hidden lg:flex lg:flex-col lg:text-right lg:mr-8 lg:flex-no-shrink">
-        <div class="flex-1 lg:mb-2">
+        <div class="flex-1 lg:mb-4">
           <p class="mb-1"><strong><?php echo get_the_author(); ?></strong></p>
           <p class="mb-1"><?php echo $author_title; ?></p>
           <p><?php echo $date; ?></p>

@@ -29,7 +29,7 @@ $tb_latest_news = new WP_Query( array(
       <li class="h-full w-screen bg-center bg-cover bg-no-repeat" style="background-image: url(<?php the_field( 'tb_project_featured_img', $project['project']); ?>); ?>"></li>
     <?php endforeach; ?>
   </ul>
-  <div class="featured-project-nav flex flex-col lg:flex-row justify-between items-start lg:items-center p-8 absolute pin-b pin-l pin-r z-30">
+  <div class="featured-project-nav flex flex-col lg:flex-row justify-between items-start lg:items-center p-8 xl:pb-4 absolute pin-b pin-l pin-r z-30">
     <div class="branding flex flex-col items-start justify-start mb-8 lg:mb-0 lg:mr-4 relative">
       <?php echo do_shortcode( '[logo classname="absolute branding-logo hidden lg:block w-10 mb-4 h-auto" sticky="true"]' ); ?>
       <div class="hidden lg:block w-10 mb-4 h-10" data-sticky-ref></div>
@@ -83,9 +83,9 @@ $tb_latest_news = new WP_Query( array(
 </section>
 
 <section id="culture" class="">
-  <div class="mx-8 culture-accent relative z-30"><div class="w-1 h-full bg-primary lg:absolute lg:pin-t lg:pin-r" data-grow data-grow-buffer="0.25"></div></div>
+  <div class="mx-8 culture-accent relative z-30"><div class="w-1 h-full bg-primary lg:absolute lg:pin-t lg:pin-r" data-grow data-grow-buffer="0.05"></div></div>
   <div class="relative">
-    <div class="culture-bg bg-cover bg-fixed bg-center p-8 mb-8" style="background-image: linear-gradient(rgba(63, 66, 67, 0.2), rgba(63, 66, 67, 0.2)), url(<?php echo $tb_culture_bg; ?>);">
+    <div class="culture-bg bg-cover bg-fixed bg-center p-8 mb-8" style="background-image: linear-gradient(rgba(63, 66, 67, 0.35), rgba(63, 66, 67, 0.15)), url(<?php echo $tb_culture_bg; ?>);">
       <div class="culture-info xl:ml-8 xl:pl-8">
         <h2 class="culture-tagline text-white mb-6 uppercase"><?php echo do_shortcode( '[tagline theme="stack"]' ); ?></h2>
         <a href="<?php echo $tb_culture_button_link; ?>" class="button"><?php echo $tb_culture_button_text; ?></a>

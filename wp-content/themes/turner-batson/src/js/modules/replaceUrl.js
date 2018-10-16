@@ -1,8 +1,9 @@
 import withDefault from './withDefault';
 
 export default function replaceUrl(el) {
-  const url = withDefault(false, 'theUrl', el.dataset);
+  const url = encodeURIComponent(window.location.href);
+  const base = el.getAttribute('href');
   if (url) {
-    el.setAttribute('data-the-url', url);
+    el.setAttribute('href', base + url);
   }
 }

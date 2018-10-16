@@ -28,3 +28,7 @@
     margin-left: 174px;
   }
 }
+
+.gm-style > div:first-child > div:last-child {
+  display: none !important;
+}

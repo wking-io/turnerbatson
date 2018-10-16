@@ -37,7 +37,7 @@ $connect = is_page( 'connect' ) ? ' connect' : '';
 		<h1 class="branding relative z-50">
 			<div class="flex items-center">
 				<a class="h-8 w-8" href="<?php echo home_url(); ?>"><?php echo do_shortcode( '[logo classname="w-full h-full"]' ); ?></a>
-				<span class="page-name ml-2 text-base md:text-md uppercase font-medium"><?php echo get_page_name( $post_type ); ?></span>
+				<button class="page-name ml-2 text-base md:text-md uppercase font-medium name-toggle" aria-expanded="false"><?php echo get_page_name( $post_type ); ?></button>
 			</div>
 		</h1>
 

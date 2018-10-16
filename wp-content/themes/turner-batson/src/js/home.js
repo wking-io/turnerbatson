@@ -67,7 +67,7 @@ runAndListen(stick(logo, nav, name), 'scroll', window);
 const tagline = dom('.culture-info');
 const wrapper = dom('.culture-bg');
 
-function moveTagline(tagline, quote, wrapper) {
+function moveTagline(tagline, wrapper) {
   if (window.innerWidth > 992) {
     return function() {
       requestAnimationFrame(() => {
@@ -77,32 +77,21 @@ function moveTagline(tagline, quote, wrapper) {
         const isVisible = wrapperTop < window.innerHeight;
         const isAbove = wrapperCenter < windowCenter;
         const base = 35;
-        const quoteBase = 20;
-        const blurBase = 5;
 
         if (isAbove) {
           tagline.style.transform = `translateY(-50%)`;
-          quote.style.filter = 'blur(0px)';
-          quote.style.opacity = '1';
-          quote.style.transform = 'translateX(0)';
         } else if (isVisible) {
           const percent = -(1 - wrapperCenter / windowCenter);
           tagline.style.transform = `translateY(-${base + base * percent}%)`;
-          quote.style.transform = `translateX(${quoteBase * percent}px)`;
-          quote.style.opacity = `${1 - percent}`;
-          quote.style.filter = `blur(${blurBase * percent})`;
         } else {
           tagline.style.transform = `translateY(-${base}%)`;
-          quote.style.filter = 'blur(5px)';
-          quote.style.opacity = '0';
-          quote.style.transform = 'translateX(20px)';
         }
       });
     };
   }
 }
 
-runAndListen(moveTagline(tagline, quote, wrapper), 'scroll', window);
+runAndListen(moveTagline(tagline, wrapper), 'scroll', window);
 
 const quote = dom('.culture-testimonial');
 

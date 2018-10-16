@@ -13,6 +13,15 @@
   @apply leading-normal mb-4;
 }
 
+.news-content a {
+  @apply text-primary;
+}
+
+.news-content .aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
 .news-pagination > a {
   width: calc(50% - 2rem);
 }
