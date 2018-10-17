@@ -45,7 +45,7 @@ while ( have_posts() ) : the_post(); ?>
     </ul>
   </section>
 
-  <section class="project-content py-8">
+  <section class="project-content general-content py-8">
     <?php the_content(); ?>
     <a class="button-outline-primary my-8" href="<?php echo home_url( '/portfolio#projects' ); ?>">Back To Portfolio</a>
   </section>

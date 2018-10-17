@@ -41,23 +41,6 @@
   margin-right: 5vw;
 }
 
-.project-content p {
-  @apply mb-4 leading-normal;
-}
-
-.project-content li {
-  margin-bottom: 2rem;
-}
-
-.project-content h1,
-.project-content h2,
-.project-content h3,
-.project-content h4,
-.project-content h5,
-.project-content h6, {
-  margin-bottom: 4rem;
-}
-
 @include media('>=#{$md}') {
   .project-bar {
     position: absolute;

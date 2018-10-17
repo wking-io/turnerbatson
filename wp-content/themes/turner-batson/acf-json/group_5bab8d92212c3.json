@@ -81,6 +81,38 @@
             "maxlength": ""
         },
         {
+            "key": "field_5bc77160083c1",
+            "label": "Hero Video Poster",
+            "name": "tb_culture_hero_video_poster",
+            "type": "image",
+            "instructions": "This is the image that shows until the video is fully loaded",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bab8db43f559",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5bab8e553f55c",
             "label": "Hero Heading",
             "name": "tb_culture_hero_heading",
@@ -266,5 +298,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1539285039
+    "modified": 1539797413
 }

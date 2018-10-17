@@ -39,4 +39,6 @@ function stopAtBottom(wrapper) {
   }
 }
 
-runAndListen(stopAtBottom(wrapper), 'scroll', window);
+if (window.innerWidth >= 992) {
+  runAndListen(stopAtBottom(wrapper), 'scroll', window);
+}

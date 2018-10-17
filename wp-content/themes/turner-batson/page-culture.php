@@ -2,6 +2,7 @@
 
 $is_video = get_field( 'is_culture_hero_a_video' );
 $tb_hero_content = $is_video ? get_field( 'tb_culture_hero_video' ) : get_field( 'tb_culture_hero_img' );
+$tb_hero_poster = get_field( 'tb_culture_hero_video_poster' );
 $tb_culture_hero_heading = get_field( 'tb_culture_hero_heading' );
 $tb_culture_scroll_text = get_field( 'tb_culture_scroll_text' );
 $tb_culture_content_heading = get_field( 'tb_culture_content_heading' );
@@ -41,6 +42,7 @@ get_header(); ?>
             "fallback_content" => "Your browser does not support HTML5 video tags",
             "width" => 1000,
             "crop" => "fit",
+            "poster" => $tb_hero_poster,
           )
         ); 
         ?>

@@ -1,16 +1,16 @@
+.featured-news {
+  & > .news-item {
+    width: 100%;
+  }
+
+  & .news-img {
+    @include aspect-ratio(16, 9);
+  }
+}
+
 @include media('>=#{$md}') {
   .news-item {
     width: calc(50% - 4rem);
-  }
-
-  .featured-news {
-    & > .news-item {
-      width: 100%;
-    }
-
-    & .news-img {
-      @include aspect-ratio(16, 9);
-    }
   }
 }
 

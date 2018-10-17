@@ -5,6 +5,7 @@ get_header();
 // DATA
 $tb_featured_projects = get_field( 'tb_portfolio_slider' );
 $tb_purpose_video = get_field( 'tb_purpose_video' );
+$tb_purpose_video_poster = get_field( 'tb_purpose_video_poster' );
 $tb_purpose_description = get_field( 'tb_purpose_description' );
 $tb_purpose_button_text = get_field( 'tb_purpose_button_text' );
 $tb_purpose_button_link = get_field( 'tb_purpose_button_link' );
@@ -23,16 +24,16 @@ $tb_latest_news = new WP_Query( array(
 
 ?>
 
-<section id="hero" class="relative h-2/3 md:h-screen" data-initializing="true" data-slider="home">
+<section id="hero" class="relative h-17/20 md:h-screen" data-initializing="true" data-slider="home">
   <ul id="featured-project-slider" class="featured-project-slider slider list-reset h-9/10 md:h-full">
     <?php foreach( $tb_featured_projects as $i => $project ) : ?>
-      <li class="h-full w-screen bg-center bg-cover bg-no-repeat" style="background-image: url(<?php the_field( 'tb_project_featured_img', $project['project']); ?>); ?>"></li>
+      <li class="h-full w-screen bg-center bg-cover bg-no-repeat relative" style="background-image: url(<?php the_field( 'tb_project_featured_img', $project['project']); ?>); ?>"><a href="<?php echo get_the_permalink( $project['project'] ); ?>" class="absolute pin"></a></li>
     <?php endforeach; ?>
   </ul>
-  <div class="featured-project-nav flex flex-col lg:flex-row justify-between items-start lg:items-center p-8 xl:pb-4 absolute pin-b pin-l pin-r z-30">
-    <div class="branding flex flex-col items-start justify-start mb-8 lg:mb-0 lg:mr-4 relative">
-      <?php echo do_shortcode( '[logo classname="absolute branding-logo hidden lg:block w-10 mb-4 h-auto" sticky="true"]' ); ?>
-      <div class="hidden lg:block w-10 mb-4 h-10" data-sticky-ref></div>
+  <div class="featured-project-nav flex flex-col lg:flex-row justify-between items-start lg:items-center lg:p-6 xl:pb-4 absolute pin-b pin-l pin-r z-30">
+    <div class="branding flex flex-col items-start justify-start mb-6 lg:mb-0 lg:mr-4 relative">
+      <?php echo do_shortcode( '[logo classname="absolute branding-logo hidden lg:block w-10 mb-3 h-auto" sticky="true"]' ); ?>
+      <div class="hidden lg:block w-10 mb-3 h-10" data-sticky-ref></div>
       <?php echo do_shortcode( '[name classname="h-3 branding-name" in-color="true" ]' ); ?>
     </div>
     <ul class="featured-project-slider-nav-items flex justify-between lg:justify-end items-center flex-1 list-reset relative w-full lg:w-auto lg:ml-8">
@@ -43,10 +44,14 @@ $tb_latest_news = new WP_Query( array(
               <span class="bg-primary block h-full"></span>
               <span class="bg-primary block absolute pin-l pin-b"></span>
             </div>
-            <button class="text-left p-px" data-slider-button="featured" data-slide-to="<?php echo $i; ?>">
+            <button class="hidden md:block text-left p-px" data-slider-button="featured" data-slide-to="<?php echo $i; ?>">
               <span class="uppercase text-base md:text-sm xl:text-base font-semibold pb-1 block"><?php echo with_default( 'No short title found', 'project_short_title', $project ); ?></span>
               <span class="text-sm m-0 p-0 block"><?php echo with_default( 'No short subtitle found', 'project_short_subtitle', $project ); ?></span>
             </button>
+            <a class="md:hidden text-black no-underline text-left p-px" href="<?php echo get_the_permalink( $project['project'] ); ?>">
+              <span class="uppercase text-base md:text-sm xl:text-base font-semibold pb-1 block"><?php echo with_default( 'No short title found', 'project_short_title', $project ); ?></span>
+              <span class="text-sm m-0 p-0 block"><?php echo with_default( 'No short subtitle found', 'project_short_subtitle', $project ); ?></span>
+            </a>
           </li>
         <?php endforeach;
       else : ?>
@@ -56,7 +61,7 @@ $tb_latest_news = new WP_Query( array(
   </div>
 </section>
 
-<section id="purpose" class="purpose relative pt-8 lg:pt-jumbo bg-white">
+<section id="purpose" class="purpose relative md:pt-8 lg:pt-jumbo bg-white">
   <span class="purpose-bar" data-grow data-grow-buffer="0.5"></span>
   <div class="flex flex-col lg:flex-row justify-between items-center">
     <div class="purpose-video relative w-full lg:w-3/5 aspect-16:9">
@@ -70,6 +75,7 @@ $tb_latest_news = new WP_Query( array(
           "fallback_content" => "Your browser does not support HTML5 video tags",
           "width" => 1000,
           "crop" => "fit",
+          "poster" => $tb_purpose_video_poster,
         )
       ); 
     ?>
@@ -85,7 +91,7 @@ $tb_latest_news = new WP_Query( array(
 <section id="culture" class="">
   <div class="mx-8 culture-accent relative z-30"><div class="w-1 h-full bg-primary lg:absolute lg:pin-t lg:pin-r" data-grow data-grow-buffer="0.05"></div></div>
   <div class="relative">
-    <div class="culture-bg bg-cover bg-fixed bg-center p-8 mb-8" style="background-image: linear-gradient(rgba(63, 66, 67, 0.35), rgba(63, 66, 67, 0.15)), url(<?php echo $tb_culture_bg; ?>);">
+    <div class="culture-bg bg-cover md:bg-fixed bg-center p-8 mb-8" style="background-image: linear-gradient(rgba(63, 66, 67, 0.35), rgba(63, 66, 67, 0.15)), url(<?php echo $tb_culture_bg; ?>);">
       <div class="culture-info xl:ml-8 xl:pl-8">
         <h2 class="culture-tagline text-white mb-6 uppercase"><?php echo do_shortcode( '[tagline theme="stack"]' ); ?></h2>
         <a href="<?php echo $tb_culture_button_link; ?>" class="button"><?php echo $tb_culture_button_text; ?></a>

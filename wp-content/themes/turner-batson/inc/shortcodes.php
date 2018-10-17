@@ -46,7 +46,7 @@ function tb_logo_shortcode( $atts = array() ) {
 	ob_start(); ?>
 
 <?php if ($sticky = ( 'true' === $a['sticky'] ) ) : ?>
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="<?php echo $a['classname']; ?>" data-sticky data-sticky-buffer="32px" data-sticky-top="32px" data-sticky-left="32px">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="<?php echo $a['classname']; ?>" data-sticky data-sticky-buffer="20px" data-sticky-top="20px" data-sticky-left="20px">
 <?php else : ?>
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="<?php echo $a['classname']; ?>">
 <?php endif; ?>

@@ -103,6 +103,30 @@
             "maxlength": ""
         },
         {
+            "key": "field_5bc771151cafd",
+            "label": "Our Purpose Video Poster",
+            "name": "tb_purpose_video_poster",
+            "type": "image",
+            "instructions": "This is the image that will show until the video is loaded fully",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5baa583e2bc20",
             "label": "Our Purpose Description",
             "name": "tb_purpose_description",
@@ -272,5 +296,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1539697874
+    "modified": 1539797426
 }

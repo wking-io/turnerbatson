@@ -48,7 +48,7 @@ export function initHomeSlider(context) {
       slidesToScroll: 1,
       arrows: false,
       autoplay: true,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 4500,
       speed: 500,
       vertical: true,
       useTransform: true,
@@ -161,6 +161,28 @@ export function initFeaturedSlider(context) {
 }
 
 export function initProjectSlider(context) {
+  $(`${context} .slider`).slick({
+    infinite: true,
+    slidesToShow: 2,
+    variableWidth: true,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    useTransform: true,
+    cssEase: 'cubic-bezier(0.0, 0.86, 0.9, 1)',
+    rows: false,
+  });
+
+  $(`${context} [data-slider-prev]`).click(() =>
+    $(`${context} .slider`).slick('slickPrev')
+  );
+  $(`${context} [data-slider-next]`).click(() =>
+    $(`${context} .slider`).slick('slickNext')
+  );
+}
+
+export function initNewsSlider(context) {
   $(`${context} .slider`).slick({
     infinite: true,
     slidesToShow: 2,
