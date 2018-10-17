@@ -247,10 +247,10 @@
         },
         {
             "key": "field_5bab8f3ecae5c",
-            "label": "Content Image",
-            "name": "tb_culture_content_img",
-            "type": "image",
-            "instructions": "",
+            "label": "Content Images",
+            "name": "tb_culture_content_images",
+            "type": "gallery",
+            "instructions": "One of these images below will be selected randomly on every page load so that the page is always a fresh experience. If you do not want to have it pick a random image just add one image",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -258,8 +258,9 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
-            "preview_size": "medium",
+            "min": "",
+            "max": "",
+            "insert": "append",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -298,5 +299,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1539797413
+    "modified": 1539807437
 }

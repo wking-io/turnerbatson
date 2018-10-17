@@ -10,7 +10,8 @@ $tb_culture_content_description = get_field( 'tb_culture_content_description' );
 $tb_culture_people_description = get_field( 'tb_culture_people_description' );
 $tb_culture_passion_description = get_field( 'tb_culture_passion_description' );
 $tb_culture_purpose_description = get_field( 'tb_culture_purpose_description' );
-$tb_culture_content_img = get_field( 'tb_culture_content_img' );
+$tb_culture_content_images = get_field( 'tb_culture_content_images' );
+$random_index = array_rand($tb_culture_content_images);
 
 $tb_culture_ps = array(
   'people' => $tb_culture_people_description,
@@ -65,7 +66,7 @@ get_header(); ?>
       <?php endforeach; ?>
     </ul>
   </div>
-  <div class="culture-img my-8 aspect-16:9 md:aspect-2:1 bg-cover bg-no-repeat bg-center" style="background-image: url('<?php echo $tb_culture_content_img; ?>');"></div>
+  <div class="culture-img my-8 aspect-16:9 md:aspect-2:1 bg-cover bg-no-repeat bg-center" style="background-image: url('<?php echo $tb_culture_content_images[$random_index]['url']; ?>');"></div>
   <div class="wrapper-sm py-8">
     <?php echo job_content(); ?>
   </div>
