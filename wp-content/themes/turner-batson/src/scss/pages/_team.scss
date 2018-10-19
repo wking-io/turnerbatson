@@ -273,7 +273,7 @@
 }
 
 @include media('>=#{1334px}') {
-  .team-bio {
+  .team-item .team-bio {
     left: 600px;
     right: 600px;
 
@@ -295,6 +295,14 @@
       transform: rotate(45deg);
       left: 20rem;
       top: -1.75rem;
+    }
+
+    &-name {
+      font-size: 74px;
+    }
+
+    &-title {
+      font-size: 28px;
     }
   }
 

@@ -185,9 +185,9 @@
         },
         {
             "key": "field_5baa597a2bc24",
-            "label": "Culture Background Image",
-            "name": "tb_culture_bg",
-            "type": "image",
+            "label": "Culture Background Images",
+            "name": "tb_culture_bg_images",
+            "type": "gallery",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
@@ -196,8 +196,9 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
-            "preview_size": "medium",
+            "min": "",
+            "max": "",
+            "insert": "append",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -296,5 +297,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1539797426
+    "modified": 1539976856
 }
