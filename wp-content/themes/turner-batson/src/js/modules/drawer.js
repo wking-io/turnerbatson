@@ -25,7 +25,7 @@ function toggleDrawerAttr(btn, wrapper) {
   wrapper.classList.toggle('drawer--open');
   btn.setAttribute('aria-expanded', !isExpanded);
 
-  if ( isExpanded ) {
+  if (isExpanded) {
     btn.innerHTML = btn.getAttribute('data-open-text');
   } else {
     btn.innerHTML = btn.getAttribute('data-close-text');
@@ -47,6 +47,8 @@ export function setDrawerHeight(wrapper) {
 
 function toggleAllDrawerAttr(btn, wrapper, wrappers) {
   const isExpanded = attrToBool(wrapper, 'data-drawer-expanded');
+  const currentBio = dom('.team-bio', wrapper);
+  const currentSpacer = dom('.team-spacer', wrapper);
 
   wrapper.parentElement.classList.remove(
     'team-container--open',
@@ -56,17 +58,17 @@ function toggleAllDrawerAttr(btn, wrapper, wrappers) {
 
   if (!isExpanded) {
     wrappers.forEach(wrap => {
+      const spacer = dom('.team-spacer', wrap);
       const wrapButton = dom('[data-drawer-action-special]', wrap);
       wrap.setAttribute('data-drawer-expanded', false);
       wrap.classList.remove('drawer--open');
       wrapButton.setAttribute('aria-expanded', false);
+      spacer.style.height = '0px';
     });
     wrapper.parentElement.classList.add('team-container--open');
-    if (wrapper.classList.contains('team-item--right')) {
-      wrapper.parentElement.classList.add('team-container--open-right');
-    } else {
-      wrapper.parentElement.classList.add('team-container--open-left');
-    }
+    currentSpacer.style.height = `${currentBio.offsetHeight + 32}px`;
+  } else {
+    currentSpacer.style.height = '0px';
   }
 
   wrapper.setAttribute('data-drawer-expanded', !isExpanded);

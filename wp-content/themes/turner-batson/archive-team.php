@@ -17,19 +17,17 @@ get_header(); ?>
 <section class="py-8 md:py-jumbo">
   <div class="py-4 wrapper" data-load-more="team">
     <h1 class="uppercase text-lg md:text-xl mb-6 md:mb-8">Meet Our Team</h1>
-    <div class="team-container md:flex md:flex-wrap justify-between relative" data-load-more-container>
+    <ul class="team-container list-reset md:flex md:flex-wrap relative" data-load-more-container>
       <?php if ( have_posts() ) :
-        $i = 1;
         while ( have_posts() ) : the_post();
-          echo team_item( get_the_ID(), $i );
-          $i++;
+          echo team_item( get_the_ID() );
         endwhile;
       else :
         echo no_items( 'team members' );
       endif; ?>
-    </div>
+    </ul>
     <div class="text-center">
-      <button class="button button-lg my-8<?php echo $is_last_page ? ' hidden' : '' ;?>" data-load-more-button data-load-more-loading="false" data-load-page="2">Load More Team Members <?php echo do_shortcode( '[loader]' ); ?></button>
+      <button class="button button-lg my-8<?php echo $is_last_page ? ' hidden' : '' ;?>" data-load-more-button data-load-more-loading="false" data-load-page="2">Load More Team Members<?php echo do_shortcode( '[loader]' ); ?></button>
     </div>
   </div>
 </section>
