@@ -1,3 +1,13 @@
+@include media('height<740px', '<430px') {
+  #hero {
+    height: 89vh;
+  }
+
+  #hero .featured-project-slider .slick-slide {
+    height: 86vh;
+  }
+}
+
 @keyframes extendBar {
   from {
     transform-origin: left center;

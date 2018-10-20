@@ -110,7 +110,7 @@ $tb_latest_news = new WP_Query( array(
   </div>
 </section>
 
-<section id="latest-news" class="pb-8 mt-8 mb-jumbo md:my-jumbo" data-slider="latest">
+<section id="latest-news" class="pb-8 mt-8 mb-8 md:mb-jumbo md:my-jumbo" data-slider="latest">
   <div class="wrapper flex justify-between items-center py-8">
     <h2 class="text-xl uppercase text-bold">The <span class="text-primary">Latest</span></h2>
     <div class="hidden md:flex md:flex-row md:flex-1 md:justify-end md:items-center">
@@ -142,7 +142,7 @@ $tb_latest_news = new WP_Query( array(
 
     ?>
   </div>
-  <a href="" class="md:hidden text-black font-bold text-md block px-8 pt-8">Give me all news</a>
+  <a href="" class="md:hidden button-outline-dark ml-8">Give me all news</a>
 </section>
 
 <?php get_footer();

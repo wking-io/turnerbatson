@@ -12,7 +12,7 @@ get_header(); ?>
 
 <section>
   <div class="wrapper testimonial-wrapper relative lg:flex pt-nav lg:pt-0">
-    <div class="w-full h-screen md:h-auto md:w-3/4 lg:min-w-4xl mb-8 lg:mb-0 lg:mr-8 lg:flex lg:flex-col lg:justify-center relative">
+    <div class="w-full h-auto md:w-3/4 lg:min-w-4xl mb-8 lg:mb-0 lg:mr-8 lg:flex lg:flex-col lg:justify-center relative">
       <div class="lg:fixed lg:max-w-4xl testimonial-info">
         <div class="h-16 lg:hidden"></div>
         <h1 class="text-2xl md:text-3xl mb-4"><?php echo $tb_testimonial_heading; ?></h1>

@@ -128,6 +128,3 @@ function moveQuote(quote) {
 }
 
 runAndListen(moveQuote(quote), 'scroll', window);
-
-const video = dom('.purpose-video video');
-video.play();

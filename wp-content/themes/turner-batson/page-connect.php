@@ -25,7 +25,7 @@ get_header(); ?>
         <p class="mb-1 roman">Phone:</p>
         <p class="mb-6 lg:mb-8 font-bold roman"><a class="text-white no-underline hover:underline" href="tel:<?php echo $tb_comany_phone; ?>"><?php echo $tb_comany_phone; ?></a></p>
         <p class="mb-1 roman">Fax:</p>
-        <p class="mb-6 lg:mb-8 font-bold roman"><?php echo $tb_comany_fax; ?></p>
+        <p class="mb-6 lg:mb-8 font-bold roman text-white"><?php echo $tb_comany_fax; ?></p>
         <p class="mb-1 roman">Email:</p>
         <p class="font-bold roman"><a class="text-white no-underline hover:underline" href="mailto:<?php echo $tb_comany_email; ?>"><?php echo $tb_comany_email; ?></a></p>
       </address>
