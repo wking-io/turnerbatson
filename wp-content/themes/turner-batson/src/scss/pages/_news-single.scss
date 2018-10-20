@@ -1,7 +1,5 @@
-@include media('>=#{$lg}') {
-  h1.news-title {
-    font-size: 3.25vw;
-  }
+.author-name {
+  font-size: 4.5rem;
 }
 
 .news-slider {
@@ -19,7 +17,6 @@
   margin-right: 4rem;
 }
 
-
 @include media('>=#{$md}') {
   .news-slider {
     height: 400px;
@@ -27,6 +24,10 @@
 }
 
 @include media('>=#{$lg}') {
+  h1.news-title {
+    font-size: 3.25vw;
+  }
+
   .news-main {
     width: calc(100% - 200px);
   }

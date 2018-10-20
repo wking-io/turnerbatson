@@ -33,20 +33,22 @@ get_header(); ?>
   </div>
   <?php if ( $is_video ) : ?>
     <div class="culture-video relative overflow-hidden flex-1 lg:aspect-4:3">
-      <?php 
-        echo cl_video_tag( $tb_hero_content, 
-          array(
-            "loop" => true,
-            "autoplay" => true,
-            "muted" => true,
-            "preload" => true,
-            "fallback_content" => "Your browser does not support HTML5 video tags",
-            "width" => 1000,
-            "crop" => "fit",
-            "poster" => $tb_hero_poster,
-          )
-        ); 
-        ?>
+      <div class="hidden md:block">
+        <?php 
+          echo cl_video_tag( $tb_hero_content, 
+            array(
+              "loop" => true,
+              "autoplay" => true,
+              "muted" => true,
+              "preload" => true,
+              "fallback_content" => "Your browser does not support HTML5 video tags",
+              "width" => 1000,
+              "crop" => "fit",
+            )
+          ); 
+          ?>
+      </div>
+      <img class="absolute pin-t pin-l object-cover w-full h-full md:hidden" src="<?php echo $tb_hero_poster; ?>" alt="Video Fallback">
     </div>
   <?php else : ?>
     <div class="aspect-4:3 bg-cover bg-no-repeat bg-center" style="background-image: linear-gradient(rgba(63, 66, 67, 0.4), rgba(63, 66, 67, 0.4)), url('<?php echo $tb_hero_content; ?>');"></div>

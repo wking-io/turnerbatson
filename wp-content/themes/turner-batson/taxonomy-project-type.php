@@ -84,7 +84,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
         <?php if ( $term->slug === $slug ) : ?>
           <li class="font-bold mx-3 mb-2 md:mx-0 md:px-3 lg:px-6 py-2 lg:py-3 border-b-2 md:border border-primary text-sm lg:text-base"><?php echo $name; ?></li>
         <?php elseif ( 'featured' !== $slug ) : ?>
-          <li class="font-bold border-b-2 md:border border-transparent hover:border-primary mb-2 mx-3 md:mx-0 md:-ml-px"><a href="<?php echo home_url($path); ?>" class="text-sm lg:text-base text-black no-underline lg:px-6 py-2 lg:py-3 block"><?php echo $name; ?></a></li>
+          <li class="font-bold border-b-2 md:border border-transparent hover:border-primary mb-2 mx-3 md:mx-0 md:-ml-px"><a href="<?php echo home_url($path); ?>" class="text-sm lg:text-base text-black no-underline md:px-3 lg:px-6 py-2 lg:py-3 block"><?php echo $name; ?></a></li>
         <?php endif; ?>
       <?php endforeach; ?>
     </ul>

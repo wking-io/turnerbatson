@@ -18,9 +18,9 @@ get_header();
           <h1 class="news-title text-md md:text-xl pb-8"><?php the_title(); ?></h1>
           <div class="flex mb-8 lg:hidden">
             <div class="flex-1">
-              <p class="mb-1"><strong><?php echo $author_name; ?></strong></p>
-              <p class="mb-1"><?php echo $author_title; ?></p>
-              <p><?php echo $date; ?></p>
+              <p class="mb-1 uppercase"><strong><?php echo $author_name; ?></strong></p>
+              <p class="mb-1 text-sm"><?php echo $author_title; ?></p>
+              <p class="text-sm"><?php echo $date; ?></p>
             </div>
             <div class="general-share text-right">
               <p class="mb-2"><strong>Share This:</strong></p>
@@ -34,17 +34,19 @@ get_header();
           <div class="general-content">
             <?php echo $tb_content; ?>
           </div>
-          <div class="relative py-6">
-            <div class="absolute py-6 pin-t pin-r lg:pin-l z-20">
-              <?php echo do_shortcode( '[slider_nav type="prev"]' ); ?>
-              <?php echo do_shortcode( '[slider_nav type="next"]' ); ?>
+          <?php if ( ! empty( $tb_gallery ) ) : ?>
+            <div class="relative py-6">
+              <div class="absolute py-6 pin-t pin-r lg:pin-l z-20">
+                <?php echo do_shortcode( '[slider_nav type="prev"]' ); ?>
+                <?php echo do_shortcode( '[slider_nav type="next"]' ); ?>
+              </div>
+              <ul class="list-reset news-slider slider">
+                <?php foreach( $tb_gallery as $image ) : ?>
+                  <li class="h-full" style="background-image: url('<?php echo $image['url']; ?>')"><img class="h-full" src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>"/></li>
+                <?php endforeach; ?>
+              </ul>
             </div>
-            <ul class="list-reset news-slider slider">
-              <?php foreach( $tb_gallery as $image ) : ?>
-                <li class="h-full" style="background-image: url('<?php echo $image['url']; ?>')"><img class="h-full" src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>"/></li>
-              <?php endforeach; ?>
-            </ul>
-          </div>
+          <?php endif; ?>
           <div class="flex flex-col md:flex-row items-center pb-8">
             <div class="w-full md:w-auto pt-4 pb-8 md:py-8 md:mr-6 flex justify-between general-pagination">
               <?php previous_post_link( '%link', 'Prev Post' ); ?>
@@ -54,9 +56,9 @@ get_header();
           </div>
         </div>
       </div>
-      <div class="hidden lg:flex lg:flex-col lg:text-right lg:mr-8 lg:flex-no-shrink">
+      <div class="hidden lg:mt-1 lg:flex lg:flex-col lg:text-right lg:mr-8 lg:flex-no-shrink">
         <div class="flex-1 lg:mb-4">
-          <p class="mb-1"><strong><?php echo $author_name; ?></strong></p>
+          <p class="mb-1 uppercase author-name"><strong><?php echo $author_name; ?></strong></p>
           <p class="mb-1"><?php echo $author_title; ?></p>
           <p><?php echo $date; ?></p>
         </div>

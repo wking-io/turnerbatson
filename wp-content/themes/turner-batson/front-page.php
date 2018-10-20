@@ -26,8 +26,8 @@ $tb_latest_news = new WP_Query( array(
 
 ?>
 
-<section id="hero" class="relative h-17/20 md:h-screen" data-initializing="true" data-slider="home">
-  <ul id="featured-project-slider" class="featured-project-slider slider list-reset h-9/10 md:h-full">
+<section id="hero" class="relative h-screen" data-initializing="true" data-slider="home">
+  <ul id="featured-project-slider" class="featured-project-slider slider list-reset h-full">
     <?php foreach( $tb_featured_projects as $i => $project ) : ?>
       <li class="h-full w-screen bg-center bg-cover bg-no-repeat relative" style="background-image: url(<?php the_field( 'tb_project_featured_img', $project['project']); ?>); ?>"><a href="<?php echo get_the_permalink( $project['project'] ); ?>" class="absolute pin"></a></li>
     <?php endforeach; ?>
@@ -67,20 +67,22 @@ $tb_latest_news = new WP_Query( array(
   <span class="purpose-bar" data-grow data-grow-buffer="0.5"></span>
   <div class="flex flex-col lg:flex-row justify-between items-center">
     <div class="purpose-video relative w-full lg:w-3/5 aspect-16:9">
-    <?php 
-      echo cl_video_tag( $tb_purpose_video, 
-        array(
-          "loop" => true,
-          "autoplay" => true,
-          "muted" => true,
-          "preload" => true,
-          "fallback_content" => "Your browser does not support HTML5 video tags",
-          "width" => 1000,
-          "crop" => "fit",
-          "poster" => $tb_purpose_video_poster,
-        )
-      ); 
-    ?>
+      <div class="hidden md:block">
+        <?php 
+          echo cl_video_tag( $tb_purpose_video, 
+            array(
+              "loop" => true,
+              "autoplay" => true,
+              "muted" => true,
+              "preload" => true,
+              "fallback_content" => "Your browser does not support HTML5 video tags",
+              "width" => 1000,
+              "crop" => "fit",
+            )
+          ); 
+        ?>
+      </div>
+      <img class="absolute pin-t pin-l object-cover w-full h-full md:hidden" src="<?php echo $tb_purpose_video_poster; ?>" alt="Video Fallback">
     </div>
     <div class="p-8 pb-0 lg:pb-8 w-full lg:w-2/5">
       <h2 class="purpose-heading uppercase text-primary mb-6"><span class="text-black block">Our</span> Purpose</h2>
@@ -93,7 +95,7 @@ $tb_latest_news = new WP_Query( array(
 <section id="culture" class="">
   <div class="mx-8 culture-accent relative z-30"><div class="w-1 h-full bg-primary lg:absolute lg:pin-t lg:pin-r" data-grow data-grow-buffer="0.05"></div></div>
   <div class="relative">
-    <div class="culture-bg bg-cover md:bg-fixed bg-center p-8 mb-8" style="background-image: linear-gradient(rgba(63, 66, 67, 0.35), rgba(63, 66, 67, 0.15)), url(<?php echo $tb_culture_bg['url']; ?>);">
+    <div class="culture-bg bg-cover md:bg-fixed bg-center p-8 mb-8" style="background-image: linear-gradient(rgba(63, 66, 67, 0.15), rgba(63, 66, 67, 0.05)), url(<?php echo $tb_culture_bg['url']; ?>);">
       <div class="culture-info xl:ml-8 xl:pl-8">
         <h2 class="culture-tagline text-white mb-6 uppercase"><?php echo do_shortcode( '[tagline theme="stack"]' ); ?></h2>
         <a href="<?php echo $tb_culture_button_link; ?>" class="button"><?php echo $tb_culture_button_text; ?></a>
@@ -112,7 +114,7 @@ $tb_latest_news = new WP_Query( array(
   <div class="wrapper flex justify-between items-center py-8">
     <h2 class="text-xl uppercase text-bold">The <span class="text-primary">Latest</span></h2>
     <div class="hidden md:flex md:flex-row md:flex-1 md:justify-end md:items-center">
-      <a href="" class="text-black font-bold">Give me all news</a>
+      <a href="<?php echo home_url('/news'); ?>" class="text-black font-bold">Give me all news</a>
       <div class="ml-8">
         <?php echo do_shortcode( '[slider_nav type="prev"]' ); ?>
         <?php echo do_shortcode( '[slider_nav type="next"]' ); ?>

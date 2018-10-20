@@ -5,9 +5,11 @@ export function hide(buffer, el) {
   if (window.scrollY > buffer) {
     el.classList.remove('opacity-100');
     el.classList.add('opacity-0');
+    el.style.pointerEvents = 'none';
   } else {
     el.classList.remove('opacity-0');
     el.classList.add('opacity-100');
+    el.style.pointerEvents = 'auto';
   }
 }
 
@@ -15,9 +17,11 @@ export function show(buffer, el) {
   if (window.scrollY > buffer) {
     el.classList.add('opacity-100');
     el.classList.remove('opacity-0');
+    el.style.pointerEvents = 'auto';
   } else {
     el.classList.add('opacity-0');
     el.classList.remove('opacity-100');
+    el.style.pointerEvents = 'none';
   }
 }
 

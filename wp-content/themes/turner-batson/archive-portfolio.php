@@ -8,7 +8,7 @@ $is_last_page = $wp_query->max_num_pages == $current_page;
 
 $tb_featured_projects = new WP_Query( array(
   'post_type' => 'portfolio',
-  'project_type' => 'featured',
+  'project-type' => 'featured',
   'post_status' => 'publish',
   'posts_per_page' => 10,
   'no_found_rows' => true,
@@ -16,6 +16,8 @@ $tb_featured_projects = new WP_Query( array(
   'update_post_term_cache' => false,
 ) );
 $tb_featured_project_solo = $tb_featured_projects->posts[0];
+
+error_log( print_r( $tb_featured_projects, true ) );
 
 $tb_project_categories = array_merge( array('all' => 'All'), wp_list_pluck( get_terms('project-type'), 'name', 'slug' ) );
 
@@ -49,7 +51,7 @@ $tb_project_categories = array_merge( array('all' => 'All'), wp_list_pluck( get_
     </div>
     <div class="featured-projects-slider slider hidden lg:block w-full overflow-hidden relative">
       <?php foreach( $tb_featured_projects->posts as $featured_project ) : ?>
-        <div class="featured-projects-img lg:hidden bg-cover bg-no-repeat bg-center h-full relative" style="background-image: url(<?php the_field( 'tb_project_featured_img', $featured_project->ID ); ?>);"><a href="<?php echo get_permalink( $tb_featured_project_solo->ID ); ?>" class="absolute"></a></div>
+        <div class="featured-projects-img lg:hidden bg-cover bg-no-repeat bg-center h-full relative" style="background-image: url(<?php the_field( 'tb_project_featured_img', $featured_project->ID ); ?>);"><a href="<?php echo get_permalink( $tb_featured_project->ID ); ?>" class="absolute"></a></div>
       <?php endforeach; ?>
     </div>
     <div class="featured-projects-img lg:hidden bg-cover bg-no-repeat bg-center h-full relative" style="background-image: linear-gradient(to top, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 55%), url(<?php the_field( 'tb_project_featured_img', $tb_featured_project_solo->ID ); ?>);"><a href="<?php echo get_permalink( $tb_featured_project_solo->ID ); ?>" class="absolute pin"></a></div>
@@ -82,7 +84,7 @@ $tb_project_categories = array_merge( array('all' => 'All'), wp_list_pluck( get_
         <?php if ( 'all' === $slug ) : ?>
           <li class="font-bold mx-3 mb-2 md:mx-0 md:px-3 lg:px-6 py-2 lg:py-3 border-b-2 md:border border-primary text-sm lg:text-base"><?php echo $name; ?></li>
         <?php elseif ( 'featured' !== $slug ) : ?>
-          <li class="font-bold border-b-2 md:border border-transparent hover:border-primary mb-2 mx-3 md:mx-0 md:-ml-px"><a href="<?php echo home_url($path); ?>" class="text-sm lg:text-base text-black no-underline lg:px-6 py-2 lg:py-3 block"><?php echo $name; ?></a></li>
+          <li class="font-bold border-b-2 md:border border-transparent hover:border-primary mb-2 mx-3 md:mx-0 md:-ml-px"><a href="<?php echo home_url($path); ?>" class="text-sm lg:text-base text-black no-underline md:px-3 lg:px-6 py-2 lg:py-3 block"><?php echo $name; ?></a></li>
         <?php endif; ?>
       <?php endforeach; ?>
     </ul>

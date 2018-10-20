@@ -89,8 +89,7 @@ export function initLatestSlider(context) {
     variableWidth: true,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: true,
-    autoplaySpeed: 5000,
+    autoplay: false,
     useTransform: true,
     cssEase: 'cubic-bezier(0.0, 0.86, 0.9, 1)',
   };

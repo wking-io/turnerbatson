@@ -37,7 +37,7 @@ $connect = is_page( 'connect' ) ? ' connect' : '';
 		<h1 class="branding relative z-50">
 			<div class="flex items-center">
 				<a class="h-8 w-8" href="<?php echo home_url(); ?>"><?php echo do_shortcode( '[logo classname="w-full h-full"]' ); ?></a>
-				<button class="page-name ml-2 text-base md:text-md uppercase font-medium name-toggle<?php echo is_front_page() ? ' opacity-0' : ''; ?>" aria-expanded="false"><?php echo get_page_name( $post_type ); ?></button>
+				<button class="page-name ml-2 text-base md:text-md uppercase font-medium name-toggle<?php echo is_front_page() ? ' opacity-0' : ''; ?>" aria-expanded="false" style="pointer-events: <?php echo is_front_page() ? 'none' : 'auto'; ?>"><?php echo get_page_name( $post_type ); ?></button>
 			</div>
 		</h1>
 

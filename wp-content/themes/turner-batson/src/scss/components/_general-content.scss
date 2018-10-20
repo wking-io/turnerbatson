@@ -11,11 +11,14 @@
 
 .general-content ul,
 .general-content ol {
-  margin-bottom: 8rem;
+  margin-bottom: 9rem;
+  padding-top: 2rem;
 }
 
 .general-content li {
   margin-bottom: 2rem;
+  line-height: 1.4;
+  padding-left: 2rem;
 }
 
 .general-content h1 {
@@ -38,6 +41,21 @@
 .general-content h6 {
   font-size: 16px;
   text-transform: uppercase;
+}
+
+.video {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.video iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 @include media('>=#{$md}') {

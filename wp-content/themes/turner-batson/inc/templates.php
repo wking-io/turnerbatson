@@ -39,7 +39,7 @@ function team_item( $id ) {
           <h3 class="team-bio-name hidden md:block mb-1"><?php echo get_the_title( $id ); ?></h3>
           <h4 class="team-bio-title hidden md:block mb-4"><?php the_field( 'tb_team_role', $id ); ?></h4>
         </div>
-        <div class="w-full lg:w-3/5">
+        <div class="w-full lg:w-3/5 text-sm">
           <?php echo wpautop( get_the_content( $id ) ); ?>
         </div>
         <button class="team-bio-close hidden md:block" data-drawer-action-special aria-expanded="false" aria-controls="team-member-<?php echo $id ?>"><span></span><span></span></button>
