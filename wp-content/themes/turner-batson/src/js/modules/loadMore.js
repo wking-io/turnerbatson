@@ -5,16 +5,16 @@ import { attrToBool } from './attr';
 
 export default function loadMore(context, options) {
   const button = dom('[data-load-more-button]', context);
-  const page = parseInt(withDefault('2', 'loadPage', button.dataset));
   const ppp = parseInt(withDefault('0', 'ppp', button.dataset));
   const offset = parseInt(withDefault('0', 'offset', button.dataset));
   const query = options.query;
-  if (ppp > 0 && offset > 0) {
-    query.posts_per_page = ppp;
-    query.offset = (page - 2) * ppp + offset;
-  }
 
   button.addEventListener('click', function() {
+    const page = parseInt(withDefault('2', 'loadPage', button.dataset));
+    if (ppp > 0 && offset > 0) {
+      query.posts_per_page = ppp;
+      query.offset = (page - 2) * ppp + offset;
+    }
     const loading = attrToBool(button, 'loadPageLoading');
     if (!loading) {
       button.setAttribute('data-load-more-loading', true);

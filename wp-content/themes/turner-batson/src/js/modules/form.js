@@ -10,7 +10,6 @@ function on(classname, el) {
 function off(classname, el) {
   return function(e) {
     const val = e.target.value;
-    console.log(val);
     if (val.length === 0 || val === '(___) ___-____')
       el.classList.remove(classname);
     return el;

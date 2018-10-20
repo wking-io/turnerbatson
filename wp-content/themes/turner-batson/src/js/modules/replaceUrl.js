@@ -1,5 +1,3 @@
-import withDefault from './withDefault';
-
 export default function replaceUrl(el) {
   const url = encodeURIComponent(window.location.href);
   const base = el.getAttribute('href');
