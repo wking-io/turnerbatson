@@ -67,8 +67,18 @@ function toggleAllDrawerAttr(btn, wrapper, wrappers) {
     });
     wrapper.parentElement.classList.add('team-container--open');
     currentSpacer.style.height = `${currentBio.offsetHeight + 32}px`;
+    const { top } = currentSpacer.getBoundingClientRect();
+    window.scrollTo({
+      top: top + window.scrollY - 52,
+      behavior: 'smooth',
+    });
   } else {
     currentSpacer.style.height = '0px';
+    const { top } = wrapper.getBoundingClientRect();
+    window.scrollTo({
+      top: top + window.scrollY - 32,
+      behavior: 'smooth',
+    });
   }
 
   wrapper.setAttribute('data-drawer-expanded', !isExpanded);

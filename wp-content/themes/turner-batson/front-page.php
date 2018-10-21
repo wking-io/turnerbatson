@@ -142,7 +142,7 @@ $tb_latest_news = new WP_Query( array(
 
     ?>
   </div>
-  <a href="" class="md:hidden button-outline-dark ml-8">Give me all news</a>
+  <a href="<?php echo home_url('/news'); ?>" class="md:hidden button-outline-dark ml-8">Give me all news</a>
 </section>
 
 <?php get_footer();
