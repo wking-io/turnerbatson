@@ -16,7 +16,7 @@ get_header(); ?>
 
 <section class="py-8 md:py-jumbo">
   <div class="py-4 wrapper relative" data-load-more="team">
-    <span class="team-bar" data-grow data-grow-buffer="0.01"></span>
+    <span class="hidden md:block team-bar" data-grow data-grow-buffer="0.01"></span>
     <h1 class="uppercase text-lg md:text-xl mb-6 md:mb-8 pl-8">Meet Our Team</h1>
     <ul class="team-container list-reset md:flex md:flex-wrap relative" data-load-more-container>
       <?php if ( have_posts() ) :
