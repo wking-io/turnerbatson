@@ -305,7 +305,7 @@
       width: 4rem;
       height: 4rem;
       transform: rotate(45deg);
-      left: 20rem;
+      left: 43.5rem;
       top: -2.5rem;
     }
 
@@ -315,7 +315,7 @@
       width: 4rem;
       height: 4rem;
       transform: rotate(45deg);
-      left: 20rem;
+      left: 43.5rem;
       top: -1.75rem;
     }
 
@@ -328,17 +328,78 @@
     }
   }
 
-  .team-item:nth-child(2n) {
-    .team-bio {
-      left: 189.5px;
-      right: 189.5px;
+  .team-item:nth-child(2) .team-bio {
+    left: 189.5px;
+    right: 189.5px;
+
+    &:before {
+      @apply bg-grey border-t-2 border-l-2 border-grey absolute;
+      content: '';
+      width: 4rem;
+      height: 4rem;
+      transform: rotate(45deg);
+      left: 147rem;
+      top: -2.5rem;
+    }
+  
+    &:after {
+      @apply bg-white absolute;
+      content: '';
+      width: 4rem;
+      height: 4rem;
+      transform: rotate(45deg);
+      left: 147rem;
+      top: -1.75rem;
     }
   }
 
-  .team-item:nth-child(3n) {
-    .team-bio {
-      left: -221px;
-      right: -221px;
+  .team-item:nth-child(3n + 2) .team-bio {
+    left: 189.5px;
+    right: 189.5px;
+
+    &:before {
+      @apply bg-grey border-t-2 border-l-2 border-grey absolute;
+      content: '';
+      width: 4rem;
+      height: 4rem;
+      transform: rotate(45deg);
+      left: 147rem;
+      top: -2.5rem;
+    }
+  
+    &:after {
+      @apply bg-white absolute;
+      content: '';
+      width: 4rem;
+      height: 4rem;
+      transform: rotate(45deg);
+      left: 147rem;
+      top: -1.75rem;
+    }
+  }
+
+  .team-item:nth-child(3n) .team-bio {
+    left: -221px;
+    right: -221px;
+
+    &:before {
+      @apply bg-grey border-t-2 border-l-2 border-grey absolute;
+      content: '';
+      width: 4rem;
+      height: 4rem;
+      transform: rotate(45deg);
+      left: 250rem;
+      top: -2.5rem;
+    }
+  
+    &:after {
+      @apply bg-white absolute;
+      content: '';
+      width: 4rem;
+      height: 4rem;
+      transform: rotate(45deg);
+      left: 250rem;
+      top: -1.75rem;
     }
   }
 }

@@ -18,23 +18,23 @@ function portfolio_item( $id ) {
   <?php return ob_get_clean();
 }
 
-function team_item( $id ) {
+function team_item( $id, $i ) {
   ob_start(); ?>
 
-  <div class="team-item relative lg:mb-8" id="team-member-<?php echo $id ?>" data-drawer-wrapper data-drawer-special data-drawer-expanded="false">
+  <div class="team-item relative lg:mb-8" id="team-member-<?php echo $id ?>" data-item-index="<?php echo $i; ?>" data-drawer-wrapper data-drawer-special data-drawer-expanded="false">
     <div class="relative">
       <div class="team-headshot relative">
         <img class="team-headshot-img" src="<?php the_field( 'tb_team_headshot', $id ); ?>" alt="<?php echo get_the_title( $id ); ?> headshot" />
         <div class="team-headshot-overlay flex lg:absolute lg:pin pt-4 pb-6 lg:py-0">
-          <div class="flex-1 lg:flex lg:flex-row lg:justify-between lg:absolute lg:pin-b lg:pin-l lg:pin-r lg:px-3 lg:pb-3">
-            <h3 class="uppercase lg:text-white text-bold mb-1 lg:mb-0 lg:leading-none"><?php echo get_the_title( $id ); ?></h3>
+          <div class="flex-1 lg:absolute lg:pin-b lg:pin-l lg:pin-r lg:px-3 lg:pb-3">
+            <h3 class="uppercase lg:text-white text-bold mb-1 lg:leading-none"><?php echo get_the_title( $id ); ?></h3>
             <p class="lg:mb-0 lg:text-white lg:leading-none"><?php the_field( 'tb_team_role', $id ); ?></p>
           </div>
-          <button class="team-headshot-button button-link-primary lg:hidden" data-drawer-action-special aria-expanded="false" aria-controls="team-member-<?php echo $id ?>"><span class="show-when-closed">View Bio</span><span class="show-when-open">Close Bio</span></button>
+          <button class="team-headshot-button button-link-primary lg:hidden" data-team-member="<?php echo $id ?>" data-drawer-action-special aria-expanded="false" aria-controls="team-member-<?php echo $id ?>"><span class="show-when-closed">View Bio</span><span class="show-when-open">Close Bio</span></button>
         </div>
-        <button class="team-headshot-button button-outline-light absolute pin-center hidden lg:inline-block" data-drawer-action-special aria-expanded="false" aria-controls="team-member-<?php echo $id ?>"><span class="show-when-closed">View Bio</span><span class="show-when-open">Close Bio</span></button>
+        <button class="team-headshot-button button-outline-light absolute pin-center hidden lg:inline-block" data-team-member="<?php echo $id ?>" data-drawer-action-special aria-expanded="false" aria-controls="team-member-<?php echo $id ?>"><span class="show-when-closed">View Bio</span><span class="show-when-open">Close Bio</span></button>
       </div>
-      <div class="team-bio opacity-0 flex flex-col lg:flex-row justify-between items-start lg:items-end">
+      <div id="team-bio-<?php echo $id ?>" class="team-bio opacity-0 flex flex-col lg:flex-row justify-between items-start lg:items-end">
         <div class="mr-8 flex-1">
           <h3 class="team-bio-name hidden md:block mb-1"><?php echo get_the_title( $id ); ?></h3>
           <h4 class="team-bio-title hidden md:block mb-4"><?php the_field( 'tb_team_role', $id ); ?></h4>

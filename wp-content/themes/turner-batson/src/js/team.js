@@ -1,5 +1,3 @@
-import runAndListen from './modules/runAndListen';
-import { grow } from './modules/onScroll';
 import { domAll } from './modules/dom';
 import { toggleAllDrawer } from './modules/drawer';
 import loadMore from './modules/loadMore';

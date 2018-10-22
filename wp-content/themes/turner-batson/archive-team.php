@@ -20,8 +20,10 @@ get_header(); ?>
     <h1 class="uppercase text-lg md:text-xl mb-6 md:mb-8 pl-8">Meet Our Team</h1>
     <ul class="team-container list-reset md:flex md:flex-wrap relative" data-load-more-container>
       <?php if ( have_posts() ) :
+        $i = 0;
         while ( have_posts() ) : the_post();
-          echo team_item( get_the_ID() );
+          echo team_item( get_the_ID(), $i );
+          $i++;
         endwhile;
       else :
         echo no_items( 'team members' );
