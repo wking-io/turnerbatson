@@ -41,7 +41,7 @@ $tb_latest_news = new WP_Query( array(
     <ul class="featured-project-slider-nav-items flex justify-between lg:justify-end items-center flex-1 list-reset relative w-full lg:w-auto lg:ml-8">
       <?php if ( ! empty( $tb_featured_projects ) ) :
         foreach ( $tb_featured_projects as $i => $project ) : ?>
-          <li class="<?php echo $i !== 0 ? 'absolute ml-0 md:ml-4 lg:ml-8 lg:pl-2' : 'static'; ?> md:static pin-b pin-l w-full md:w-1/3 lg:w-auto opacity-0 md:opacity-100 flex items-center featured-project-slider-nav-item">
+          <li class="<?php echo $i !== 0 ? 'absolute ml-0 md:ml-4 lg:ml-8 lg:pl-2' : 'static'; ?> md:static pin-b pin-l w-full md:w-1/3 lg:w-auto flex items-center featured-project-slider-nav-item">
             <div class="featured-project-slider-indicator relative h-full pr-4 md:pr-3 lg:pr-4">
               <span class="bg-primary block h-full"></span>
               <span class="bg-primary block absolute pin-l pin-b"></span>

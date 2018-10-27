@@ -20,6 +20,11 @@ if ( ! function_exists( 'turnerbatson_scripts' ) ) :
 			wp_enqueue_script( 'home' );
 		endif;
 
+		if ( is_page( 'portfolio-featured' ) ) :
+			wp_register_script( 'portfolio-featured', get_template_directory_uri() . '/assets/js/portfolio-featured.js', array(), '1.0.0', true );
+			wp_enqueue_script( 'portfolio-featured' );
+		endif;
+
 		if ( is_post_type_archive( 'portfolio' ) || is_tax( 'project-type' ) ) :
 			wp_register_script( 'portfolio', get_template_directory_uri() . '/assets/js/portfolio.js', array(), '1.0.0', true );
 			wp_enqueue_script( 'portfolio' );
@@ -77,11 +82,11 @@ add_action('wp_enqueue_scripts', 'turnerbatson_styles');
 /**
 * Dequeue jQuery Migrate script in WordPress.
 */
-function turnerbatson_remove_jquery( &$scripts) {
-    if ( ! is_admin() ) {
-        // $scripts->remove( 'jquery');
-        // $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.12.4' );
-    }
-}
+// function turnerbatson_remove_jquery( &$scripts) {
+//     if ( ! is_admin() ) {
+//         $scripts->remove( 'jquery');
+//         $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.12.4' );
+//     }
+// }
 
-add_filter( 'wp_default_scripts', 'turnerbatson_remove_jquery' );
+// add_filter( 'wp_default_scripts', 'turnerbatson_remove_jquery' );

@@ -37,6 +37,8 @@ function get_name_by_page() {
     return 'Connect';
   } else if ( is_page( 'culture' ) ) {
     return 'Culture';
+  } else if ( is_page( 'portfolio-featured' ) ) {
+    return 'Portfolio';
   } else {
     return '';
   }

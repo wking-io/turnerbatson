@@ -47,7 +47,7 @@ while ( have_posts() ) : the_post(); ?>
 
   <section class="project-content general-content py-8">
     <?php the_content(); ?>
-    <a class="button-outline-primary my-8" href="<?php echo home_url( '/portfolio#projects' ); ?>">Back To Portfolio</a>
+    <a class="button-outline-primary my-8" href="<?php echo home_url( '/portfolio/type/' . str_replace( ' ', '-', strtolower( $category ) ) . '#projects' ); ?>">Back To <?php echo $category; ?></a>
   </section>
 
   <?php endwhile;

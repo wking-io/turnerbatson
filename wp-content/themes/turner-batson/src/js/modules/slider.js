@@ -50,7 +50,6 @@ export function initHomeSlider(context) {
       autoplay: true,
       autoplaySpeed: 4500,
       speed: 500,
-      vertical: true,
       useTransform: true,
       cssEase: 'cubic-bezier(0.0, 0.86, 0.9, 1)',
       rows: 0,
@@ -59,7 +58,7 @@ export function initHomeSlider(context) {
     })
     .slick('slickPause');
 
-  const initDelay = window.innerWidth > 922 ? 2000 : 0;
+  const initDelay = window.innerWidth > 922 ? 2500 : 0;
 
   setTimeout(function() {
     $(`${context} .slider`).slick('slickPlay');

@@ -1,0 +1,124 @@
+.featured-projects {
+  height: 85vh;
+}
+
+.featured-projects-preview {
+  height: calc(100% - 58px);
+}
+.featured-projects-nav {
+  height: 58px;
+}
+
+.featured-projects-info--solo {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.featured-projects-slider-nav {
+  margin: 4.75rem 4.75rem 0 0;
+}
+
+@include media('>=#{$lg}') {
+  .featured-projects-info {
+    min-width: 360px;
+    max-width: 420px;
+
+    &--nav {
+      position: relative;
+      width: 100%;
+      top: 55%;
+      transform: translateY(-50%);
+    }
+
+    &--category {
+      font-size: 1.75vw;
+      margin-bottom: 0.75em;
+    }
+
+    &--title {
+      font-size: 3vw;
+      margin-bottom: 0.75em;
+    }
+
+    &--link {
+      font-size: 1.75vw;
+      margin-bottom: 0;
+    }
+  }
+
+  .featured-projects-nav--info {
+    min-width: 280px;
+    max-width: 334px;
+    width: 28.25%;
+  }
+}
+
+@include media('>=1156px') {
+  .featured-projects-info {
+    &--category {
+      @apply text-md;
+    }
+
+    &--title {
+      @apply text-xl;
+    }
+
+    &--link {
+      @apply text-md;
+    }
+  }
+}
+
+.featured-projects-slider {
+  & .slick-slide {
+    height: calc((100vh - 58px) * 0.75);
+    margin-bottom: 8rem;
+
+    & > a {
+      left: -1px;
+      top: -1px;
+      bottom: -1px;
+      right: -1px;
+      background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0) 45%
+      );
+    }
+  }
+}
+
+.featured-projects-slider {
+  & .slick-slide {
+    height: 60vh;
+    margin-bottom: 8rem;
+
+    & > a {
+      left: -1px;
+      top: -1px;
+      bottom: -1px;
+      right: -1px;
+    }
+  }
+}
+
+@include media('>=#{$lg}') {
+  .featured-projects-slider {
+    & .slick-slide {
+      height: calc((100vh - 58px) * 0.75);
+      margin-bottom: 8rem;
+
+      & > a {
+        left: -1px;
+        top: -1px;
+        bottom: -1px;
+        right: -1px;
+        background-image: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0.6),
+          rgba(255, 255, 255, 0) 45%
+        );
+      }
+    }
+  }
+}
