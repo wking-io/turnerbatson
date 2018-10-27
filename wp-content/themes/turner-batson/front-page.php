@@ -32,11 +32,10 @@ $tb_latest_news = new WP_Query( array(
       <li class="h-full w-screen bg-center bg-cover bg-no-repeat relative" style="background-image: url(<?php the_field( 'tb_project_featured_img', $project['project']); ?>); ?>"><a href="<?php echo get_the_permalink( $project['project'] ); ?>" class="absolute pin"></a></li>
     <?php endforeach; ?>
   </ul>
-  <div class="featured-project-nav flex flex-col lg:flex-row justify-between items-start lg:items-center lg:p-6 xl:pb-4 absolute pin-b pin-l pin-r z-30">
+  <div class="featured-project-nav flex flex-col lg:flex-row justify-between items-start lg:items-center lg:p-6 absolute pin-b pin-l pin-r z-30">
     <div class="branding flex flex-col items-start justify-start mb-6 lg:mb-0 lg:mr-4 relative">
-      <?php echo do_shortcode( '[logo classname="absolute branding-logo hidden lg:block w-10 mb-3 h-auto" sticky="true"]' ); ?>
-      <div class="hidden lg:block w-10 mb-3 h-10" data-sticky-ref></div>
-      <?php echo do_shortcode( '[name classname="h-3 branding-name" in-color="true" ]' ); ?>
+      <?php echo do_shortcode( '[logo classname="absolute branding-logo hidden lg:block w-12 mb-3 h-auto" sticky="true"]' ); ?>
+      <?php echo do_shortcode( '[name classname="h-4 branding-name" in-color="true" ]' ); ?>
     </div>
     <ul class="featured-project-slider-nav-items flex justify-between lg:justify-end items-center flex-1 list-reset relative w-full lg:w-auto lg:ml-8">
       <?php if ( ! empty( $tb_featured_projects ) ) :
