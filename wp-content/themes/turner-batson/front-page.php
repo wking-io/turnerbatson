@@ -32,33 +32,38 @@ $tb_latest_news = new WP_Query( array(
       <li class="h-full w-screen bg-center bg-cover bg-no-repeat relative" style="background-image: url(<?php the_field( 'tb_project_featured_img', $project['project']); ?>); ?>"><a href="<?php echo get_the_permalink( $project['project'] ); ?>" class="absolute pin"></a></li>
     <?php endforeach; ?>
   </ul>
-  <div class="featured-project-nav flex flex-col lg:flex-row justify-between items-start lg:items-center lg:p-6 absolute pin-b pin-l pin-r z-30">
-    <div class="branding flex flex-col items-start justify-start mb-6 lg:mb-0 lg:mr-4 relative">
-      <?php echo do_shortcode( '[logo classname="absolute branding-logo hidden lg:block w-12 mb-3 h-auto" sticky="true"]' ); ?>
-      <?php echo do_shortcode( '[name classname="h-4 branding-name" in-color="true" ]' ); ?>
+  <div class="absolute pin-b pin-l pin-r z-30">
+    <div class="hidden lg:block ml-6 mb-6 relative">
+      <?php echo do_shortcode( '[logo classname="branding-logo w-8 lg:w-12 h-auto absolute pin-l pin-t" sticky="true"]' ); ?>
+      <div class="w-8 lg:w-12 h-8 lg:h-12" data-sticky-ref></div>
     </div>
-    <ul class="featured-project-slider-nav-items flex justify-between lg:justify-end items-center flex-1 list-reset relative w-full lg:w-auto lg:ml-8">
-      <?php if ( ! empty( $tb_featured_projects ) ) :
-        foreach ( $tb_featured_projects as $i => $project ) : ?>
-          <li class="<?php echo $i !== 0 ? 'absolute ml-0 md:ml-4 lg:ml-8 lg:pl-2' : 'static'; ?> md:static pin-b pin-l w-full md:w-1/3 lg:w-auto flex items-center featured-project-slider-nav-item">
-            <div class="featured-project-slider-indicator relative h-full pr-4 md:pr-3 lg:pr-4">
-              <span class="bg-primary block h-full"></span>
-              <span class="bg-primary block absolute pin-l pin-b"></span>
-            </div>
-            <button class="hidden md:block text-left p-px" data-slider-button="featured" data-slide-to="<?php echo $i; ?>">
-              <span class="uppercase text-base md:text-sm xl:text-base font-semibold pb-1 block"><?php echo with_default( 'No short title found', 'project_short_title', $project ); ?></span>
-              <span class="text-sm m-0 p-0 block"><?php echo with_default( 'No short subtitle found', 'project_short_subtitle', $project ); ?></span>
-            </button>
-            <a class="md:hidden text-black no-underline text-left p-px" href="<?php echo get_the_permalink( $project['project'] ); ?>">
-              <span class="uppercase text-base md:text-sm xl:text-base font-semibold pb-1 block"><?php echo with_default( 'No short title found', 'project_short_title', $project ); ?></span>
-              <span class="text-sm m-0 p-0 block"><?php echo with_default( 'No short subtitle found', 'project_short_subtitle', $project ); ?></span>
-            </a>
-          </li>
-        <?php endforeach;
-      else : ?>
-      <p>No featured projects found! Try adding them on the Home page in the admin.</p>
-      <?php endif; ?>
-    </ul>
+    <div class="featured-project-nav flex flex-col lg:flex-row justify-between items-start lg:items-center lg:p-6">
+      <div class="branding mb-6 lg:mb-0 lg:mr-4">
+        <?php echo do_shortcode( '[name classname="h-4 branding-name" in-color="true" ]' ); ?>
+      </div>
+      <ul class="featured-project-slider-nav-items flex justify-between lg:justify-end items-center flex-1 list-reset relative w-full lg:w-auto lg:ml-8">
+        <?php if ( ! empty( $tb_featured_projects ) ) :
+          foreach ( $tb_featured_projects as $i => $project ) : ?>
+            <li class="<?php echo $i !== 0 ? 'absolute ml-0 md:ml-4 lg:ml-8 lg:pl-2' : 'static'; ?> md:static pin-b pin-l w-full md:w-1/3 lg:w-auto flex items-center opacity-0 lg:opacity-100 featured-project-slider-nav-item">
+              <div class="featured-project-slider-indicator relative h-full pr-4 md:pr-3 lg:pr-4">
+                <span class="bg-primary block h-full"></span>
+                <span class="bg-primary block absolute pin-l pin-b"></span>
+              </div>
+              <button class="hidden md:block text-left p-px" data-slider-button="featured" data-slide-to="<?php echo $i; ?>">
+                <span class="uppercase text-base md:text-sm xl:text-base font-semibold pb-1 block"><?php echo with_default( 'No short title found', 'project_short_title', $project ); ?></span>
+                <span class="text-sm m-0 p-0 block"><?php echo with_default( 'No short subtitle found', 'project_short_subtitle', $project ); ?></span>
+              </button>
+              <a class="md:hidden text-black no-underline text-left p-px" href="<?php echo get_the_permalink( $project['project'] ); ?>">
+                <span class="uppercase text-base md:text-sm xl:text-base font-semibold pb-1 block"><?php echo with_default( 'No short title found', 'project_short_title', $project ); ?></span>
+                <span class="text-sm m-0 p-0 block"><?php echo with_default( 'No short subtitle found', 'project_short_subtitle', $project ); ?></span>
+              </a>
+            </li>
+          <?php endforeach;
+        else : ?>
+        <p>No featured projects found! Try adding them on the Home page in the admin.</p>
+        <?php endif; ?>
+      </ul>
+    </div>
   </div>
 </section>
 

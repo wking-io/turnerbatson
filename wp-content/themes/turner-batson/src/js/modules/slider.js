@@ -128,6 +128,7 @@ export function initFeaturedSlider(context) {
     slidesToShow: 2,
     slidesToScroll: 1,
     vertical: true,
+    verticalSwiping: true,
     adaptiveHeight: true,
     autoplay: true,
     arrows: false,

@@ -23,42 +23,40 @@ const name = dom('.branding-name');
 
 export function stick(el, ref, name) {
   return function() {
-    if (window.innerWidth > 992) {
-      requestAnimationFrame(() => {
-        const isReady =
-          fromTop(ref) <=
-          parseInt(withDefault('0', 'stickyBuffer', el.dataset));
+    requestAnimationFrame(() => {
+      const isReady =
+        fromTop(ref) <= parseInt(withDefault('0', 'stickyBuffer', el.dataset));
 
-        if (isReady) {
-          const top = withDefault('auto', 'stickyTop', el.dataset);
-          const left = withDefault('auto', 'stickyLeft', el.dataset);
+      if (isReady) {
+        const top = withDefault('auto', 'stickyTop', el.dataset);
+        const left = withDefault('auto', 'stickyLeft', el.dataset);
 
-          el.style.position = 'fixed';
-          el.style.top = top;
-          el.style.left = left;
+        el.style.position = 'fixed';
+        el.style.top = top;
+        el.style.left = left;
 
-          const opacity = 1 - (88 - fromTop(name)) / 20;
-          name.style.opacity = opacity;
+        const opacity = 1 - (96 - fromTop(name)) / 20;
+        name.style.opacity = opacity;
 
-          const fromTopFixed = fromTop(ref) + 100;
-          const fromFinal = (120 - fromTopFixed) / 120;
-          el.style.top = '20px';
-          el.style.left = '20px';
-          if (fromFinal >= 1) {
-            el.style.width = '32px';
-            el.classList.add('opacity-0');
-          } else {
-            el.style.width = `${40 - fromFinal * 8}px`;
-            el.classList.add('opacity-100');
-          }
+        const fromTopFixed = fromTop(ref) + 148;
+        const fromFinal = (168 - fromTopFixed) / 168;
+        el.style.top = '20px';
+        el.style.left = '20px';
+        if (fromFinal >= 1) {
+          el.style.width = '32px';
+          el.classList.add('opacity-0');
         } else {
-          el.style.position = 'absolute';
-          el.style.top = '0px';
-          el.style.left = '0px';
-          name.style.opacity = '1';
+          el.style.width = `${48 - fromFinal * 16}px`;
+          el.classList.add('opacity-100');
         }
-      });
-    }
+      } else {
+        el.style.position = 'absolute';
+        el.style.top = '0px';
+        el.style.left = '0px';
+        el.style.width = '48px';
+        name.style.opacity = '1';
+      }
+    });
   };
 }
 
