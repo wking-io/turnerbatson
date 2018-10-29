@@ -20,7 +20,7 @@ get_header();
           <?php previous_post_link( '%link', 'Prev Job' ); ?>
           <?php next_post_link( '%link', 'Next Job' ); ?>
         </div>
-        <a class="button-link-primary mb-8 md:mb-0" href="<?php echo home_url( '/career' ); ?>">Back To Careers</a>
+        <a class="button-link-primary mb-8 md:mb-0" href="<?php echo home_url( 'careers' ); ?>">Back To Careers</a>
       </div>
     </div>
   </section>

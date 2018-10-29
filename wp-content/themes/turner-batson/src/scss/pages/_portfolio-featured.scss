@@ -1,5 +1,8 @@
-.featured-projects {
-  height: 85vh;
+@include media('<=#{$md}') {
+  .featured-projects {
+    height: calc(100vh - 44px);
+    margin-bottom: 44px;
+  }
 }
 
 .featured-projects-preview {

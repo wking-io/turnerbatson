@@ -16,7 +16,7 @@ $tb_project_categories = array_merge( array('all' => 'All'), wp_list_pluck( get_
 
 ?>
 
-<section class="featured-projects h-screen pt-nav lg:pt-0" data-slider="featured">
+<section class="featured-projects md:h-screen pt-nav lg:pt-0" data-slider="featured">
   <div class="featured-projects-preview lg:opacity-0 flex flex-col-reverse lg:flex-row">
     <div class="featured-projects-info relative z-10 p-8 lg:p-0 lg:mt-0 lg:w-3/5">
       <div class="lg:absolute featured-projects-info--nav lg:px-8">
