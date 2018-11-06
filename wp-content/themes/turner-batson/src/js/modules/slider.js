@@ -166,7 +166,7 @@ export function initProjectSlider(context) {
     variableWidth: true,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     useTransform: true,
     cssEase: 'cubic-bezier(0.0, 0.86, 0.9, 1)',

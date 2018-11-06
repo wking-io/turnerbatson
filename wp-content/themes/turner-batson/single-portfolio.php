@@ -40,7 +40,7 @@ while ( have_posts() ) : the_post(); ?>
     </div>
     <ul class="list-reset project-slider slider">
       <?php foreach( $tb_gallery as $image ) : ?>
-        <li class="aspect-5:3 bg-cover bg-no-repeat bg-center" style="background-image: url('<?php echo $image['url']; ?>')"></li>
+        <li class=""><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>"></li>
       <?php endforeach; ?>
     </ul>
   </section>

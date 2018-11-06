@@ -10,7 +10,7 @@ function get_page_name( $post_type ) {
       $name = 'News';
       break;
     case 'career':
-      $name = 'Career';
+      $name = 'Careers';
       break;
     case 'portfolio':
       $name = 'Portfolio';
@@ -19,7 +19,7 @@ function get_page_name( $post_type ) {
       $name = 'Team';
       break;
     case 'testimonial':
-      $name = 'Testimonial';
+      $name = 'Testimonials';
       break;
     default:
       $name = '';
