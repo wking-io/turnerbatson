@@ -4,6 +4,8 @@ get_header();
 
 // DATA
 $tb_featured_projects = get_field( 'tb_portfolio_slider' );
+$tb_purpose_heading_one = get_field( 'tb_purpose_heading_one' );
+$tb_purpose_heading_two = get_field( 'tb_purpose_heading_two' );
 $tb_purpose_video = get_field( 'tb_purpose_video' );
 $tb_purpose_video_poster = get_field( 'tb_purpose_video_poster' );
 $tb_purpose_description = get_field( 'tb_purpose_description' );
@@ -39,12 +41,12 @@ $tb_latest_news = new WP_Query( array(
     </div>
     <div class="featured-project-nav flex flex-col lg:flex-row justify-between items-start lg:items-center lg:p-6">
       <div class="branding mb-6 lg:mb-0 lg:mr-4">
-        <?php echo do_shortcode( '[name classname="h-4 branding-name" in-color="true" ]' ); ?>
+        <?php echo do_shortcode( '[name classname="h-4 md:h-6 lg:h-4 xl:h-6 branding-name" in-color="true" ]' ); ?>
       </div>
       <ul class="featured-project-slider-nav-items flex justify-between lg:justify-end items-center flex-1 list-reset relative w-full lg:w-auto lg:ml-8">
         <?php if ( ! empty( $tb_featured_projects ) ) :
           foreach ( $tb_featured_projects as $i => $project ) : ?>
-            <li class="<?php echo $i !== 0 ? 'absolute ml-0 md:ml-4 lg:ml-8 lg:pl-2' : 'static'; ?> md:static pin-b pin-l w-full md:w-1/3 lg:w-auto flex items-center opacity-0 lg:opacity-100 featured-project-slider-nav-item">
+            <li class="<?php echo $i !== 0 ? 'absolute ml-0 md:ml-4 lg:ml-8 lg:pl-2' : 'static'; ?> md:static pin-b pin-l w-full md:w-1/3 lg:w-auto flex items-center opacity-0 md:opacity-100 featured-project-slider-nav-item">
               <div class="featured-project-slider-indicator relative h-full pr-4 md:pr-3 lg:pr-4">
                 <span class="bg-primary block h-full"></span>
                 <span class="bg-primary block absolute pin-l pin-b"></span>
@@ -89,7 +91,7 @@ $tb_latest_news = new WP_Query( array(
       <img class="absolute pin-t pin-l object-cover w-full h-full md:hidden" src="<?php echo $tb_purpose_video_poster; ?>" alt="Video Fallback">
     </div>
     <div class="p-8 pb-0 lg:pb-8 w-full lg:w-2/5">
-      <h2 class="purpose-heading uppercase text-primary mb-6"><span class="text-black block">Our</span> Purpose</h2>
+      <h2 class="purpose-heading uppercase text-primary mb-6"><span class="text-black block"><?php echo $tb_purpose_heading_one; ?></span> <?php echo $tb_purpose_heading_two; ?></h2>
       <div class="leading-normal mb-8"><?php echo $tb_purpose_description; ?></div>
       <a href="<?php echo $tb_purpose_button_link; ?>" class="button-outline-dark"><?php echo $tb_purpose_button_text; ?></a>
     </div>

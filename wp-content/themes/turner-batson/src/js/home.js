@@ -7,8 +7,32 @@ import fromTop from './modules/fromTop';
 
 const hero = dom('#hero');
 const navName = dom('#masthead .branding');
+const footer = dom('#footer .branding');
+
+// Hide logo when footer logo is visible
+function toggleLogo(footer, header, offset) {
+  const shouldHide = footer.getBoundingClientRect().top < window.innerHeight;
+  if (shouldHide) {
+    header.classList.remove('opacity-100');
+    header.classList.add('opacity-0');
+    header.style.pointerEvents = 'none';
+  } else if (window.scrollY > offset) {
+    header.classList.remove('opacity-0');
+    header.classList.add('opacity-100');
+    header.style.pointerEvents = 'auto';
+  } else {
+    header.classList.remove('opacity-100');
+    header.classList.add('opacity-0');
+    header.style.pointerEvents = 'none';
+  }
+}
+
 if (window.innerWidth > 992) {
-  runAndListen(() => show(hero.offsetHeight, navName), 'scroll', window);
+  runAndListen(
+    () => toggleLogo(footer, navName, hero.offsetHeight),
+    'scroll',
+    window
+  );
 }
 
 initHomeSlider('[data-slider="home"]');

@@ -94,6 +94,16 @@
   }
 }
 
+@include media('height<560px') {
+  .nav .menu-item {
+    padding-top: 4rem;
+
+    & a {
+      font-size: 7vw;
+    }
+  }
+}
+
 @include media('>=#{$md}') {
   .nav {
     & .menu-item-list {

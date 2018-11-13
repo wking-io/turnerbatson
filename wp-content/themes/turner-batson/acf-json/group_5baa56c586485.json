@@ -84,6 +84,44 @@
             ]
         },
         {
+            "key": "field_5bea4f7572981",
+            "label": "Our Purpose Heading - Line One",
+            "name": "tb_purpose_heading_one",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Our",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5bea50211cd16",
+            "label": "Our Purpose Heading - Line Two",
+            "name": "tb_purpose_heading_two",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Purpose",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5baa580d2bc1f",
             "label": "Our Purpose Video",
             "name": "tb_purpose_video",
@@ -297,5 +335,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1539976856
+    "modified": 1542082614
 }

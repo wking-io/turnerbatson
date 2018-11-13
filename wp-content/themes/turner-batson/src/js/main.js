@@ -22,15 +22,16 @@ if (window.location.pathname !== '/') {
 
 // Toggle Nav
 const toggleNavOnEvent = wrapEvent(toggleClass, ['nav--open', nav]);
-const toggleExpandedOnNav = wrapEvent(toggleAttr, [
-  'aria-expanded',
-  navToggle,
-]);
+const toggleExpandedOnNav = wrapEvent(toggleAttr, ['aria-expanded', navToggle]);
 const toggleExpandedOnName = wrapEvent(toggleAttr, [
   'aria-expanded',
   nameToggle,
 ]);
-const menuPipeline = compose(toggleExpandedOnNav, toggleExpandedOnName, toggleNavOnEvent);
+const menuPipeline = compose(
+  toggleExpandedOnNav,
+  toggleExpandedOnName,
+  toggleNavOnEvent
+);
 eventOn('click', menuPipeline, navToggle);
 eventOn('click', menuPipeline, nameToggle);
 
@@ -47,3 +48,21 @@ drawers.forEach(function(btn) {
   setDrawerHeight(wrapper);
   btn.addEventListener('click', toggleDrawer(wrapper));
 });
+
+// Hide logo when footer logo is visible
+function toggleLogo(footer, header) {
+  const shouldHide = footer.getBoundingClientRect().top < window.innerHeight;
+  if (shouldHide) {
+    header.classList.remove('opacity-100');
+    header.classList.add('opacity-0');
+    header.style.pointerEvents = 'none';
+  } else {
+    header.classList.remove('opacity-0');
+    header.classList.add('opacity-100');
+    header.style.pointerEvents = 'auto';
+  }
+}
+
+const branding = dom('#masthead .branding');
+const footerLogo = dom('#footer .branding');
+runAndListen(() => toggleLogo(footerLogo, branding), 'scroll', window);

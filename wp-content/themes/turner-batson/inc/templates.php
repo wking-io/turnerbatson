@@ -21,7 +21,7 @@ function portfolio_item( $id ) {
 function team_item( $id, $i ) {
   ob_start(); ?>
 
-  <div class="team-item relative lg:mb-8" id="team-member-<?php echo $id ?>" data-item-index="<?php echo $i; ?>" data-drawer-wrapper data-drawer-special data-drawer-expanded="false">
+  <li class="team-item relative lg:mb-8" id="team-member-<?php echo $id ?>" data-item-index="<?php echo $i; ?>" data-drawer-wrapper data-drawer-special data-drawer-expanded="false">
     <div class="relative">
       <div class="team-headshot relative">
         <img class="team-headshot-img" src="<?php the_field( 'tb_team_headshot', $id ); ?>" alt="<?php echo get_the_title( $id ); ?> headshot" />
@@ -46,7 +46,7 @@ function team_item( $id, $i ) {
       </div>
     </div>
     <div class="team-spacer team-spacer-<?php echo $id; ?>"></div>
-  </div>
+  </li>
 
   <?php return ob_get_clean();
 }

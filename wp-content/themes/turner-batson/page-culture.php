@@ -7,17 +7,17 @@ $tb_culture_hero_heading = get_field( 'tb_culture_hero_heading' );
 $tb_culture_scroll_text = get_field( 'tb_culture_scroll_text' );
 $tb_culture_content_heading = get_field( 'tb_culture_content_heading' );
 $tb_culture_content_description = get_field( 'tb_culture_content_description' );
-$tb_culture_people_description = get_field( 'tb_culture_people_description' );
-$tb_culture_passion_description = get_field( 'tb_culture_passion_description' );
-$tb_culture_purpose_description = get_field( 'tb_culture_purpose_description' );
+// $tb_culture_people_description = get_field( 'tb_culture_people_description' );
+// $tb_culture_passion_description = get_field( 'tb_culture_passion_description' );
+// $tb_culture_purpose_description = get_field( 'tb_culture_purpose_description' );
 $tb_culture_content_images = get_field( 'tb_culture_content_images' );
 $random_index = array_rand($tb_culture_content_images);
 
-$tb_culture_ps = array(
-  'people' => $tb_culture_people_description,
-  'passion' => $tb_culture_passion_description,
-  'purpose' => $tb_culture_purpose_description
-);
+// $tb_culture_ps = array(
+//   'people' => $tb_culture_people_description,
+//   'passion' => $tb_culture_passion_description,
+//   'purpose' => $tb_culture_purpose_description
+// );
 
 get_header(); ?>
 
@@ -56,17 +56,17 @@ get_header(); ?>
 </section>
 
 <section class="md:py-8">
-  <div class="wrapper-sm pt-8">
+  <div class="wrapper-sm pt-8 pb-1">
     <h2 class="text-md md:text-lg lg:text-xl leading-tight mb-6"><?php echo $tb_culture_content_heading; ?></h2>
     <div class="leading-normal culture-content mb-8"><?php echo $tb_culture_content_description; ?></div>
-    <ul class="list-reset md:flex md:flex-row md:flex-wrap md:justify-between">
-      <?php foreach ( $tb_culture_ps as $name => $content ) : ?>
+    <!-- <ul class="list-reset md:flex md:flex-row md:flex-wrap md:justify-between">
+      <?php // foreach ( $tb_culture_ps as $name => $content ) : ?>
         <li class="p-item pb-8">
-          <h3 class="text-primary uppercase text-lg mb-1"><?php echo $name; ?></h3>
-          <p class="leading-normal"><?php echo $content; ?></p>
+          <h3 class="text-primary uppercase text-lg mb-1"><?php // echo $name; ?></h3>
+          <p class="leading-normal"><?php // echo $content; ?></p>
         </li>
-      <?php endforeach; ?>
-    </ul>
+      <?php // endforeach; ?>
+    </ul> -->
   </div>
   <div class="culture-img my-8 aspect-16:9 md:aspect-2:1 bg-cover bg-no-repeat bg-center" style="background-image: url('<?php echo $tb_culture_content_images[$random_index]['url']; ?>');"></div>
   <div class="wrapper-sm py-8">
