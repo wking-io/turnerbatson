@@ -1,5 +1,5 @@
 import runAndListen from './modules/runAndListen';
-import { show, grow } from './modules/onScroll';
+import { grow } from './modules/onScroll';
 import { initHomeSlider, initLatestSlider } from './modules/slider';
 import { dom, domAll } from './modules/dom';
 import withDefault from './modules/withDefault';
