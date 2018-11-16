@@ -236,14 +236,7 @@
     & .team-bio {
       top: calc(100% + 8rem);
       padding: 14rem 14rem 12rem;
-      left: 45vw;
-      right: 45vw;
       width: 90vw;
-
-      &:before,
-      &:after {
-        left: 13vw;
-      }
     }
 
     &:first-child,
@@ -253,6 +246,16 @@
 
     &:nth-child(3n) {
       margin-right: 8rem;
+
+      & .team-bio {
+        left: 45vw;
+        right: 45vw;
+
+        &:before,
+        &:after {
+          left: 13vw;
+        }
+      }
     }
 
     &:nth-child(3n + 1) {
@@ -283,6 +286,16 @@
       }
     }
 
+    &:first-child .team-bio {
+      left: 45vw;
+      right: 45vw;
+
+      &:before,
+      &:after {
+        left: 21vw;
+      }
+    }
+
     &:nth-child(2) {
       margin-right: 0;
 
@@ -292,7 +305,7 @@
 
         &:before,
         &:after {
-          left: 49vw;
+          left: 67vw;
         }
       }
     }
@@ -308,24 +321,9 @@
     left: 600px;
     right: 600px;
 
-    &:before {
-      @apply bg-grey border-t-2 border-l-2 border-grey absolute;
-      content: '';
-      width: 4rem;
-      height: 4rem;
-      transform: rotate(45deg);
-      left: 43.5rem;
-      top: -2.5rem;
-    }
-
+    &:before,
     &:after {
-      @apply bg-white absolute;
-      content: '';
-      width: 4rem;
-      height: 4rem;
-      transform: rotate(45deg);
       left: 43.5rem;
-      top: -1.75rem;
     }
 
     &-name {
@@ -337,78 +335,53 @@
     }
   }
 
-  .team-item:nth-child(2) .team-bio {
+  .team-item:nth-child(3n + 1) .team-bio {
     left: 189.5px;
     right: 189.5px;
 
-    &:before {
-      @apply bg-grey border-t-2 border-l-2 border-grey absolute;
-      content: '';
-      width: 4rem;
-      height: 4rem;
-      transform: rotate(45deg);
-      left: 147rem;
-      top: -2.5rem;
-    }
-
+    &:before,
     &:after {
-      @apply bg-white absolute;
-      content: '';
-      width: 4rem;
-      height: 4rem;
-      transform: rotate(45deg);
-      left: 147rem;
-      top: -1.75rem;
+      left: 148rem;
     }
   }
 
   .team-item:nth-child(3n + 2) .team-bio {
-    left: 189.5px;
-    right: 189.5px;
+    left: -223px;
+    right: -223px;
 
-    &:before {
-      @apply bg-grey border-t-2 border-l-2 border-grey absolute;
-      content: '';
-      width: 4rem;
-      height: 4rem;
-      transform: rotate(45deg);
-      left: 147rem;
-      top: -2.5rem;
-    }
-
+    &:before,
     &:after {
-      @apply bg-white absolute;
-      content: '';
-      width: 4rem;
-      height: 4rem;
-      transform: rotate(45deg);
-      left: 147rem;
-      top: -1.75rem;
+      left: 1004px;
     }
   }
 
   .team-item:nth-child(3n) .team-bio {
-    left: -221px;
-    right: -221px;
+    left: 600px;
+    right: 600px;
 
-    &:before {
-      @apply bg-grey border-t-2 border-l-2 border-grey absolute;
-      content: '';
-      width: 4rem;
-      height: 4rem;
-      transform: rotate(45deg);
-      left: 250rem;
-      top: -2.5rem;
-    }
-
+    &:before,
     &:after {
-      @apply bg-white absolute;
-      content: '';
-      width: 4rem;
-      height: 4rem;
-      transform: rotate(45deg);
-      left: 250rem;
-      top: -1.75rem;
+      left: 187px;
+    }
+  }
+
+  .team-item:first-child .team-bio {
+    left: 600px;
+    right: 600px;
+
+    &:before,
+    &:after {
+      left: 70rem;
+    }
+  }
+
+  .team-item:nth-child(2) .team-bio {
+    left: -16.5px;
+    right: -16.5px;
+
+    &:before,
+    &:after {
+      left: 894px;
     }
   }
 }
