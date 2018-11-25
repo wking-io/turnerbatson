@@ -70,9 +70,9 @@ $tb_latest_news = new WP_Query( array(
 </section>
 
 <section id="purpose" class="purpose relative md:pt-8 lg:pt-jumbo bg-white">
-  <span class="purpose-bar" data-grow data-grow-buffer="0.5"></span>
-  <div class="flex flex-col lg:flex-row justify-between items-center">
-    <div class="purpose-video relative w-full lg:w-3/5 aspect-16:9">
+  <span class="purpose-box hidden lg:block" data-grow-x data-grow-buffer="0.5"></span>
+  <div class="purpose-content flex flex-col lg:flex-row justify-between items-center">
+    <div class="purpose-video relative w-full lg:ml-jumbo lg:w-1/2 aspect-16:9 lg:aspect-4:3">
       <div class="hidden md:block">
         <?php 
           echo cl_video_tag( $tb_purpose_video, 
@@ -96,10 +96,10 @@ $tb_latest_news = new WP_Query( array(
       <a href="<?php echo $tb_purpose_button_link; ?>" class="button-outline-dark"><?php echo $tb_purpose_button_text; ?></a>
     </div>
   </div>
+  <div class="mx-8 culture-accent relative z-30"><div class="w-1 h-full bg-primary lg:absolute lg:pin-t lg:pin-r" data-grow-y data-grow-buffer="0.05"></div></div>
 </section>
 
-<section id="culture" class="">
-  <div class="mx-8 culture-accent relative z-30"><div class="w-1 h-full bg-primary lg:absolute lg:pin-t lg:pin-r" data-grow data-grow-buffer="0.05"></div></div>
+<section id="culture" class="lg:overflow-hidden">
   <div class="relative">
     <div class="culture-bg bg-cover lg:bg-fixed bg-center p-8 mb-8" style="background-image: linear-gradient(rgba(63, 66, 67, 0.15), rgba(63, 66, 67, 0.05)), url(<?php echo $tb_culture_bg['url']; ?>);">
       <div class="culture-info xl:ml-8 xl:pl-8">

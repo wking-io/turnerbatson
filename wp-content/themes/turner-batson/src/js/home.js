@@ -1,5 +1,5 @@
 import runAndListen from './modules/runAndListen';
-import { grow } from './modules/onScroll';
+import { growX, growY } from './modules/onScroll';
 import { initHomeSlider, initLatestSlider } from './modules/slider';
 import { dom, domAll } from './modules/dom';
 import withDefault from './modules/withDefault';
@@ -38,8 +38,45 @@ if (window.innerWidth > 992) {
 initHomeSlider('[data-slider="home"]');
 initLatestSlider('[data-slider="latest"]');
 
-const growers = domAll('[data-grow]').map(grow);
-growers.forEach(grower => runAndListen(grower, 'scroll', window));
+const ygrowers = domAll('[data-grow-y]').map(growY);
+ygrowers.forEach(grower => runAndListen(grower, 'scroll', window));
+
+if (window.innerWidth > 992) {
+  const xgrowers = domAll('[data-grow-x]').map(growX);
+  xgrowers.forEach(grower => runAndListen(grower, 'scroll', window));
+}
+
+const purpose = dom('.purpose-content');
+
+function movePurpose(purpose) {
+  return function() {
+    if (window.innerWidth > 992) {
+      requestAnimationFrame(() => {
+        const purposeTop = fromTop(purpose);
+        const buffer = window.innerHeight * 0.6;
+        const full = window.innerHeight - buffer - 100;
+        const fromBuffer = purposeTop - buffer;
+        const isVisible = purposeTop - window.innerHeight < -100;
+        const isAbove = fromBuffer < 0;
+        const base = 40;
+
+        if (isAbove) {
+          purpose.style.opacity = '1';
+          purpose.style.transform = 'translateY(0)';
+        } else if (isVisible) {
+          const percent = 1 - fromBuffer / full;
+          purpose.style.transform = `translateX(${base - base * percent}px)`;
+          purpose.style.opacity = `${1 * percent}`;
+        } else {
+          purpose.style.opacity = '0';
+          purpose.style.transform = 'translateY(20px)';
+        }
+      });
+    }
+  };
+}
+
+runAndListen(movePurpose(purpose), 'scroll', window);
 
 const logo = dom('[data-sticky]');
 const nav = dom('[data-sticky-ref]');
