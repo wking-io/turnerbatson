@@ -72,7 +72,7 @@ $tb_latest_news = new WP_Query( array(
 <section id="purpose" class="purpose relative md:pt-8 lg:pt-jumbo bg-white">
   <span class="purpose-box hidden lg:block" data-grow-x data-grow-buffer="0.5"></span>
   <div class="purpose-content flex flex-col lg:flex-row justify-between items-center">
-    <div class="purpose-video relative w-full lg:ml-jumbo lg:w-1/2 aspect-16:9 lg:aspect-4:3">
+    <div class="purpose-video overflow-hidden relative w-full lg:ml-jumbo lg:w-1/2 aspect-4:3">
       <div class="hidden md:block">
         <?php 
           echo cl_video_tag( $tb_purpose_video, 
