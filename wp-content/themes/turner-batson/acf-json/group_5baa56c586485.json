@@ -122,13 +122,40 @@
             "maxlength": ""
         },
         {
+            "key": "field_5c2fd78929870",
+            "label": "Show Purpose Video",
+            "name": "tb_show_purpose_video",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5baa580d2bc1f",
             "label": "Our Purpose Video",
             "name": "tb_purpose_video",
             "type": "text",
             "instructions": "To fill out this field follow these steps:\r\n\r\n1. Go to the Cloudinary Media Library > Videos here: http:\/\/turnerbatson.test\/wp-admin\/admin.php?page=cloudinary-image-management-and-manipulation-in-the-cloud-cdn%2Flibrary.php\r\n2. Click into the edit page for the video you want to add\r\n3. Copy the name of the video in the top left\r\n4. Paste the name of the video below",
             "required": 1,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c2fd78929870",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -335,5 +362,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1542082614
+    "modified": 1546639315
 }

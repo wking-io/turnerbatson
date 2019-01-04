@@ -9,9 +9,7 @@ $tb_hero_img = get_field( 'tb_team_hero_img', 'options' );
 get_header(); ?>
 
 <section class="team-header pt-nav lg:pt-0">
-  <div class="h-full max-h-screen bg-cover bg-no-repeat bg-center aspect-5:3 relative" style="background-image: linear-gradient(to bottom, rgba(63, 66, 67, .6), rgba(63, 66, 67, 0) 30%), url('<?php echo $tb_hero_img; ?>');">
-    <div class="w-full md:w-auto bg-white md:inline-block md:absolute pin-b pin-r text-center"><h2 class="text-md xl:text-lg text-grey uppercase font-medium py-6 px-8"><?php echo do_shortcode( '[tagline theme="people-red"]' ); ?></h2></div>
-  </div>
+  <div class="h-full max-h-screen bg-cover bg-no-repeat bg-center aspect-5:3 relative" style="background-image: linear-gradient(to bottom, rgba(63, 66, 67, .6), rgba(63, 66, 67, 0) 30%), url('<?php echo $tb_hero_img; ?>');"></div>
 </section>
 
 <section class="py-8 md:py-jumbo">

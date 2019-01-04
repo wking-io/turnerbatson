@@ -6,6 +6,7 @@ get_header();
 $tb_featured_projects = get_field( 'tb_portfolio_slider' );
 $tb_purpose_heading_one = get_field( 'tb_purpose_heading_one' );
 $tb_purpose_heading_two = get_field( 'tb_purpose_heading_two' );
+$tb_show_purpose_video = get_field( 'tb_show_purpose_video' );
 $tb_purpose_video = get_field( 'tb_purpose_video' );
 $tb_purpose_video_poster = get_field( 'tb_purpose_video_poster' );
 $tb_purpose_description = get_field( 'tb_purpose_description' );
@@ -73,22 +74,24 @@ $tb_latest_news = new WP_Query( array(
   <span class="purpose-box hidden lg:block" data-grow-x data-grow-buffer="0.5"></span>
   <div class="purpose-content flex flex-col lg:flex-row justify-between items-center">
     <div class="purpose-video overflow-hidden relative w-full lg:ml-jumbo lg:w-1/2 aspect-4:3">
-      <div class="hidden md:block">
-        <?php 
-          echo cl_video_tag( $tb_purpose_video, 
-            array(
-              "loop" => true,
-              "autoplay" => true,
-              "muted" => true,
-              "preload" => true,
-              "fallback_content" => "Your browser does not support HTML5 video tags",
-              "width" => 1000,
-              "crop" => "fit",
-            )
-          ); 
-        ?>
-      </div>
-      <img class="absolute pin-t pin-l object-cover w-full h-full md:hidden" src="<?php echo $tb_purpose_video_poster; ?>" alt="Video Fallback">
+      <?php if ( $tb_show_purpose_video ) : ?>
+        <div class="hidden md:block">
+          <?php 
+            echo cl_video_tag( $tb_purpose_video, 
+              array(
+                "loop" => true,
+                "autoplay" => true,
+                "muted" => true,
+                "preload" => true,
+                "fallback_content" => "Your browser does not support HTML5 video tags",
+                "width" => 1000,
+                "crop" => "fit",
+              )
+            ); 
+          ?>
+        </div>
+        <?php endif; ?>
+      <img class="absolute pin-t pin-l object-cover w-full h-full<?php echo $tb_show_purpose_video ? ' md:hidden' : ''; ?>" src="<?php echo $tb_purpose_video_poster; ?>" alt="Video Fallback">
     </div>
     <div class="p-8 pb-0 lg:pb-8 w-full lg:w-2/5">
       <h2 class="purpose-heading uppercase text-primary mb-6"><span class="text-black block"><?php echo $tb_purpose_heading_one; ?></span> <?php echo $tb_purpose_heading_two; ?></h2>
