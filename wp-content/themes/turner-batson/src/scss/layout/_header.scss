@@ -179,3 +179,36 @@
     max-width: 1100px;
   }
 }
+
+@media (orientation: landscape) {
+  .nav {
+    & .menu-item-list {
+      max-height: 80%;
+      padding-bottom: 2rem;
+    }
+
+    & .menu-item {
+      padding-top: 3rem;
+    }
+
+    & .menu-item a {
+      font-size: 5vw;
+    }
+
+    .menu-aside {
+      padding: 4rem 8rem;
+    }
+  }
+}
+
+@media (orientation: landscape) and (min-height: 520px) {
+  .nav {
+    & .menu-item a {
+      font-size: 8vw;
+    }
+
+    .menu-aside {
+      padding: 8rem;
+    }
+  }
+}
