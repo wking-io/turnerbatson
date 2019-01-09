@@ -1,13 +1,12 @@
 .footer {
   & .menu-item-list {
-    height: 120px;
+    height: 130px;
   }
 
   & .menu-item {
     @apply pb-3 cursor-pointer w-1/2;
   }
 
-  
   & .menu-item a {
     @apply text-white no-underline uppercase font-bold w-full block;
   }

@@ -1,5 +1,6 @@
 import { attrToBool } from './attr';
 import { dom } from './dom';
+import $ from 'jquery';
 
 function findParentDrawer(el) {
   if (el === document.body) {
@@ -86,23 +87,29 @@ function toggleAllDrawerAttr(btn, wrapper, wrappers) {
       currentIndex > lastActive.index &&
       currentTop > lastActive.top
     ) {
-      window.scrollTo({
-        top: top + window.scrollY - 52 - lastActive.height,
-        behavior: 'smooth',
-      });
+      $('html, body').animate(
+        {
+          scrollTop: top + window.scrollY - 52 - lastActive.height,
+        },
+        350
+      );
     } else {
-      window.scrollTo({
-        top: top + window.scrollY - 52,
-        behavior: 'smooth',
-      });
+      $('html, body').animate(
+        {
+          scrollTop: top + window.scrollY - 52,
+        },
+        350
+      );
     }
   } else {
     currentSpacer.style.height = '0px';
     const { top } = wrapper.getBoundingClientRect();
-    window.scrollTo({
-      top: top + window.scrollY - 32,
-      behavior: 'smooth',
-    });
+    $('html, body').animate(
+      {
+        scrollTop: top + window.scrollY - 32,
+      },
+      350
+    );
   }
 
   wrapper.setAttribute('data-drawer-expanded', !isExpanded);
