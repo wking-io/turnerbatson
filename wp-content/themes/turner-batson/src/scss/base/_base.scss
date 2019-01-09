@@ -34,6 +34,10 @@ body {
   margin: 0 auto;
 }
 
+.mobile-heading {
+  font-size: 9vw;
+}
+
 @include media('>=#{$lg}') {
   .wrapper,
   .wrapper-sm {

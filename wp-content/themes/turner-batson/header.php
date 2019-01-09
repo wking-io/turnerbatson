@@ -41,7 +41,7 @@ $connect = is_page( 'connect' ) ? ' connect' : '';
 			</div>
 		</h1>
 
-		<nav class="nav" role="navigation">
+		<nav class="nav pointer-events-auto" role="navigation">
 			<button class="menu-toggle z-40 w-6 relative cursor-pointer" aria-expanded="false">
 				<span></span>
 				<span></span>

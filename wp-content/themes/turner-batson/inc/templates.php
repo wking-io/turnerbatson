@@ -102,7 +102,7 @@ function job_content() {
   ob_start(); ?>
   
   <div>
-    <h3 class="uppercase text-2xl mb-6"><?php the_field( 'tb_career_heading', 'options' ); ?></h3>
+    <h3 class="mobile-heading uppercase sm:text-2xl mb-6"><?php the_field( 'tb_career_heading', 'options' ); ?></h3>
     <div class="leading-normal md:text-md mb-8"><?php the_field( 'tb_career_description', 'options' ); ?></div>
     <?php if ( $tb_careers->have_posts() ) : ?>
       <ul class="list-reset flex flex-col md:flex-row md:flex-wrap md:justify-between">
