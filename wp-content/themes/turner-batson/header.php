@@ -33,7 +33,7 @@ $connect = is_page( 'connect' ) ? ' connect' : '';
 <body <?php body_class('font-sans text-black' . $culture . $connect ); ?>>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', THEME_NAME ); ?></a>
 
-	<header id="masthead" class="w-full flex justify-between items-center fixed pl-6 py-6 z-50" role="banner">
+	<header id="masthead" class="w-full flex justify-between items-center fixed pl-6 py-6 z-50 pointer-events-none" role="banner">
 		<h1 class="branding relative z-50">
 			<div class="flex items-center">
 				<a class="h-8 w-8" href="<?php echo home_url(); ?>"><?php echo do_shortcode( '[logo classname="w-full h-full"]' ); ?></a>
