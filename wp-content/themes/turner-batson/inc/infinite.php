@@ -38,14 +38,18 @@ function tb_load_more_portfolio_js() {
 	$args = array(
 		'nonce' => wp_create_nonce( 'tb-load-more-nonce' ),
 		'url'   => admin_url( 'admin-ajax.php' ),
-    'query' => $wp_query->query,
     'action' => 'tb_ajax_load_more',
   );
+
+  $portfolio_args = array_merge( $args, array( 'query' => array_merge( $wp_query->query, array( 'post_type' => 'portfolio' ) ) ) );
+  $team_args = array_merge( $args, array( 'query' => array_merge( $wp_query->query, array( 'post_type' => 'team' ) ) ) );
+  $news_args = array_merge( $args, array( 'query' => $wp_query->query ) );
+  $testimonial_args = array_merge( $args, array( 'query' => array_merge( $wp_query->query, array( 'post_type' => 'testimonial' ) ) ) );
   
-  wp_localize_script( 'portfolio', 'loadmore', $args );
-  wp_localize_script( 'team', 'loadmore', $args );
-  wp_localize_script( 'news', 'loadmore', $args );
-  wp_localize_script( 'testimonial', 'loadmore', $args );
+  wp_localize_script( 'portfolio', 'loadmore', $portfolio_args );
+  wp_localize_script( 'team', 'loadmore', $team_args );
+  wp_localize_script( 'news', 'loadmore', $news_args );
+  wp_localize_script( 'testimonial', 'loadmore', $testimonial_args );
 	
 }
 add_action( 'wp_enqueue_scripts', 'tb_load_more_portfolio_js' );
@@ -69,6 +73,7 @@ function tb_ajax_load_more() {
   // Get markup from template functions
   ob_start();
   $loop = new WP_Query( $args );
+  error_log( print_r( $loop, true ) );
 	if( $loop->have_posts() ): while( $loop->have_posts() ): $loop->the_post();
   echo tb_get_template( $args['post_type'] );
   endwhile; endif; wp_reset_postdata();
@@ -78,7 +83,7 @@ function tb_ajax_load_more() {
   $is_last_page = false;
   if ( $check_max && $loop->max_num_pages == $loop->get( 'paged' ) ) {
     $is_last_page =  true;
-  } elseif ( ( $loop->found_posts - $loop->get( 'offset' ) ) <= $loop->get( 'posts_per_page' ) ) {
+  } elseif ( ( $loop->found_posts - ( $loop->get( 'offset' ) || 0 ) ) <= $loop->get( 'posts_per_page' ) ) {
     $is_last_page = true;
   }
 
